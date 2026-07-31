@@ -54,23 +54,41 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-## Веб сайт (хамгийн хялбар)
+## Онлайн веб (GitHub Pages)
 
-Desktop дээр **`CPI_WEB.bat`** (эсвэл `CPI WEB` shortcut) дээр 2 товших.
+**Хаяг:** https://batsukh1111.github.io/cpi-calculator/
 
-эсвэл:
+Статик сайт — Flask шаардлагагүй. Браузер дээр харьцуулалт, оролцоо бүгдийг бодно.
+
+### Өгөгдөл шинэчлэх (сарын дараа)
+
+```bash
+# 1) Excel-ээс JSON гаргах
+python cli.py web-export -i "C:\Users\...\cpi calculation 2023=100.xlsx"
+
+# 2) GitHub руу push
+git add docs
+git commit -m "Update CPI online data"
+git push
+```
+
+эсвэл Desktop/project дээр **`deploy_online.bat`** 2 товших.
+
+### Локал веб (Excel шууд, Flask)
 
 ```bash
 python server.py
+# http://127.0.0.1:5050
 ```
 
-Хөтөч: **http://127.0.0.1:5050**
+| | Online (GitHub) | Local (Flask) |
+|--|-----------------|---------------|
+| Интернет | Тийм | Үгүй (локал) |
+| Excel шууд | Үгүй (JSON export) | Тийм |
+| Table 1–11 | Үгүй* | Тийм |
+| Харьцуулалт / оролцоо | Тийм | Тийм |
 
-| Товч | Үйлдэл |
-|------|--------|
-| Хугацаа сонгох | YoY / YTD / MoM автомат |
-| Дахин тооцоолох | Excel-ээс шинэ индекс |
-| Table 1–11 татах | Нийтлэлийн Excel |
+\* Table 1–11-ийг локал `publish` командаар гаргана.
 
 ## Ашиглах
 

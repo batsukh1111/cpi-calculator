@@ -25,7 +25,9 @@ from cpi.special_groups import compute_ub_and_national_special
 from cpi.regions import compute_all_regions
 from cpi.period import parse_period, latest_period, three_way_changes, period_index
 from cpi.publication import publish_for_period, generate_publication
+from cpi.web_bundle import export_web_bundle
 import json as _json
+import shutil
 
 
 def _latest_month_index(result) -> int:
@@ -257,6 +259,41 @@ def cmd_publish(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_web_export(args: argparse.Namespace) -> int:
+    """Онлайн (GitHub Pages) сайт-д зориулсан JSON + docs/ шинэчлэх."""
+    excel = Path(args.input)
+    if not excel.exists():
+        print(f"Файл олдсонгүй: {excel}", file=sys.stderr)
+        return 1
+    print(f"Уншиж байна: {excel}")
+    t0 = time.perf_counter()
+    data = load_workbook_data(excel)
+    result = CPICalculator(data).calculate()
+    print(f"  Тооцоо ({time.perf_counter()-t0:.1f}s)")
+
+    out = Path(args.output).resolve()
+    # Always write to docs/data for GitHub Pages
+    docs_data = (Path(__file__).resolve().parent / "docs" / "data" / "cpi_bundle.json").resolve()
+    export_web_bundle(result, docs_data)
+    print(f"  GitHub Pages: {docs_data} ({docs_data.stat().st_size // 1024} KB)")
+
+    if out != docs_data:
+        try:
+            out.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(docs_data, out)
+            print(f"  Хуулбар: {out}")
+        except OSError as e:
+            print(f"  Хуулбар алгассан: {e}")
+
+    print()
+    print("Онлайн байршуулах:")
+    print("  git add docs")
+    print('  git commit -m "Update CPI web data"')
+    print("  git push")
+    print("  → https://batsukh1111.github.io/cpi-calculator/")
+    return 0
+
+
 def cmd_validate(args: argparse.Namespace) -> int:
     """Excel-ийн data_only утгатай харьцуулах."""
     import openpyxl
@@ -395,6 +432,19 @@ def main(argv: list[str] | None = None) -> int:
         help="Загварын бүх sheet үлдээх (default: зөвхөн table 1–11)",
     )
     pub.set_defaults(func=cmd_publish)
+
+    we = sub.add_parser(
+        "web-export",
+        help="GitHub Pages онлайн сайт-д JSON өгөгдөл бэлтгэх",
+    )
+    we.add_argument("-i", "--input", required=True, help="cpi calculation Excel")
+    we.add_argument(
+        "-o",
+        "--output",
+        default="docs/data/cpi_bundle.json",
+        help="гаралтын JSON",
+    )
+    we.set_defaults(func=cmd_web_export)
 
     args = p.parse_args(argv)
     return args.func(args)

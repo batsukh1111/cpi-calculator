@@ -1,6 +1,10 @@
-/* CPI dashboard frontend */
+/* CPI dashboard — free period inputs + auto calculate */
 let STATE = null;
 let charts = {};
+let AVAILABLE = [];
+let DEFAULT_PERIOD = null;
+let _debounceTimer = null;
+let _skipAuto = false;
 
 function $(id) { return document.getElementById(id); }
 
@@ -38,6 +42,38 @@ function pctCell(n) {
   return `<td class="${c}">${s}</td>`;
 }
 
+/** Normalize user typing to YYYY-MM if possible */
+function normalizePeriodInput(s) {
+  if (!s) return "";
+  s = String(s).trim();
+  let m = s.match(/^(\d{4})-(\d{1,2})$/);
+  if (m) return m[1] + "-" + String(m[2]).padStart(2, "0");
+  m = s.match(/^(\d{4})[./](\d{1,2})$/);
+  if (m) return m[1] + "-" + String(m[2]).padStart(2, "0");
+  m = s.match(/^(\d{4})(\d{2})$/);
+  if (m) return m[1] + "-" + m[2];
+  return s;
+}
+
+function getPeriods() {
+  return {
+    period: normalizePeriodInput($("period").value),
+    vs_yoy: normalizePeriodInput($("vs_yoy").value),
+    vs_ytd: normalizePeriodInput($("vs_ytd").value),
+    vs_mom: normalizePeriodInput($("vs_mom").value),
+  };
+}
+
+function queryString() {
+  const p = getPeriods();
+  const q = new URLSearchParams();
+  if (p.period) q.set("period", p.period);
+  if (p.vs_yoy) q.set("vs_yoy", p.vs_yoy);
+  if (p.vs_ytd) q.set("vs_ytd", p.vs_ytd);
+  if (p.vs_mom) q.set("vs_mom", p.vs_mom);
+  return q.toString();
+}
+
 // Tabs
 document.querySelectorAll(".tab").forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -61,20 +97,163 @@ async function api(path, opts) {
   return res;
 }
 
+/** Standard compare months for a main period YYYY-MM */
+function computeDefaults(periodKey) {
+  const m = periodKey.match(/^(\d{4})-(\d{2})$/);
+  if (!m) return null;
+  const y = +m[1], mo = +m[2];
+  const prevMo = mo === 1 ? 12 : mo - 1;
+  const prevY = mo === 1 ? y - 1 : y;
+  return {
+    yoy: `${y - 1}-${String(mo).padStart(2, "0")}`,
+    ytd: `${y - 1}-12`,
+    mom: `${prevY}-${String(prevMo).padStart(2, "0")}`,
+  };
+}
+
+function fillDefaults() {
+  const p = normalizePeriodInput($("period").value);
+  if (!p) {
+    showStatus("Эхлээд үндсэн сараа оруулна уу (ж.нь 2026-06)", "info");
+    return;
+  }
+  const d = computeDefaults(p);
+  if (!d) {
+    showStatus("Үндсэн сар буруу форматтай. Жишээ: 2026-06", "err");
+    return;
+  }
+  _skipAuto = true;
+  $("period").value = p;
+  $("vs_yoy").value = d.yoy;
+  $("vs_ytd").value = d.ytd;
+  $("vs_mom").value = d.mom;
+  _skipAuto = false;
+  loadDashboard();
+}
+
+function onPeriodMainChange() {
+  const p = normalizePeriodInput($("period").value);
+  if (!/^\d{4}-\d{2}$/.test(p)) return;
+  // auto-fill compare boxes with standards when main period changes
+  const d = computeDefaults(p);
+  if (!d) return;
+  _skipAuto = true;
+  $("period").value = p;
+  // only auto-fill if empty or previously looked like defaults
+  $("vs_yoy").value = d.yoy;
+  $("vs_ytd").value = d.ytd;
+  $("vs_mom").value = d.mom;
+  _skipAuto = false;
+}
+
+function scheduleAutoCalc(fromMain) {
+  if (_skipAuto) return;
+  clearTimeout(_debounceTimer);
+  _debounceTimer = setTimeout(() => {
+    if (fromMain) onPeriodMainChange();
+    const p = normalizePeriodInput($("period").value);
+    if (!p) return;
+    // normalize displayed values
+    _skipAuto = true;
+    if ($("period").value) $("period").value = normalizePeriodInput($("period").value);
+    if ($("vs_yoy").value) $("vs_yoy").value = normalizePeriodInput($("vs_yoy").value);
+    if ($("vs_ytd").value) $("vs_ytd").value = normalizePeriodInput($("vs_ytd").value);
+    if ($("vs_mom").value) $("vs_mom").value = normalizePeriodInput($("vs_mom").value);
+    _skipAuto = false;
+    loadDashboard();
+  }, 450);
+}
+
+function bindAutoInputs() {
+  const main = $("period");
+  const others = [$("vs_yoy"), $("vs_ytd"), $("vs_mom")];
+
+  main.addEventListener("change", () => scheduleAutoCalc(true));
+  main.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      onPeriodMainChange();
+      loadDashboard();
+    }
+  });
+  // typing: debounce auto
+  main.addEventListener("input", () => scheduleAutoCalc(true));
+
+  others.forEach((el) => {
+    el.addEventListener("change", () => scheduleAutoCalc(false));
+    el.addEventListener("input", () => scheduleAutoCalc(false));
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        loadDashboard();
+      }
+    });
+  });
+}
+
+async function waitUntilReady(maxSec = 120) {
+  for (let i = 0; i < maxSec; i++) {
+    try {
+      const res = await fetch("/api/status");
+      const s = await res.json();
+      if (s.load_error) {
+        showStatus("Алдаа: " + s.load_error, "err");
+        return false;
+      }
+      if (s.ready) return true;
+      if (s.loading) {
+        showStatus(
+          "Excel тооцоолж байна… " + (i + 1) + " сек (ихэвчлэн 30–90 сек)",
+          "info"
+        );
+        setLoading(true);
+      } else if (!s.default_excel_exists) {
+        showStatus(
+          "Excel Desktop дээр алга: cpi calculation 2023=100.xlsx",
+          "err"
+        );
+        return false;
+      } else {
+        showStatus(
+          "Өгөгдөл бэлэн биш. «Excel дахин» дарна уу… (" + (i + 1) + "с)",
+          "info"
+        );
+      }
+    } catch (e) {
+      showStatus("Серверт холбогдохгүй байна… " + (i + 1) + "с", "info");
+    }
+    await new Promise((r) => setTimeout(r, 1000));
+  }
+  showStatus("Хэт удаан. «Excel дахин» товчийг дарна уу.", "err");
+  return false;
+}
+
 async function loadPeriods() {
   const res = await api("/api/periods");
   const data = await res.json();
-  const sel = $("period");
-  sel.innerHTML = "";
-  (data.periods || []).forEach((p) => {
+  AVAILABLE = data.periods || [];
+  DEFAULT_PERIOD = data.default;
+  const dl = $("periodList");
+  dl.innerHTML = "";
+  AVAILABLE.forEach((p) => {
     const opt = document.createElement("option");
     opt.value = p;
-    opt.textContent = p;
-    if (p === data.default) opt.selected = true;
-    sel.appendChild(opt);
+    dl.appendChild(opt);
   });
   if (!data.ready) {
-    showStatus("Эхлээд тооцоолол хийнэ. «Дахин тооцоолох» дарна уу (30–90 сек).", "info");
+    showStatus("Өгөгдөл бэлдэж байна… эсвэл «Excel дахин» дарна уу.", "info");
+    return;
+  }
+  if (!$("period").value && DEFAULT_PERIOD) {
+    _skipAuto = true;
+    $("period").value = DEFAULT_PERIOD;
+    const d = computeDefaults(DEFAULT_PERIOD);
+    if (d) {
+      $("vs_yoy").value = d.yoy;
+      $("vs_ytd").value = d.ytd;
+      $("vs_mom").value = d.mom;
+    }
+    _skipAuto = false;
   }
 }
 
@@ -84,7 +263,11 @@ async function recalculate() {
   try {
     const res = await api("/api/calculate", { method: "POST" });
     const data = await res.json();
-    showStatus("Тооцоолол амжилттай (" + fmt(data.seconds, 1) + " сек). " + data.months + " сар, " + data.aimags + " аймаг.", "ok");
+    showStatus(
+      "Тооцоолол амжилттай (" + fmt(data.seconds, 1) + " сек). " +
+        data.months + " сар, " + data.aimags + " аймаг.",
+      "ok"
+    );
     await loadPeriods();
     await loadDashboard();
   } catch (e) {
@@ -95,41 +278,57 @@ async function recalculate() {
 }
 
 async function loadDashboard() {
-  const period = $("period").value;
-  if (!period) {
-    showStatus("Хугацаа сонгоно уу. Эсвэл «Дахин тооцоолох» дарна уу.", "info");
+  const p = getPeriods();
+  if (!p.period) {
+    showStatus("Үндсэн сараа оруулна уу. Жишээ: 2026-06", "info");
     return;
   }
   setLoading(true);
   hideStatus();
   try {
-    const res = await api("/api/dashboard?period=" + encodeURIComponent(period));
+    const res = await api("/api/dashboard?" + queryString());
     STATE = await res.json();
     $("content").style.display = "block";
+    // sync inputs to resolved values
+    _skipAuto = true;
+    $("period").value = STATE.period;
+    if (STATE.compare) {
+      $("vs_yoy").value = STATE.compare.yoy;
+      $("vs_ytd").value = STATE.compare.ytd;
+      $("vs_mom").value = STATE.compare.mom;
+    }
+    _skipAuto = false;
     renderAll();
-    showStatus("Хугацаа: " + STATE.period_label + " · " + STATE.period_en, "ok");
+    const c = STATE.compare;
+    showStatus(
+      STATE.period_label +
+        "  ·  vs " + c.yoy + " / " + c.ytd + " / " + c.mom,
+      "ok"
+    );
   } catch (e) {
-    showStatus("Алдаа: " + e.message + " — эхлээд «Дахин тооцоолох» туршина уу.", "err");
-    $("content").style.display = "none";
+    showStatus("Алдаа: " + e.message, "err");
   } finally {
     setLoading(false);
   }
 }
 
 async function publishTables() {
-  const period = $("period").value;
-  if (!period) {
-    showStatus("Хугацаа сонгоно уу.", "err");
+  const p = getPeriods();
+  if (!p.period) {
+    showStatus("Үндсэн сараа оруулна уу.", "err");
     return;
   }
   setLoading(true);
   showStatus("Table 1–11 үүсгэж байна…", "info");
   try {
-    const res = await api("/api/publish?period=" + encodeURIComponent(period), { method: "POST" });
+    const res = await api(
+      "/api/publish?period=" + encodeURIComponent(p.period),
+      { method: "POST" }
+    );
     const data = await res.json();
     showStatus("Бэлэн: " + data.filename, "ok");
-    // download
-    window.location.href = "/api/download/publication?period=" + encodeURIComponent(period);
+    window.location.href =
+      "/api/download/publication?period=" + encodeURIComponent(p.period);
   } catch (e) {
     showStatus("Алдаа: " + e.message, "err");
   } finally {
@@ -150,29 +349,188 @@ function renderAll() {
   renderAimags();
   renderGroups();
   renderSpecial();
+  renderContribution();
   renderRegions();
   renderCharts();
-  $("dlComp").href = "/api/download/comparison?period=" + encodeURIComponent(STATE.period);
-  $("dlHint").textContent = "Сонгосон сар: " + STATE.period;
+  $("dlComp").href =
+    "/api/download/comparison?period=" + encodeURIComponent(STATE.period);
+  $("dlHint").textContent =
+    "Сар: " + STATE.period +
+    " · харьцуулалт: " +
+    STATE.compare.yoy + ", " + STATE.compare.ytd + ", " + STATE.compare.mom;
+}
+
+function renderContribution() {
+  if (!STATE || !STATE.contribution) return;
+  const slot = $("contribSlot") ? $("contribSlot").value : "yoy";
+  const scope = $("contribScope") ? $("contribScope").value : "national";
+  const block = STATE.contribution[slot];
+  if (!block) {
+    if ($("contribHint")) {
+      $("contribHint").textContent = "Энэ харьцуулалтын суурь сар өгөгдөлд алга.";
+    }
+    return;
+  }
+  const data = block[scope] || {};
+  const groups = data.groups || [];
+  const special = data.special || [];
+  const base = block.base_period || STATE.compare[slot];
+  const cur = STATE.period;
+
+  // update slot option labels with actual months
+  if ($("contribSlot")) {
+    const opt0 = $("contribSlot").options[0];
+    const opt1 = $("contribSlot").options[1];
+    const opt2 = $("contribSlot").options[2];
+    if (opt0) opt0.textContent = "1: vs " + STATE.compare.yoy;
+    if (opt1) opt1.textContent = "2: vs " + STATE.compare.ytd;
+    if (opt2) opt2.textContent = "3: vs " + STATE.compare.mom;
+  }
+
+  if ($("contribBaseLabel")) {
+    $("contribBaseLabel").textContent = "· " + cur + " vs " + base;
+  }
+  if ($("contribHint")) {
+    const overall = groups.find((g) => g.is_overall);
+    const inf = overall ? fmt(overall.inflation, 2) : "—";
+    $("contribHint").textContent =
+      (scope === "national" ? "Улс" : "Улаанбаатар") +
+      ": " + cur + " / " + base +
+      " · инфляц " + inf + "%" +
+      " · Cont = жин × (I_t − I_0) / I_ерөнхий_0 · Share = Cont / инфляц × 100";
+  }
+
+  function rowHtml(r) {
+    const bold = r.is_overall ? "font-weight:700" : "";
+    return `
+      <tr style="${bold}">
+        <td>${r.name || r.key || ""}</td>
+        <td>${fmt(r.weight, 2)}</td>
+        <td>${fmt(r.index, 2)}</td>
+        ${pctCell(r.inflation)}
+        <td class="${pctClass(r.contrib_pp)}">${r.contrib_pp == null ? "—" : fmt(r.contrib_pp, 2)}</td>
+        <td>${r.contrib_share == null ? "—" : fmt(r.contrib_share, 1)}</td>
+      </tr>`;
+  }
+
+  if ($("tblContribGroups")) {
+    $("tblContribGroups").querySelector("tbody").innerHTML = groups.map(rowHtml).join("");
+  }
+  if ($("tblContribSpecial")) {
+    $("tblContribSpecial").querySelector("tbody").innerHTML = special.map(rowHtml).join("");
+  }
+
+  // charts: exclude overall, sort by abs contrib
+  const gPlot = groups.filter((g) => !g.is_overall);
+  const sPlot = special.filter((g) => !g.is_overall);
+
+  destroyChart("contribG");
+  destroyChart("contribS");
+
+  if ($("chartContribGroups")) {
+    charts.contribG = new Chart($("chartContribGroups"), {
+      type: "bar",
+      data: {
+        labels: gPlot.map((g) => shortName(g.name)),
+        datasets: [
+          {
+            label: "Оролцоо (нэгж)",
+            data: gPlot.map((g) => g.contrib_pp),
+            backgroundColor: gPlot.map((g) =>
+              (g.contrib_pp || 0) >= 0
+                ? "rgba(248,113,113,0.75)"
+                : "rgba(74,222,128,0.75)"
+            ),
+            borderRadius: 4,
+          },
+        ],
+      },
+      options: {
+        ...chartOpts("нэгж"),
+        indexAxis: "y",
+        plugins: { legend: { display: false } },
+      },
+    });
+  }
+
+  if ($("chartContribSpecial")) {
+    charts.contribS = new Chart($("chartContribSpecial"), {
+      type: "bar",
+      data: {
+        labels: sPlot.map((g) => g.name),
+        datasets: [
+          {
+            label: "Оролцоо (нэгж)",
+            data: sPlot.map((g) => g.contrib_pp),
+            backgroundColor: sPlot.map((g) =>
+              (g.contrib_pp || 0) >= 0
+                ? "rgba(129,140,248,0.8)"
+                : "rgba(74,222,128,0.75)"
+            ),
+            borderRadius: 4,
+          },
+        ],
+      },
+      options: {
+        ...chartOpts("нэгж"),
+        indexAxis: "y",
+        plugins: { legend: { display: false } },
+      },
+    });
+  }
+}
+
+function shortName(s) {
+  if (!s) return "";
+  s = String(s);
+  // drop leading codes like "01.   "
+  s = s.replace(/^\d+\.\s*/, "").trim();
+  if (s.length > 36) return s.slice(0, 34) + "…";
+  return s;
 }
 
 function renderKpis() {
   const n = STATE.national;
+  const c = STATE.compare;
   const items = [
-    { label: "Сар", value: STATE.period, sub: STATE.period_label },
-    { label: "Улсын индекс", value: fmt(n.index, 2), sub: "2023=100" },
-    { label: "Өмнөх оны мөн үе", value: (n.yoy >= 0 ? "+" : "") + fmt(n.yoy, 1) + "%", sub: "YoY", cls: pctClass(n.yoy) },
-    { label: "Өмнөх оны эцэс", value: (n.ytd >= 0 ? "+" : "") + fmt(n.ytd, 1) + "%", sub: "vs XII", cls: pctClass(n.ytd) },
-    { label: "Өмнөх сар", value: (n.mom >= 0 ? "+" : "") + fmt(n.mom, 1) + "%", sub: "MoM", cls: pctClass(n.mom) },
+    { label: "Үндсэн сар", value: STATE.period, sub: STATE.period_label },
+    { label: "Индекс", value: fmt(n.index, 2), sub: "2023=100" },
+    {
+      label: "vs " + c.yoy,
+      value: (n.yoy >= 0 ? "+" : "") + fmt(n.yoy, 1) + "%",
+      sub: "харьцуулалт 1",
+      cls: pctClass(n.yoy),
+    },
+    {
+      label: "vs " + c.ytd,
+      value: (n.ytd >= 0 ? "+" : "") + fmt(n.ytd, 1) + "%",
+      sub: "харьцуулалт 2",
+      cls: pctClass(n.ytd),
+    },
+    {
+      label: "vs " + c.mom,
+      value: (n.mom >= 0 ? "+" : "") + fmt(n.mom, 1) + "%",
+      sub: "харьцуулалт 3",
+      cls: pctClass(n.mom),
+    },
   ];
-  $("kpis").innerHTML = items.map((k) => `
+  $("kpis").innerHTML = items
+    .map(
+      (k) => `
     <div class="kpi">
       <div class="label">${k.label}</div>
       <div class="value ${k.cls || ""}">${k.value}</div>
       <div class="sub">${k.sub || ""}</div>
     </div>
-  `).join("");
+  `
+    )
+    .join("");
   $("chartPeriod").textContent = STATE.period;
+  $("cmpHint").textContent =
+    "· " + STATE.period + " / " + c.yoy + " / " + c.ytd + " / " + c.mom;
+  $("thYoy").textContent = "vs " + c.yoy + " %";
+  $("thYtd").textContent = "vs " + c.ytd + " %";
+  $("thMom").textContent = "vs " + c.mom + " %";
 }
 
 function renderCompare() {
@@ -180,7 +538,9 @@ function renderCompare() {
     { name: "Улс", ...STATE.national },
     ...STATE.aimags.map((a) => ({ name: a.name, ...a })),
   ];
-  $("tblCompare").querySelector("tbody").innerHTML = rows.map((r) => `
+  $("tblCompare").querySelector("tbody").innerHTML = rows
+    .map(
+      (r) => `
     <tr>
       <td>${r.name}</td>
       <td>${fmt(r.index, 2)}</td>
@@ -188,12 +548,16 @@ function renderCompare() {
       ${pctCell(r.ytd)}
       ${pctCell(r.mom)}
     </tr>
-  `).join("");
+  `
+    )
+    .join("");
 }
 
 function renderAimags() {
-  const sorted = [...STATE.aimags].sort((a, b) => b.index - a.index);
-  $("tblAimags").querySelector("tbody").innerHTML = sorted.map((a) => `
+  const sorted = [...STATE.aimags].sort((a, b) => (b.yoy || 0) - (a.yoy || 0));
+  $("tblAimags").querySelector("tbody").innerHTML = sorted
+    .map(
+      (a) => `
     <tr>
       <td>${a.code}</td>
       <td>${a.name}</td>
@@ -203,11 +567,15 @@ function renderAimags() {
       ${pctCell(a.ytd)}
       ${pctCell(a.mom)}
     </tr>
-  `).join("");
+  `
+    )
+    .join("");
 }
 
 function renderGroups() {
-  $("tblGroups").querySelector("tbody").innerHTML = STATE.groups.map((g) => `
+  $("tblGroups").querySelector("tbody").innerHTML = STATE.groups
+    .map(
+      (g) => `
     <tr>
       <td>${g.name}</td>
       <td>${fmt(g.weight, 3)}</td>
@@ -216,11 +584,15 @@ function renderGroups() {
       ${pctCell(g.ytd)}
       ${pctCell(g.mom)}
     </tr>
-  `).join("");
+  `
+    )
+    .join("");
 }
 
 function renderSpecial() {
-  $("tblSpecial").querySelector("tbody").innerHTML = STATE.special.map((g) => `
+  $("tblSpecial").querySelector("tbody").innerHTML = STATE.special
+    .map(
+      (g) => `
     <tr>
       <td>${g.label}</td>
       <td>${fmt(g.ub_index, 2)}</td>
@@ -228,13 +600,17 @@ function renderSpecial() {
       <td>${fmt(g.nat_index, 2)}</td>
       ${pctCell(g.nat_yoy)}
     </tr>
-  `).join("");
+  `
+    )
+    .join("");
 }
 
 function renderRegions() {
   const scheme = $("regionScheme").value;
   const list = STATE.regions[scheme] || [];
-  $("tblRegions").querySelector("tbody").innerHTML = list.map((r) => `
+  $("tblRegions").querySelector("tbody").innerHTML = list
+    .map(
+      (r) => `
     <tr>
       <td>${r.name}</td>
       <td>${r.codes}</td>
@@ -244,17 +620,18 @@ function renderRegions() {
       ${pctCell(r.ytd)}
       ${pctCell(r.mom)}
     </tr>
-  `).join("");
+  `
+    )
+    .join("");
 
   destroyChart("regions");
-  const ctx = $("chartRegions");
-  charts.regions = new Chart(ctx, {
+  charts.regions = new Chart($("chartRegions"), {
     type: "bar",
     data: {
       labels: list.map((r) => r.name),
       datasets: [
         {
-          label: "YoY %",
+          label: "vs " + STATE.compare.yoy + " %",
           data: list.map((r) => r.yoy),
           backgroundColor: "rgba(56,189,248,0.65)",
           borderRadius: 6,
@@ -274,13 +651,22 @@ function chartOpts(yTitle) {
     },
     scales: {
       x: {
-        ticks: { color: "#8fa3bf", maxRotation: 45, minRotation: 0, font: { size: 10 } },
+        ticks: {
+          color: "#8fa3bf",
+          maxRotation: 45,
+          minRotation: 0,
+          font: { size: 10 },
+        },
         grid: { color: "rgba(42,59,85,0.5)" },
       },
       y: {
         ticks: { color: "#8fa3bf" },
         grid: { color: "rgba(42,59,85,0.5)" },
-        title: { display: !!yTitle, text: yTitle || "", color: "#8fa3bf" },
+        title: {
+          display: !!yTitle,
+          text: yTitle || "",
+          color: "#8fa3bf",
+        },
       },
     },
   };
@@ -326,7 +712,7 @@ function renderCharts() {
       labels,
       datasets: [
         {
-          label: "Улс YoY %",
+          label: "Улс 12 сарын %",
           data: STATE.series.national_yoy,
           borderColor: "#f87171",
           tension: 0.25,
@@ -338,17 +724,19 @@ function renderCharts() {
     options: chartOpts("%"),
   });
 
-  const sorted = [...STATE.aimags].sort((a, b) => b.yoy - a.yoy);
+  const sorted = [...STATE.aimags].sort((a, b) => (b.yoy || 0) - (a.yoy || 0));
   charts.aimags = new Chart($("chartAimags"), {
     type: "bar",
     data: {
       labels: sorted.map((a) => a.name),
       datasets: [
         {
-          label: "YoY %",
+          label: "vs " + STATE.compare.yoy + " %",
           data: sorted.map((a) => a.yoy),
           backgroundColor: sorted.map((a) =>
-            a.yoy >= 0 ? "rgba(248,113,113,0.7)" : "rgba(74,222,128,0.7)"
+            (a.yoy || 0) >= 0
+              ? "rgba(248,113,113,0.7)"
+              : "rgba(74,222,128,0.7)"
           ),
           borderRadius: 4,
         },
@@ -364,11 +752,24 @@ function renderCharts() {
 
 // init
 (async function init() {
+  bindAutoInputs();
   try {
+    const ready = await waitUntilReady(120);
+    setLoading(false);
+    if (!ready) {
+      showStatus(
+        "Бэлэн болоогүй. Дээрх «Excel дахин» товчийг дарж тооцоолно уу.",
+        "info"
+      );
+      return;
+    }
     await loadPeriods();
-    // try load dashboard if cache exists
     await loadDashboard();
   } catch (e) {
-    showStatus("Эхлүүлэхэд: " + e.message + " — «Дахин тооцоолох» дарна уу.", "info");
+    setLoading(false);
+    showStatus(
+      "Эхлүүлэхэд: " + e.message + " — «Excel дахин» дарна уу.",
+      "info"
+    );
   }
 })();

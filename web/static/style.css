@@ -50,9 +50,10 @@ header.app-header {
 .brand p { font-size: 0.75rem; color: var(--muted); }
 
 .controls {
-  display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;
+  display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: flex-end;
 }
-.controls label { font-size: 0.75rem; color: var(--muted); }
+.period-bar { max-width: 920px; justify-content: flex-end; }
+.controls label { font-size: 0.72rem; color: var(--muted); display: block; margin-bottom: 0.2rem; }
 .controls select, .controls input {
   background: var(--surface2);
   border: 1px solid var(--border);
@@ -60,7 +61,17 @@ header.app-header {
   border-radius: 10px;
   padding: 0.45rem 0.7rem;
   font-size: 0.9rem;
-  min-width: 130px;
+  min-width: 110px;
+  width: 118px;
+}
+.controls input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(56,189,248,.2);
+}
+@media (max-width: 900px) {
+  .period-bar { max-width: 100%; }
+  header.app-header { flex-direction: column; align-items: stretch; }
 }
 .btn {
   border: none; border-radius: 10px; padding: 0.5rem 1rem;

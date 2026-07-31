@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CPI — Хэрэглээний үнийн индекс (2023=100)</title>
+  <meta name="description" content="Монгол Улсын CPI: аймаг, бүс, тусгай бүлэг, инфляцын оролцоо. Онлайн дашбоард." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-icon">📈</div>
+      <div>
+        <h1>Хэрэглээний үнийн <span>индекс</span> <span class="badge">online</span></h1>
+        <p>Суурь 2023=100 · Улс · УБ · Бүлэг · Оролцоо · GitHub Pages</p>
+      </div>
+    </div>
+    <div class="controls">
+      <div>
+        <label>Үндсэн сар</label>
+        <input type="text" id="period" list="periodList" placeholder="2026-06" />
+        <datalist id="periodList"></datalist>
+      </div>
+      <div>
+        <label>Харьцуулах 1</label>
+        <input type="text" id="vs1" list="periodList" placeholder="2025-06" />
+      </div>
+      <div>
+        <label>Харьцуулах 2</label>
+        <input type="text" id="vs2" list="periodList" placeholder="2025-12" />
+      </div>
+      <div>
+        <label>Харьцуулах 3</label>
+        <input type="text" id="vs3" list="periodList" placeholder="2026-05" />
+      </div>
+      <button class="btn btn-ghost" type="button" onclick="fillDefaults()">Стандарт</button>
+      <button class="btn" type="button" id="btnGo" onclick="render()">Тооцох</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="status" class="status"></div>
+    <div id="content" style="display:none">
+      <div class="kpis" id="kpis"></div>
+      <div class="tabs">
+        <button class="tab active" data-tab="overview">Ерөнхий</button>
+        <button class="tab" data-tab="aimags">Аймгууд</button>
+        <button class="tab" data-tab="groups">Бүлэг</button>
+        <button class="tab" data-tab="special">Тусгай</button>
+        <button class="tab" data-tab="contrib">Оролцоо</button>
+        <button class="tab" data-tab="regions">Бүс</button>
+      </div>
+
+      <section class="panel active" id="panel-overview">
+        <div class="grid-2">
+          <div class="card">
+            <h2>Улсын индекс</h2>
+            <div class="chart-wrap"><canvas id="cOverall"></canvas></div>
+          </div>
+          <div class="card">
+            <h2>12 сарын инфляц %</h2>
+            <div class="chart-wrap"><canvas id="cYoy"></canvas></div>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Харьцуулалт <span id="cmpHint" class="hint" style="display:inline"></span></h2>
+          <div class="scroll">
+            <table class="data" id="tblCompare">
+              <thead><tr>
+                <th>Хамрах хүрээ</th><th>Индекс</th>
+                <th id="th1">vs1 %</th><th id="th2">vs2 %</th><th id="th3">vs3 %</th>
+              </tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-aimags">
+        <div class="card">
+          <h2>Аймаг / нийслэл</h2>
+          <div class="chart-wrap" style="height:360px"><canvas id="cAimags"></canvas></div>
+          <div class="scroll" style="margin-top:0.8rem">
+            <table class="data" id="tblAimags">
+              <thead><tr><th>Код</th><th>Нэр</th><th>Жин</th><th>Индекс</th><th>vs1 %</th><th>vs2 %</th><th>vs3 %</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-groups">
+        <div class="card">
+          <h2>COICOP бүлэг — Улс</h2>
+          <div class="scroll">
+            <table class="data" id="tblGroups">
+              <thead><tr><th>Бүлэг</th><th>Жин</th><th>Индекс</th><th>vs1 %</th><th>vs2 %</th><th>vs3 %</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-special">
+        <div class="card">
+          <h2>Тусгай бүлэг (УБ + Улс)</h2>
+          <div class="scroll">
+            <table class="data" id="tblSpecial">
+              <thead><tr><th>Бүлэг</th><th>УБ индекс</th><th>УБ vs1</th><th>Улс индекс</th><th>Улс vs1</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-contrib">
+        <div class="card">
+          <h2>
+            Инфляцын оролцоо
+            <select id="contribSlot" onchange="renderContrib()" style="margin-left:0.4rem;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:0.25rem 0.5rem">
+              <option value="1">Харьцуулалт 1</option>
+              <option value="2">Харьцуулалт 2</option>
+              <option value="3">Харьцуулалт 3</option>
+            </select>
+            <select id="contribScope" onchange="renderContrib()" style="margin-left:0.3rem;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:0.25rem 0.5rem">
+              <option value="national">Улс</option>
+              <option value="ulaanbaatar">Улаанбаатар</option>
+            </select>
+          </h2>
+          <p class="hint" id="contribHint">Cont = жин × (I_t − I_0) / I_ерөнхий_0</p>
+          <div class="grid-2">
+            <div class="chart-wrap" style="height:340px"><canvas id="cContribG"></canvas></div>
+            <div class="chart-wrap" style="height:340px"><canvas id="cContribS"></canvas></div>
+          </div>
+        </div>
+        <div class="card">
+          <h2>COICOP бүлэг</h2>
+          <div class="scroll">
+            <table class="data" id="tblContribG">
+              <thead><tr><th>Бүлэг</th><th>Жин</th><th>Индекс</th><th>Инфляц %</th><th>Оролцоо (нэгж)</th><th>Эзлэх %</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Тусгай бүлэг</h2>
+          <div class="scroll">
+            <table class="data" id="tblContribS">
+              <thead><tr><th>Бүлэг</th><th>Жин</th><th>Индекс</th><th>Инфляц %</th><th>Оролцоо (нэгж)</th><th>Эзлэх %</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-regions">
+        <div class="card">
+          <h2>
+            Бүс
+            <select id="regionScheme" onchange="renderRegions()" style="margin-left:0.4rem;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:0.25rem 0.5rem">
+              <option value="traditional">Уламжлалт</option>
+              <option value="new">Шинэ бүс</option>
+            </select>
+          </h2>
+          <div class="chart-wrap"><canvas id="cRegions"></canvas></div>
+          <div class="scroll" style="margin-top:0.8rem">
+            <table class="data" id="tblRegions">
+              <thead><tr><th>Бүс</th><th>Аймгууд</th><th>Жин</th><th>Индекс</th><th>vs1 %</th><th>vs2 %</th><th>vs3 %</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div id="footerMeta">CPI 2023=100 · GitHub Pages</div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

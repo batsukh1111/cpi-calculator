@@ -17,19 +17,35 @@
         <p>Суурь 2023=100 · Аймаг → Улс · Нийтлэлийн хүснэгт</p>
       </div>
     </div>
-    <div class="controls">
+    <div class="controls period-bar">
       <div>
-        <label>Хугацаа</label><br/>
-        <select id="period"></select>
+        <label>Үндсэн сар</label><br/>
+        <input type="text" id="period" list="periodList" placeholder="2026-06" autocomplete="off" />
+        <datalist id="periodList"></datalist>
+      </div>
+      <div>
+        <label>Харьцуулах 1 (мөн үе)</label><br/>
+        <input type="text" id="vs_yoy" list="periodList" placeholder="2025-06" autocomplete="off" />
+      </div>
+      <div>
+        <label>Харьцуулах 2 (оны эцэс)</label><br/>
+        <input type="text" id="vs_ytd" list="periodList" placeholder="2025-12" autocomplete="off" />
+      </div>
+      <div>
+        <label>Харьцуулах 3 (өмнөх сар)</label><br/>
+        <input type="text" id="vs_mom" list="periodList" placeholder="2026-05" autocomplete="off" />
       </div>
       <div style="align-self:flex-end">
-        <button class="btn btn-primary" id="btnLoad" onclick="loadDashboard()">Шинэчлэх</button>
+        <button class="btn btn-ghost" type="button" id="btnDefaults" onclick="fillDefaults()">Стандарт</button>
       </div>
       <div style="align-self:flex-end">
-        <button class="btn btn-success" id="btnPublish" onclick="publishTables()">Table 1–11 татах</button>
+        <button class="btn btn-primary" id="btnLoad" onclick="loadDashboard()">Тооцох</button>
       </div>
       <div style="align-self:flex-end">
-        <button class="btn btn-ghost" onclick="recalculate()">Дахин тооцоолох</button>
+        <button class="btn btn-success" id="btnPublish" onclick="publishTables()">Table 1–11</button>
+      </div>
+      <div style="align-self:flex-end">
+        <button class="btn btn-ghost" type="button" onclick="recalculate()">Excel дахин</button>
       </div>
     </div>
   </header>
@@ -49,6 +65,7 @@
         <button class="tab" data-tab="aimags">Аймгууд</button>
         <button class="tab" data-tab="groups">Бүлэг</button>
         <button class="tab" data-tab="special">Тусгай бүлэг</button>
+        <button class="tab" data-tab="contrib">Оролцоо</button>
         <button class="tab" data-tab="regions">Бүс</button>
         <button class="tab" data-tab="download">Татах</button>
       </div>
@@ -65,16 +82,17 @@
           </div>
         </div>
         <div class="card">
-          <h2>Сонгосон сарын харьцуулалт</h2>
+          <h2>Харьцуулалт <span id="cmpHint"></span></h2>
+          <p class="hint">Сар оруулаад Enter дар — автоматаар бодно. Формат: 2026-06, 2026.06, 202606</p>
           <div class="scroll">
             <table class="data" id="tblCompare">
               <thead>
                 <tr>
                   <th>Хамрах хүрээ</th>
                   <th>Индекс</th>
-                  <th>Өмнөх оны мөн үе %</th>
-                  <th>Өмнөх оны эцэс %</th>
-                  <th>Өмнөх сар %</th>
+                  <th id="thYoy">vs 1 %</th>
+                  <th id="thYtd">vs 2 %</th>
+                  <th id="thMom">vs 3 %</th>
                 </tr>
               </thead>
               <tbody></tbody>
@@ -128,6 +146,72 @@
                   <th>Бүлэг</th>
                   <th>УБ индекс</th><th>УБ YoY</th>
                   <th>Улс индекс</th><th>Улс YoY</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-contrib">
+        <div class="card">
+          <h2>
+            Инфляцын оролцоо (contribution)
+            <select id="contribSlot" onchange="renderContribution()" style="margin-left:0.5rem;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:0.25rem 0.5rem">
+              <option value="yoy">Харьцуулалт 1</option>
+              <option value="ytd">Харьцуулалт 2</option>
+              <option value="mom">Харьцуулалт 3</option>
+            </select>
+            <select id="contribScope" onchange="renderContribution()" style="margin-left:0.35rem;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:0.25rem 0.5rem">
+              <option value="national">Улс</option>
+              <option value="ulaanbaatar">Улаанбаатар</option>
+            </select>
+          </h2>
+          <p class="hint" id="contribHint">
+            Cont = жин × (I_одоо − I_суурь) / I_ерөнхий_суурь · Share = Cont / инфляц × 100
+          </p>
+          <div class="grid-2">
+            <div>
+              <h2 style="font-size:0.95rem;margin-bottom:0.5rem">COICOP бүлэг — оролцоо (нэгж)</h2>
+              <div class="chart-wrap" style="height:340px"><canvas id="chartContribGroups"></canvas></div>
+            </div>
+            <div>
+              <h2 style="font-size:0.95rem;margin-bottom:0.5rem">Тусгай бүлэг — оролцоо (нэгж)</h2>
+              <div class="chart-wrap" style="height:340px"><canvas id="chartContribSpecial"></canvas></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h2>COICOP 13 бүлэг <span id="contribBaseLabel"></span></h2>
+          <div class="scroll">
+            <table class="data" id="tblContribGroups">
+              <thead>
+                <tr>
+                  <th>Бүлэг</th>
+                  <th>Жин</th>
+                  <th>Индекс</th>
+                  <th>Инфляц %</th>
+                  <th>Оролцоо (нэгж)</th>
+                  <th>Эзлэх хувь %</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Тусгай бүлэг</h2>
+          <div class="scroll">
+            <table class="data" id="tblContribSpecial">
+              <thead>
+                <tr>
+                  <th>Бүлэг</th>
+                  <th>Жин</th>
+                  <th>Индекс</th>
+                  <th>Инфляц %</th>
+                  <th>Оролцоо (нэгж)</th>
+                  <th>Эзлэх хувь %</th>
                 </tr>
               </thead>
               <tbody></tbody>
