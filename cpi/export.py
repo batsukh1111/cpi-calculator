@@ -104,11 +104,7 @@ def export_json(result: CPIResult, path: str | Path, compact: bool = True) -> No
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
 
-def export_excel(result: CPIResult, path: str | Path) -> None:
-    """Хураангуй Excel: Улс + аймаг бүрийн ерөнхий индекс, бүлгүүд."""
-    path = Path(path)
-    wb = Workbook()
-    periods = _period_labels(result)
+def _styles():
     header_font = Font(bold=True, color="FFFFFF")
     header_fill = PatternFill("solid", fgColor="1F4E79")
     thin = Border(
@@ -117,6 +113,192 @@ def export_excel(result: CPIResult, path: str | Path) -> None:
         top=Side(style="thin", color="CCCCCC"),
         bottom=Side(style="thin", color="CCCCCC"),
     )
+    return header_font, header_fill, thin
+
+
+def export_special_and_regions(
+    result: CPIResult,
+    path: str | Path,
+    special: dict | None = None,
+    regional: dict | None = None,
+) -> None:
+    """
+    Тусгай барааны бүлэг (УБ + улс) болон бүсийн индексийг Excel-д бичнэ.
+    path — шинэ файл эсвэл одоо байгаа workbook-д sheet нэмэхэд ашиглана.
+    """
+    from .special_groups import compute_ub_and_national_special
+    from .regions import compute_all_regions
+
+    path = Path(path)
+    periods = _period_labels(result)
+    header_font, header_fill, thin = _styles()
+
+    if special is None:
+        try:
+            special = compute_ub_and_national_special(result)
+        except KeyError:
+            special = None
+    if regional is None:
+        regional = compute_all_regions(result)
+
+    if path.exists():
+        from openpyxl import load_workbook
+
+        wb = load_workbook(path)
+    else:
+        wb = Workbook()
+        # drop default if empty new
+        if wb.active.title == "Sheet" and wb.active.max_row == 1:
+            pass
+
+    def write_special_sheet(ws, title: str, groups: dict):
+        ws["A1"] = title
+        ws["A1"].font = Font(bold=True, size=14)
+        ws["A2"] = "Эх сурвалж: Бүлэг.xlsx → барааны бүлэг | суурь 2023=100"
+        headers = ["Түлхүүр", "Бүлэг", "Жин", "Бараа тоо"] + periods
+        for c, h in enumerate(headers, 1):
+            cell = ws.cell(3, c, h)
+            cell.font = header_font
+            cell.fill = header_fill
+        # stable order matching file columns
+        order = [
+            "domestic",
+            "domestic_ex_meat",
+            "import",
+            "meat",
+            "fuel",
+            "import_ex_fuel",
+            "goods",
+            "services",
+            "core",
+            "food",
+            "non_food",
+            "electricity_fuel",
+        ]
+        r = 4
+        for key in order:
+            if key not in groups:
+                continue
+            g = groups[key]
+            ws.cell(r, 1, key)
+            ws.cell(r, 2, g["label_mn"])
+            ws.cell(r, 3, round(g["weight"], 6))
+            ws.cell(r, 4, g["n_items"])
+            for m_i, val in enumerate(g["indices"]):
+                cell = ws.cell(r, 5 + m_i, round(val, 4))
+                cell.number_format = "0.00"
+                cell.border = thin
+            r += 1
+        # YoY block
+        r += 1
+        ws.cell(r, 1, "Жилийн өөрчлөлт (%)").font = Font(bold=True)
+        r += 1
+        for c, h in enumerate(["Түлхүүр", "Бүлэг"] + periods, 1):
+            cell = ws.cell(r, c, h)
+            cell.font = header_font
+            cell.fill = header_fill
+        r += 1
+        start_yoy = r
+        for key in order:
+            if key not in groups:
+                continue
+            g = groups[key]
+            ws.cell(r, 1, key)
+            ws.cell(r, 2, g["label_mn"])
+            for m_i, val in enumerate(g["yoy"]):
+                cell = ws.cell(
+                    r, 3 + m_i, round(val, 2) if val is not None else None
+                )
+                cell.number_format = "0.00"
+            r += 1
+        ws.column_dimensions["A"].width = 18
+        ws.column_dimensions["B"].width = 32
+        ws.column_dimensions["C"].width = 12
+        ws.column_dimensions["D"].width = 10
+
+    if special:
+        for sheet_name, scope_key, title in [
+            ("Тусгай_УБ", "ulaanbaatar", "Улаанбаатар — тусгай барааны бүлгийн индекс"),
+            ("Тусгай_Улс", "national", "Улс — тусгай барааны бүлгийн индекс"),
+        ]:
+            if scope_key not in special:
+                continue
+            if sheet_name in wb.sheetnames:
+                del wb[sheet_name]
+            ws = wb.create_sheet(sheet_name)
+            write_special_sheet(ws, title, special[scope_key])
+
+    def write_region_scheme(ws, title: str, scheme: dict):
+        ws["A1"] = title
+        ws["A1"].font = Font(bold=True, size=14)
+        ws["A2"] = "Аймгуудын жингээр жигнэсэн | суурь 2023=100"
+        headers = ["Бүс", "Аймгууд", "Жин"] + periods
+        for c, h in enumerate(headers, 1):
+            cell = ws.cell(3, c, h)
+            cell.font = header_font
+            cell.fill = header_fill
+        r = 4
+        for name, agg in scheme.items():
+            codes = ",".join(agg["codes"])
+            ws.cell(r, 1, name)
+            ws.cell(r, 2, codes)
+            ws.cell(r, 3, round(agg["weight_total"], 6))
+            for m_i, val in enumerate(agg["overall"]):
+                cell = ws.cell(r, 4 + m_i, round(val, 4))
+                cell.number_format = "0.00"
+            r += 1
+        # major groups per region (overall-style table for food etc.)
+        r += 2
+        ws.cell(r, 1, "COICOP бүлгүүд (сүүлийн сарын индекс)").font = Font(bold=True)
+        r += 1
+        last_i = len(periods) - 1
+        for i in range(len(periods) - 1, -1, -1):
+            # use last period index position
+            last_i = i
+            break
+        headers2 = ["Бүс", "Бүлэг", "Жин", f"Индекс {periods[last_i]}", "Жилийн %"]
+        for c, h in enumerate(headers2, 1):
+            cell = ws.cell(r, c, h)
+            cell.font = header_font
+            cell.fill = header_fill
+        r += 1
+        for name, agg in scheme.items():
+            for row_id, info in agg["rows"].items():
+                yoy = info["yoy"][last_i]
+                ws.cell(r, 1, name)
+                ws.cell(r, 2, info["name"])
+                ws.cell(r, 3, round(info["weight"], 6))
+                ws.cell(r, 4, round(info["indices"][last_i], 4)).number_format = "0.00"
+                ws.cell(
+                    r, 5, round(yoy, 2) if yoy is not None else None
+                ).number_format = "0.00"
+                r += 1
+        ws.column_dimensions["A"].width = 22
+        ws.column_dimensions["B"].width = 50
+        ws.column_dimensions["C"].width = 12
+
+    if regional:
+        for sheet_name, scheme_key, title in [
+            ("Бүс_уламжлалт", "traditional", "Уламжлалт бүс — ерөнхий индекс"),
+            ("Бүс_шинэ", "new", "Шинэ бүс — ерөнхий индекс"),
+        ]:
+            if scheme_key not in regional:
+                continue
+            if sheet_name in wb.sheetnames:
+                del wb[sheet_name]
+            ws = wb.create_sheet(sheet_name)
+            write_region_scheme(ws, title, regional[scheme_key])
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    wb.save(path)
+
+
+def export_excel(result: CPIResult, path: str | Path) -> None:
+    """Хураангуй Excel: Улс + аймаг бүрийн ерөнхий индекс, бүлгүүд + тусгай/бүс."""
+    path = Path(path)
+    wb = Workbook()
+    periods = _period_labels(result)
+    header_font, header_fill, thin = _styles()
 
     def write_sheet(ws, title: str, weights, indices, by_row):
         ws["A1"] = title
@@ -219,6 +401,13 @@ def export_excel(result: CPIResult, path: str | Path) -> None:
 
     path.parent.mkdir(parents=True, exist_ok=True)
     wb.save(path)
+
+    # Append special product groups (UB + national) and geographic regions
+    try:
+        export_special_and_regions(result, path)
+    except Exception as e:
+        # Core export succeeded; special sheets optional
+        print(f"Анхааруулга: тусгай/бүсийн sheet бичихэд алдаа: {e}")
 
 
 def export_overall_csv(result: CPIResult, path: str | Path) -> None:

@@ -20,6 +20,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from cpi.loader import load_workbook_data, load_aimags
 from cpi.engine import CPICalculator, inflation_yoy, inflation_mom
 from cpi.export import export_excel, export_json, MAJOR_ROWS
+from cpi.special_groups import compute_ub_and_national_special
+from cpi.regions import compute_all_regions
 
 st.set_page_config(
     page_title="CPI тооцоолуур | 2023=100",
@@ -106,8 +108,8 @@ if run or "cpi_result" in st.session_state:
         f"{mom[last_i]:.2f}%" if mom[last_i] is not None else "—",
     )
 
-    tab1, tab2, tab3, tab4 = st.tabs(
-        ["Улс", "Аймгууд", "Бүлгээр", "Татах"]
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
+        ["Улс", "Аймгууд", "Бүлгээр", "Тусгай бүлэг", "Бүс", "Татах"]
     )
 
     with tab1:
@@ -209,10 +211,74 @@ if run or "cpi_result" in st.session_state:
         st.dataframe(df_g, use_container_width=True)
 
     with tab4:
+        st.subheader("Тусгай барааны бүлэг (УБ + Улс)")
+        st.caption("Ангилал: Бүлэг.xlsx → барааны бүлэг")
+        if "20" not in result.regions:
+            st.warning("Улаанбаатар (20) сонгогдоогүй байна.")
+        else:
+            special = compute_ub_and_national_special(result)
+            rows = []
+            for key, g_ub in special["ulaanbaatar"].items():
+                g_nat = special["national"][key]
+                rows.append(
+                    {
+                        "Бүлэг": g_ub["label_mn"],
+                        "УБ жин": round(g_ub["weight"], 4),
+                        "УБ индекс": round(g_ub["indices"][last_i], 2),
+                        "УБ жилийн %": round(g_ub["yoy"][last_i], 2)
+                        if g_ub["yoy"][last_i] is not None
+                        else None,
+                        "Улс жин": round(g_nat["weight"], 4),
+                        "Улс индекс": round(g_nat["indices"][last_i], 2),
+                        "Улс жилийн %": round(g_nat["yoy"][last_i], 2)
+                        if g_nat["yoy"][last_i] is not None
+                        else None,
+                    }
+                )
+            st.dataframe(pd.DataFrame(rows), use_container_width=True)
+            pick_g = st.selectbox(
+                "График — бүлэг",
+                list(special["ulaanbaatar"].keys()),
+                format_func=lambda k: special["ulaanbaatar"][k]["label_mn"],
+            )
+            chart = {
+                "Улаанбаатар": special["ulaanbaatar"][pick_g]["indices"],
+                "Улс": special["national"][pick_g]["indices"],
+            }
+            st.line_chart(pd.DataFrame(chart, index=periods))
+
+    with tab5:
+        st.subheader("Бүсийн индекс")
+        st.caption("Ангилал: Бүлэг.xlsx → бүс / Шинэ бүс")
+        if len(result.regions) < 2:
+            st.warning("Бүс тооцоход олон аймаг хэрэгтэй.")
+        else:
+            regional = compute_all_regions(result)
+            scheme = st.radio(
+                "Бүсийн схем",
+                ["traditional", "new"],
+                format_func=lambda s: "Уламжлалт" if s == "traditional" else "Шинэ бүс",
+                horizontal=True,
+            )
+            recs = []
+            chart = {}
+            for name, agg in regional[scheme].items():
+                y = inflation_yoy(agg["overall"])[last_i]
+                recs.append(
+                    {
+                        "Бүс": name,
+                        "Аймгууд": ",".join(agg["codes"]),
+                        "Жин": round(agg["weight_total"], 4),
+                        "Индекс": round(agg["overall"][last_i], 2),
+                        "Жилийн %": round(y, 2) if y is not None else None,
+                    }
+                )
+                chart[name] = agg["overall"]
+            st.dataframe(pd.DataFrame(recs), use_container_width=True)
+            st.line_chart(pd.DataFrame(chart, index=periods))
+
+    with tab6:
         st.subheader("Үр дүн татах")
-        buf = io.BytesIO()
-        tmp_xlsx = Path(st.session_state.get("_tmp_dir", ".")) 
-        # write to bytes via temp
         import tempfile
 
         with tempfile.TemporaryDirectory() as td:

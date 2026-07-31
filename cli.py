@@ -21,6 +21,20 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from cpi.loader import load_workbook_data
 from cpi.engine import CPICalculator, inflation_yoy
 from cpi.export import export_excel, export_json, export_overall_csv
+from cpi.special_groups import compute_ub_and_national_special
+from cpi.regions import compute_all_regions
+import json as _json
+
+
+def _latest_month_index(result) -> int:
+    last_i = len(result.months) - 1
+    for i in range(len(result.months) - 1, -1, -1):
+        vals = [result.regions[c].overall[i] for c in result.regions]
+        if any(abs(v - 100.0) > 1e-6 for v in vals) or abs(
+            result.national.overall[i] - 100.0
+        ) > 1e-6:
+            return i
+    return last_i
 
 
 def cmd_calculate(args: argparse.Namespace) -> int:
@@ -47,28 +61,7 @@ def cmd_calculate(args: argparse.Namespace) -> int:
     result = calc.calculate()
     print(f"  Дууслаа ({time.perf_counter()-t1:.1f}s)")
 
-    # Print latest overall
-    last_i = len(result.months) - 1
-    # find last non-empty-looking month (has variation from 100 or any prices)
-    while last_i > 0 and result.national.overall[last_i] == 100.0:
-        # could be real 100; check a few regions for price activity
-        break
-    # better: last month with any aimag overall != 100 or has data
-    for i in range(len(result.months) - 1, -1, -1):
-        if abs(result.national.overall[i] - 100.0) > 1e-9 or i < 12:
-            last_i = i
-            # keep scanning for actual last with prices — use max month that any region differs
-            break
-    # find rightmost month where national is not exactly default unused
-    last_i = len(result.months) - 1
-    for i in range(len(result.months) - 1, -1, -1):
-        vals = [result.regions[c].overall[i] for c in result.regions]
-        if any(abs(v - 100.0) > 1e-6 for v in vals) or any(
-            abs(v - 100.0) > 1e-6 for v in [result.national.overall[i]]
-        ):
-            last_i = i
-            break
-
+    last_i = _latest_month_index(result)
     period = result.months[last_i]["period"]
     overall = result.national.overall[last_i]
     yoy = inflation_yoy(result.national.overall)
@@ -82,7 +75,44 @@ def cmd_calculate(args: argparse.Namespace) -> int:
     print("Аймаг / нийслэл (сүүлийн сар):")
     for code in sorted(result.regions.keys()):
         rr = result.regions[code]
-        print(f"  {code} {rr.name:14s}  {rr.overall[last_i]:8.2f}  жин={rr.weights.get(8,0):.3f}")
+        print(
+            f"  {code} {rr.name:14s}  {rr.overall[last_i]:8.2f}  "
+            f"жин={rr.weights.get(8,0):.3f}"
+        )
+
+    # Special product groups (UB + national) + geographic regions
+    special = None
+    regional = None
+    if "20" in result.regions:
+        special = compute_ub_and_national_special(result)
+        print()
+        print(f"=== Тусгай барааны бүлэг ({period}) ===")
+        print(f"{'Бүлэг':32s} {'УБ индекс':>10s} {'УБ жил%':>8s} {'Улс индекс':>10s} {'Улс жил%':>8s}")
+        for key, g_ub in special["ulaanbaatar"].items():
+            g_nat = special["national"][key]
+            y_ub = g_ub["yoy"][last_i]
+            y_nat = g_nat["yoy"][last_i]
+            print(
+                f"{g_ub['label_mn'][:32]:32s} "
+                f"{g_ub['indices'][last_i]:10.2f} "
+                f"{(f'{y_ub:.2f}' if y_ub is not None else '—'):>8s} "
+                f"{g_nat['indices'][last_i]:10.2f} "
+                f"{(f'{y_nat:.2f}' if y_nat is not None else '—'):>8s}"
+            )
+
+    if len(result.regions) >= 2:
+        regional = compute_all_regions(result)
+        print()
+        print(f"=== Бүс (уламжлалт) — ерөнхий индекс ({period}) ===")
+        for name, agg in regional["traditional"].items():
+            y = inflation_yoy(agg["overall"])[last_i]
+            yoy_s = f"{y:.2f}" if y is not None else "—"
+            print(f"  {name:18s}  {agg['overall'][last_i]:8.2f}  жил%={yoy_s}")
+        print(f"=== Бүс (шинэ) — ерөнхий индекс ({period}) ===")
+        for name, agg in regional["new"].items():
+            y = inflation_yoy(agg["overall"])[last_i]
+            yoy_s = f"{y:.2f}" if y is not None else "—"
+            print(f"  {name:18s}  {agg['overall'][last_i]:8.2f}  жил%={yoy_s}")
 
     if args.excel or not args.json_only:
         xlsx_path = out / "cpi_result.xlsx"
@@ -93,6 +123,39 @@ def cmd_calculate(args: argparse.Namespace) -> int:
         json_path = out / "cpi_result.json"
         export_json(result, json_path, compact=not args.full_json)
         print(f"JSON:  {json_path}")
+        if special:
+            sp_path = out / "cpi_special_groups.json"
+            # serializable dump
+            sp_path.write_text(
+                _json.dumps(special, ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
+            print(f"JSON:  {sp_path}")
+        if regional:
+            # simplify regional for json
+            reg_json = {}
+            for scheme, regions in regional.items():
+                reg_json[scheme] = {
+                    name: {
+                        "codes": agg["codes"],
+                        "weight_total": agg["weight_total"],
+                        "overall": agg["overall"],
+                        "major": {
+                            str(rid): {
+                                "name": info["name"],
+                                "weight": info["weight"],
+                                "indices": info["indices"],
+                            }
+                            for rid, info in agg["rows"].items()
+                        },
+                    }
+                    for name, agg in regions.items()
+                }
+            rp = out / "cpi_regions.json"
+            rp.write_text(
+                _json.dumps(reg_json, ensure_ascii=False, indent=2), encoding="utf-8"
+            )
+            print(f"JSON:  {rp}")
 
     csv_path = out / "cpi_overall.csv"
     export_overall_csv(result, csv_path)
