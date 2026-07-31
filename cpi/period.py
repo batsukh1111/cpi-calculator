@@ -154,29 +154,94 @@ def pct_change(cur: float, base: float) -> float | None:
     return (cur / base) * 100.0 - 100.0
 
 
+def default_compare_periods(current: Period) -> dict[str, Period]:
+    """Стандарт 3 харьцуулалт: мөн үе / оны эцэс / өмнөх сар."""
+    return {
+        "yoy": current.same_month_prev_year(),
+        "ytd": current.end_prev_year(),
+        "mom": current.prev_month(),
+    }
+
+
 def three_way_changes(
     series: list[float],
     t: int,
+    t_yoy: int | None = None,
+    t_ytd: int | None = None,
+    t_mom: int | None = None,
 ) -> dict[str, float | None]:
     """
     t = одоогийн сарын индекс (0-based).
 
-    yoy  — өмнөх оны мөн үе (t-12)
-    ytd  — өмнөх оны эцэс (12-р сар): t-ийн жилийн өмнөх 12-р сар
-    mom  — өмнөх сар (t-1)
+    t_yoy / t_ytd / t_mom — харьцуулах сарын индекс (None бол стандарт):
+      yoy  — өмнөх оны мөн үе (t-12)
+      ytd  — өмнөх оны эцэс (12-р сар)
+      mom  — өмнөх сар (t-1)
     """
     if t < 0 or t >= len(series):
         return {"yoy": None, "ytd": None, "mom": None, "index": None}
 
     cur = series[t]
-    yoy = pct_change(cur, series[t - 12]) if t >= 12 else None
-    mom = pct_change(cur, series[t - 1]) if t >= 1 else None
 
-    # year-end: December of previous calendar year
-    # if months start at 2023-01 (t=0), period at t is year = 2023 + t//12, month = t%12+1
-    year = 2023 + t // 12
-    # Dec of year-1: month index for (year-1)-12 = ((year-1)-2023)*12 + 11
-    dec_t = ((year - 1) - 2023) * 12 + 11
-    ytd = pct_change(cur, series[dec_t]) if 0 <= dec_t < len(series) else None
+    if t_yoy is None:
+        t_yoy = t - 12 if t >= 12 else None
+    if t_mom is None:
+        t_mom = t - 1 if t >= 1 else None
+    if t_ytd is None:
+        year = 2023 + t // 12
+        dec_t = ((year - 1) - 2023) * 12 + 11
+        t_ytd = dec_t if 0 <= dec_t < len(series) else None
 
-    return {"yoy": yoy, "ytd": ytd, "mom": mom, "index": cur}
+    def _at(ti: int | None) -> float | None:
+        if ti is None or ti < 0 or ti >= len(series):
+            return None
+        return pct_change(cur, series[ti])
+
+    return {
+        "yoy": _at(t_yoy),
+        "ytd": _at(t_ytd),
+        "mom": _at(t_mom),
+        "index": cur,
+    }
+
+
+def _period_or_default(val: str | Period | None, default_p: Period) -> Period:
+    if val is None or (isinstance(val, str) and not str(val).strip()):
+        return default_p
+    if isinstance(val, Period):
+        return val
+    return parse_period(str(val))
+
+
+def resolve_compare_indices(
+    months: list[dict],
+    current: Period,
+    vs_yoy: str | Period | None = None,
+    vs_ytd: str | Period | None = None,
+    vs_mom: str | Period | None = None,
+) -> tuple[dict[str, int | None], dict[str, str]]:
+    """
+    Чөлөөт оролтын харьцуулах саруудыг months индекс + label болгоно.
+    Хоосон/None → стандарт default (мөн үе / XII / өмнөх сар).
+
+    Returns
+    -------
+    (indices, labels)
+      indices: {yoy, ytd, mom} -> int|None
+      labels:  {yoy, ytd, mom} -> "YYYY-MM"
+    """
+    defaults = default_compare_periods(current)
+    periods = {
+        "yoy": _period_or_default(vs_yoy, defaults["yoy"]),
+        "ytd": _period_or_default(vs_ytd, defaults["ytd"]),
+        "mom": _period_or_default(vs_mom, defaults["mom"]),
+    }
+    indices: dict[str, int | None] = {}
+    labels: dict[str, str] = {}
+    for key, p in periods.items():
+        labels[key] = p.key
+        try:
+            indices[key] = period_index(months, p)
+        except KeyError:
+            indices[key] = None
+    return indices, labels
