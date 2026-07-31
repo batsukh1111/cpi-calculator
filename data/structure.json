@@ -1,0 +1,8163 @@
+[
+ {
+  "row": 8,
+  "name": "ЕРӨНХИЙ ИНДЕКС",
+  "level": 0,
+  "item_no": null,
+  "weight_template": 1.9392198765479178,
+  "kind": "weighted_children",
+  "children": [
+   9,
+   209,
+   229,
+   316,
+   377,
+   461,
+   505,
+   554,
+   581,
+   628,
+   647,
+   663,
+   684
+  ],
+  "price_row": null
+ },
+ {
+  "row": 9,
+  "name": "01.   ХYНСНИЙ БАРАА, СОГТУУРУУЛАХ БУС УНДАА",
+  "level": 0,
+  "item_no": null,
+  "weight_template": 0.5197696894806695,
+  "kind": "weighted_children",
+  "children": [
+   10,
+   187
+  ],
+  "price_row": null
+ },
+ {
+  "row": 10,
+  "name": "01.1 ХYНСНИЙ БАРАА",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.4841750662408199,
+  "kind": "weighted_children",
+  "children": [
+   11,
+   33,
+   56,
+   63,
+   84,
+   96,
+   110,
+   143,
+   167
+  ],
+  "price_row": null
+ },
+ {
+  "row": 11,
+  "name": "01.1.1  ТАЛХ, ГУРИЛ, БУДАА",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.24049196798180728,
+  "kind": "weighted_children",
+  "children": [
+   12,
+   16,
+   21,
+   30
+  ],
+  "price_row": null
+ },
+ {
+  "row": 12,
+  "name": "01.1.1.1 БУДАА",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.035051921008469815,
+  "kind": "sumproduct",
+  "children": [
+   13,
+   14,
+   15
+  ],
+  "price_row": null
+ },
+ {
+  "row": 13,
+  "name": "Цагаан будаа, 1 кг, Хятад",
+  "level": 4,
+  "item_no": 1,
+  "weight_template": 0.03310799847582414,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 733
+ },
+ {
+  "row": 14,
+  "name": "Шар будаа, ууттай, \"Слава\", 1 кг, Импорт",
+  "level": 4,
+  "item_no": 2,
+  "weight_template": 0.0019439225326456798,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 734
+ },
+ {
+  "row": 15,
+  "name": "Гурвалжин будаа, 650 гр, Орос",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 735
+ },
+ {
+  "row": 16,
+  "name": "01.1.1.2 ГУРИЛ БОЛОН БУСАД ТӨСТЭЙ БҮТЭЭГДЭХҮҮН",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.12621670547133423,
+  "kind": "sumproduct",
+  "children": [
+   17,
+   18,
+   19,
+   20
+  ],
+  "price_row": null
+ },
+ {
+  "row": 17,
+  "name": "Гурил, дээд зэрэг, савласан, \"Улаанбаатар\", 1 кг, Монгол",
+  "level": 4,
+  "item_no": 3,
+  "weight_template": 0.00027848099625668994,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 737
+ },
+ {
+  "row": 18,
+  "name": "Гурил, 1-р зэрэг, савласан,  \"Улаанбаатар\", 1 кг, Монгол",
+  "level": 4,
+  "item_no": 4,
+  "weight_template": 0.12315570317111815,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 738
+ },
+ {
+  "row": 19,
+  "name": "Гурил, 2-р зэрэг, савласан, \"Улаанбаатар\", 1 кг, Монгол",
+  "level": 4,
+  "item_no": 5,
+  "weight_template": 0.0004720519786219305,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 739
+ },
+ {
+  "row": 20,
+  "name": "Хэрчсэн гурил, ууттай, 500 гр, Монгол",
+  "level": 4,
+  "item_no": 6,
+  "weight_template": 0.002310469325337454,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 740
+ },
+ {
+  "row": 21,
+  "name": "01.1.1.3 ТАЛХ, НАРИЙН БООВ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.06720458047464829,
+  "kind": "sumproduct",
+  "children": [
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29
+  ],
+  "price_row": null
+ },
+ {
+  "row": 22,
+  "name": "Талх, зүсээгүй, ууттай, \"Аймгийн үйлдвэрийн талх\", 600 гр, 1 ш, Монгол",
+  "level": 4,
+  "item_no": 7,
+  "weight_template": 0.039777559785776205,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 742
+ },
+ {
+  "row": 23,
+  "name": "Талх, зүссэн, ууттай, \"Мишээл\", 600 гр, 1 ш, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 743
+ },
+ {
+  "row": 24,
+  "name": "Талх, ууттай, \"Хөх тарианы хар талх \" 300 гр, 1 ш, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 744
+ },
+ {
+  "row": 25,
+  "name": "Гурилан боов, ууттай, \"Зүсмэл\", 900 гр, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 745
+ },
+ {
+  "row": 26,
+  "name": "Гурилан боов, ууттай, Аймгийн үйлдвэр, 900 гр, Монгол",
+  "level": 4,
+  "item_no": 8,
+  "weight_template": 0.021846440954654375,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 746
+ },
+ {
+  "row": 27,
+  "name": "Жигнэмэг, \"Аз жаргал\", 200 гр, 1 ш, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 747
+ },
+ {
+  "row": 28,
+  "name": "Жигнэмэг, \"Наша марка\",150-200 гр, 1 ш, Орос",
+  "level": 4,
+  "item_no": 9,
+  "weight_template": 0.005580579734217711,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 748
+ },
+ {
+  "row": 29,
+  "name": "Бялуу, \"Жүр үр\", 8 инч, энгийн, кремтэй, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 749
+ },
+ {
+  "row": 30,
+  "name": "01.1.1.4 ГОЙМОН",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.01201876102735491,
+  "kind": "sumproduct",
+  "children": [
+   31,
+   32
+  ],
+  "price_row": null
+ },
+ {
+  "row": 31,
+  "name": "Гоймон, ууттай, \"Pasto ricco\", 400 гр, Турк",
+  "level": 4,
+  "item_no": 10,
+  "weight_template": 0.0007104079612663299,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 751
+ },
+ {
+  "row": 32,
+  "name": "Гоймон, ууттай, \"Лапша\", 300 гр, нарийн, туузан, Монгол",
+  "level": 4,
+  "item_no": 11,
+  "weight_template": 0.01130835306608858,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 752
+ },
+ {
+  "row": 33,
+  "name": "01.1.2  МАХ, МАХАН БYТЭЭГДЭХYYН",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.10622510701801954,
+  "kind": "weighted_children",
+  "children": [
+   34,
+   37,
+   40,
+   43,
+   46,
+   48,
+   53
+  ],
+  "price_row": null
+ },
+ {
+  "row": 34,
+  "name": "01.1.2.2.1 ҮХРИЙН МАХ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.050728431996444695,
+  "kind": "sumproduct",
+  "children": [
+   35,
+   36
+  ],
+  "price_row": null
+ },
+ {
+  "row": 35,
+  "name": "Yхрийн мах, ястай, 1 кг",
+  "level": 4,
+  "item_no": 12,
+  "weight_template": 0.025364215998222348,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 755
+ },
+ {
+  "row": 36,
+  "name": "Yхрийн мах, гуяны цул, 1 кг",
+  "level": 4,
+  "item_no": 13,
+  "weight_template": 0.025364215998222348,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 756
+ },
+ {
+  "row": 37,
+  "name": "01.1.2.2.2 ГАХАЙН МАХ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   38,
+   39
+  ],
+  "price_row": null
+ },
+ {
+  "row": 38,
+  "name": "Гахайн мах, утсан, 1 кг, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 758
+ },
+ {
+  "row": 39,
+  "name": "Гахайн мах, хэрчсэн, 1 кг, Монгол",
+  "level": 4,
+  "item_no": 14,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 759
+ },
+ {
+  "row": 40,
+  "name": "01.1.2.2.3 ХОНЬ, ЯМААНЫ МАХ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.03882257881728941,
+  "kind": "sumproduct",
+  "children": [
+   41,
+   42
+  ],
+  "price_row": null
+ },
+ {
+  "row": 41,
+  "name": "Хонины мах, ястай, 1 кг",
+  "level": 4,
+  "item_no": 15,
+  "weight_template": 0.03882257881728941,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 761
+ },
+ {
+  "row": 42,
+  "name": "Ямааны мах, ястай, 1 кг",
+  "level": 4,
+  "item_no": 16,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 762
+ },
+ {
+  "row": 43,
+  "name": "01.1.2.2.4 ТАХИАНЫ МАХ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00091678206553434,
+  "kind": "sumproduct",
+  "children": [
+   44,
+   45
+  ],
+  "price_row": null
+ },
+ {
+  "row": 44,
+  "name": "Тахианы мах, гуя, 1 кг, импорт",
+  "level": 4,
+  "item_no": 17,
+  "weight_template": 0.00091678206553434,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 764
+ },
+ {
+  "row": 45,
+  "name": "Тахианы цул мах, цээж, 1 кг, импорт",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 765
+ },
+ {
+  "row": 46,
+  "name": "01.1.2.2.5 АДУУНЫ МАХ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00978019216727877,
+  "kind": "sumproduct",
+  "children": [
+   47
+  ],
+  "price_row": null
+ },
+ {
+  "row": 47,
+  "name": "Адууны мах, ястай, 1 кг",
+  "level": 4,
+  "item_no": 18,
+  "weight_template": 0.00978019216727877,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 767
+ },
+ {
+  "row": 48,
+  "name": "01.1.2.6 ХАТААСАН, УТСАН, ДАВСАЛСАН МАХАН БҮТЭЭГДЭХҮҮН, МАЛЫН ДОТОР ГЭДЭС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.004840917561813838,
+  "kind": "sumproduct",
+  "children": [
+   49,
+   50,
+   51,
+   52
+  ],
+  "price_row": null
+ },
+ {
+  "row": 49,
+  "name": "Дотор мах, цувдай, 1 гүзээ",
+  "level": 4,
+  "item_no": 19,
+  "weight_template": 0.0015148564731961777,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 769
+ },
+ {
+  "row": 50,
+  "name": "Хиам, чанамал, \"Онцгой\", 1 ш, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 770
+ },
+ {
+  "row": 51,
+  "name": "Аймгийн үйлдвэрийн хиам, 1 ш, Монгол",
+  "level": 4,
+  "item_no": 20,
+  "weight_template": 0.003027607413525421,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 771
+ },
+ {
+  "row": 52,
+  "name": "Зайдас, 1 кг, Монгол",
+  "level": 4,
+  "item_no": 21,
+  "weight_template": 0.0002984536750922392,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 772
+ },
+ {
+  "row": 53,
+  "name": "01.1.2.7 БОЛОВСРУУЛСАН, САВЛАСАН МАХАН БҮТЭЭГДЭХҮҮН",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.001136204409658489,
+  "kind": "sumproduct",
+  "children": [
+   54,
+   55
+  ],
+  "price_row": null
+ },
+ {
+  "row": 54,
+  "name": "Хөлдөөсөн бууз, савласан,  1кг, 1 уут, Монгол",
+  "level": 4,
+  "item_no": 22,
+  "weight_template": 0.001136204409658489,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 774
+ },
+ {
+  "row": 55,
+  "name": "Үхрийн жигнэсэн мах, \"Хүн-од\", 290 гр, 1 лааз, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 775
+ },
+ {
+  "row": 56,
+  "name": "01.1.3  ЗАГАС, ДАЛАЙН БYТЭЭГДЭХYYН",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 6.40082682874367e-05,
+  "kind": "weighted_children",
+  "children": [
+   57,
+   59
+  ],
+  "price_row": null
+ },
+ {
+  "row": 57,
+  "name": "01.1.3.2 ХАТААСАН, УТСАН, ДАВСАЛСАН ЗАГАС, ЗАГАСАН БҮТЭЭГДЭХҮҮН",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 1.9202480486231013e-05,
+  "kind": "sumproduct",
+  "children": [
+   58
+  ],
+  "price_row": null
+ },
+ {
+  "row": 58,
+  "name": "Далайн байцаа, \"Батсол\", 10 ширхэгтэй, 1 уут, Монгол",
+  "level": 4,
+  "item_no": 23,
+  "weight_template": 1.9202480486231013e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 778
+ },
+ {
+  "row": 59,
+  "name": "01.1.3.3 БОЛОВСРУУЛСАН, САВЛАСАН ЗАГАС, ДАЛАЙН БҮТЭЭГДЭХҮҮН",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 4.4805787801205695e-05,
+  "kind": "sumproduct",
+  "children": [
+   60,
+   61,
+   62
+  ],
+  "price_row": null
+ },
+ {
+  "row": 60,
+  "name": "Лаазалсан загас, \"Шпроты\", 160 гр, 1 лааз, Орос",
+  "level": 4,
+  "item_no": 24,
+  "weight_template": 4.4805787801205695e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 780
+ },
+ {
+  "row": 61,
+  "name": "Лаазалсан загас, \"Сардины\", 180 гр, 1 лааз, Орос",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 781
+ },
+ {
+  "row": 62,
+  "name": "Лаазалсан загас, \"Туна\", 150 гр, ясгүй, 1 лааз, БНСУ",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 782
+ },
+ {
+  "row": 63,
+  "name": "01.1.4  СYY, СYYН БYТЭЭГДЭХYYН, ӨНДӨГ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.03668742686709662,
+  "kind": "weighted_children",
+  "children": [
+   64,
+   66,
+   69,
+   71,
+   75,
+   78,
+   81
+  ],
+  "price_row": null
+ },
+ {
+  "row": 64,
+  "name": "01.1.4.1 БОЛОВСРУУЛААГҮЙ СҮҮ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.007366818616315801,
+  "kind": "sumproduct",
+  "children": [
+   65
+  ],
+  "price_row": null
+ },
+ {
+  "row": 65,
+  "name": "Сүү, үнээний, задгай, 1 л",
+  "level": 4,
+  "item_no": 25,
+  "weight_template": 0.007366818616315801,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 785
+ },
+ {
+  "row": 66,
+  "name": "01.1.4.2 БОЛОВСРУУЛСАН СҮҮ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.007366818616315801,
+  "kind": "sumproduct",
+  "children": [
+   67,
+   68
+  ],
+  "price_row": null
+ },
+ {
+  "row": 67,
+  "name": "Сүү, ууттай, \"Элекстра\" 500 гр, 1 уут, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 787
+ },
+ {
+  "row": 68,
+  "name": "Сүү, хайрцагтай, \"Миний Монголын сүү, 1 л, Монгол",
+  "level": 4,
+  "item_no": 26,
+  "weight_template": 0.007366818616315801,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 788
+ },
+ {
+  "row": 69,
+  "name": "01.1.4.3 ӨТГӨРҮҮЛСЭН СҮҮ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   70
+  ],
+  "price_row": null
+ },
+ {
+  "row": 70,
+  "name": "Өтгөрүүлсэн сүү, \"Сгущенка\",  370 гр, 1 лааз, энгийн, Орос",
+  "level": 4,
+  "item_no": 27,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 790
+ },
+ {
+  "row": 71,
+  "name": "01.1.4.4 БЯСЛАГ, ААРЦ, ААРУУЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0012555534104056632,
+  "kind": "sumproduct",
+  "children": [
+   72,
+   73,
+   74
+  ],
+  "price_row": null
+ },
+ {
+  "row": 72,
+  "name": "Хорхой ааруул, задгай, 1 кг, Монгол",
+  "level": 4,
+  "item_no": 28,
+  "weight_template": 0.0005638251668185812,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 792
+ },
+ {
+  "row": 73,
+  "name": "Бяслаг, ууттай, \"Happy cow\", 170 гр, 10 ш, Голланд",
+  "level": 4,
+  "item_no": 29,
+  "weight_template": 0.00013335056304719702,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 793
+ },
+ {
+  "row": 74,
+  "name": "Аарц, ууттай, \"Зөв аарц\", 1 ш, 29 гр, Монгол",
+  "level": 4,
+  "item_no": 30,
+  "weight_template": 0.000558377680539885,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 794
+ },
+ {
+  "row": 75,
+  "name": "01.1.4.5 ТАРАГ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.005026879764633032,
+  "kind": "sumproduct",
+  "children": [
+   76,
+   77
+  ],
+  "price_row": null
+ },
+ {
+  "row": 76,
+  "name": "Тараг, задгай, 1л, Монгол",
+  "level": 4,
+  "item_no": 31,
+  "weight_template": 0.004953945322198219,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 796
+ },
+ {
+  "row": 77,
+  "name": "Йогурт, жимстэй, ууттай, \"Сайн\", 450 гр, 1 уут, Монгол",
+  "level": 4,
+  "item_no": 32,
+  "weight_template": 7.293444243481317e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 797
+ },
+ {
+  "row": 78,
+  "name": "01.1.4.6 БУСАД СҮҮН БҮТЭЭГДЭХҮҮН",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.002624932816116647,
+  "kind": "sumproduct",
+  "children": [
+   79,
+   80
+  ],
+  "price_row": null
+ },
+ {
+  "row": 79,
+  "name": "Айраг, савласан, 1 л",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 799
+ },
+ {
+  "row": 80,
+  "name": "Кофены сүү, ууттай, \"Golden milk\", 500 гр, 1 уут, Монгол",
+  "level": 4,
+  "item_no": 33,
+  "weight_template": 0.002624932816116647,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 800
+ },
+ {
+  "row": 81,
+  "name": "01.1.4.7 ӨНДӨГ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.013046423643309676,
+  "kind": "sumproduct",
+  "children": [
+   82,
+   83
+  ],
+  "price_row": null
+ },
+ {
+  "row": 82,
+  "name": "Өндөг, 1 ш, энгийн, Монгол",
+  "level": 4,
+  "item_no": 34,
+  "weight_template": 0.006523211821654838,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 802
+ },
+ {
+  "row": 83,
+  "name": "Өндөг, 1 ш, энгийн, Орос",
+  "level": 4,
+  "item_no": 35,
+  "weight_template": 0.006523211821654838,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 803
+ },
+ {
+  "row": 84,
+  "name": "01.1.5  ТӨРӨЛ БYРИЙН ӨӨХ, ТОС",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.017817547494072185,
+  "kind": "weighted_children",
+  "children": [
+   85,
+   88,
+   93
+  ],
+  "price_row": null
+ },
+ {
+  "row": 85,
+  "name": "01.1.5.1 УРГАМЛЫН ТОС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.013139090824989519,
+  "kind": "sumproduct",
+  "children": [
+   86,
+   87
+  ],
+  "price_row": null
+ },
+ {
+  "row": 86,
+  "name": "Ургамлын тос, савласан, \"Олейна\", 1 л, Орос",
+  "level": 4,
+  "item_no": 36,
+  "weight_template": 0.013139090824989519,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 806
+ },
+ {
+  "row": 87,
+  "name": "Оливын тос, шилтэй, \"Luglio\", 1л, 1 шил, экстра виржин",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 807
+ },
+ {
+  "row": 88,
+  "name": "01.1.5.2 ЦӨЦГИЙ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0040944137778998226,
+  "kind": "sumproduct",
+  "children": [
+   89,
+   90,
+   91,
+   92
+  ],
+  "price_row": null
+ },
+ {
+  "row": 89,
+  "name": "Зөөхий, ууттай, \"Сайн\", 450 гр, 1 уут, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 809
+ },
+ {
+  "row": 90,
+  "name": "Шар тос, задгай, 1 кг, Монгол",
+  "level": 4,
+  "item_no": 37,
+  "weight_template": 0.0009892536979625112,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 810
+ },
+ {
+  "row": 91,
+  "name": "Цөцгийн тос, боодолтой, \"СҮҮ ХК, АПУ ХК\" 82% тослогтой, 180-200 гр, 1 боодол, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 811
+ },
+ {
+  "row": 92,
+  "name": "Масло, задгай, 75% дээш тослогтой, 1 кг, Орос",
+  "level": 4,
+  "item_no": 38,
+  "weight_template": 0.003105160079937311,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 812
+ },
+ {
+  "row": 93,
+  "name": "01.1.5.3 БУСАД ТОС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0005840428911828455,
+  "kind": "sumproduct",
+  "children": [
+   94,
+   95
+  ],
+  "price_row": null
+ },
+ {
+  "row": 94,
+  "name": "Маргарин, савтай, \"Луговое\", 250 гр, 1 сав, Орос",
+  "level": 4,
+  "item_no": 39,
+  "weight_template": 0.00026883466096663854,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 814
+ },
+ {
+  "row": 95,
+  "name": "Өөхөн тос, задгай, 1 кг, Монгол",
+  "level": 4,
+  "item_no": 40,
+  "weight_template": 0.0003152082302162069,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 815
+ },
+ {
+  "row": 96,
+  "name": "01.1.6  ЖИМС, ЖИМСГЭНЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.013211192910614717,
+  "kind": "weighted_children",
+  "children": [
+   97,
+   99,
+   101,
+   103,
+   105,
+   108
+  ],
+  "price_row": null
+ },
+ {
+  "row": 97,
+  "name": "01.1.6.1 ГАДИЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.005260060752179726,
+  "kind": "sumproduct",
+  "children": [
+   98
+  ],
+  "price_row": null
+ },
+ {
+  "row": 98,
+  "name": "Гадил, шар, 1кг, импорт",
+  "level": 4,
+  "item_no": 41,
+  "weight_template": 0.005260060752179726,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 818
+ },
+ {
+  "row": 99,
+  "name": "01.1.6.2 МАНДАРИН",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0015961398488165677,
+  "kind": "sumproduct",
+  "children": [
+   100
+  ],
+  "price_row": null
+ },
+ {
+  "row": 100,
+  "name": "Мандарин, 1кг, импорт",
+  "level": 4,
+  "item_no": 42,
+  "weight_template": 0.0015961398488165677,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 820
+ },
+ {
+  "row": 101,
+  "name": "01.1.6.3 АЛИМ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0040861597045523616,
+  "kind": "sumproduct",
+  "children": [
+   102
+  ],
+  "price_row": null
+ },
+ {
+  "row": 102,
+  "name": "Алим, 1кг, импорт",
+  "level": 4,
+  "item_no": 43,
+  "weight_template": 0.0040861597045523616,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 822
+ },
+ {
+  "row": 103,
+  "name": "01.1.6.4 УСАН ҮЗЭМ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00173356033182081,
+  "kind": "sumproduct",
+  "children": [
+   104
+  ],
+  "price_row": null
+ },
+ {
+  "row": 104,
+  "name": "Усан үзэм, ястай, 1кг,  импорт",
+  "level": 4,
+  "item_no": 44,
+  "weight_template": 0.00173356033182081,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 824
+ },
+ {
+  "row": 105,
+  "name": "01.1.6.5 ХАТААСАН ЖИМС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00037525161075673376,
+  "kind": "sumproduct",
+  "children": [
+   106,
+   107
+  ],
+  "price_row": null
+ },
+ {
+  "row": 106,
+  "name": "Бор үзэм, задгай, 1 кг, импорт",
+  "level": 4,
+  "item_no": 45,
+  "weight_template": 0.00018762580537836688,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 826
+ },
+ {
+  "row": 107,
+  "name": "Хатаасан жимс, 1 кг, импорт",
+  "level": 4,
+  "item_no": 46,
+  "weight_template": 0.00018762580537836688,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 827
+ },
+ {
+  "row": 108,
+  "name": "01.1.6.6 САМАР",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00016002066248851728,
+  "kind": "sumproduct",
+  "children": [
+   109
+  ],
+  "price_row": null
+ },
+ {
+  "row": 109,
+  "name": "Давсалсан самар, лаазтай \"Dawn peanuts\", 185 гр, 1 лааз, Хятад",
+  "level": 4,
+  "item_no": 47,
+  "weight_template": 0.00016002066248851728,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 829
+ },
+ {
+  "row": 110,
+  "name": "01.1.7  ХYНСНИЙ НОГОО",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.043283903512710935,
+  "kind": "weighted_children",
+  "children": [
+   111,
+   121,
+   127,
+   135,
+   137
+  ],
+  "price_row": null
+ },
+ {
+  "row": 111,
+  "name": "01.1.7.1 НАВЧИТ БОЛОН ИШТ ХҮНСНИЙ НОГОО",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.005495521437428876,
+  "kind": "sumproduct",
+  "children": [
+   112,
+   113,
+   114,
+   115,
+   116,
+   117,
+   118,
+   119,
+   120
+  ],
+  "price_row": null
+ },
+ {
+  "row": 112,
+  "name": "Брокколи, 1 кг, Хятад",
+  "level": 4,
+  "item_no": 48,
+  "weight_template": 0.0002255139160293311,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 832
+ },
+ {
+  "row": 113,
+  "name": "Юуцай, 1 кг, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 833
+ },
+ {
+  "row": 114,
+  "name": "Юуцай, 1 кг, Хятад",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 834
+ },
+ {
+  "row": 115,
+  "name": "Бууцай,  1 кг, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 835
+ },
+ {
+  "row": 116,
+  "name": "Бууцай,  1 кг, Хятад",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 836
+ },
+ {
+  "row": 117,
+  "name": "Салатны навч, 1 кг, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 837
+ },
+ {
+  "row": 118,
+  "name": "Салатны навч, 1 кг, Хятад",
+  "level": 4,
+  "item_no": 49,
+  "weight_template": 0.0002255139160293311,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 838
+ },
+ {
+  "row": 119,
+  "name": "Бөөрөнхий байцай, 1кг, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 839
+ },
+ {
+  "row": 120,
+  "name": "Бөөрөнхий байцай, 1кг, Хятад",
+  "level": 4,
+  "item_no": 50,
+  "weight_template": 0.005044493605370214,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 840
+ },
+ {
+  "row": 121,
+  "name": "01.1.7.2 ЖИМСТ ХҮНСНИЙ НОГОО",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.001840491681016232,
+  "kind": "sumproduct",
+  "children": [
+   122,
+   123,
+   124,
+   125,
+   126
+  ],
+  "price_row": null
+ },
+ {
+  "row": 122,
+  "name": "Улаан лооль, үрлэн, 1кг, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 842
+ },
+ {
+  "row": 123,
+  "name": "Улаан лооль, үрлэн, 1кг, Хятад",
+  "level": 4,
+  "item_no": 51,
+  "weight_template": 0.00045079658342675585,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 843
+ },
+ {
+  "row": 124,
+  "name": "Өргөст хэмх, 1кг, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 844
+ },
+ {
+  "row": 125,
+  "name": "Өргөст хэмх, 1кг, Хятад",
+  "level": 4,
+  "item_no": 52,
+  "weight_template": 0.0012712425000912869,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 845
+ },
+ {
+  "row": 126,
+  "name": "Амтат чинжүү, 1 кг, Хятад",
+  "level": 4,
+  "item_no": 53,
+  "weight_template": 0.00011845259749818931,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 846
+ },
+ {
+  "row": 127,
+  "name": "01.1.7.3 БУСАД ХҮНСНИЙ НОГОО",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.01691911305283693,
+  "kind": "sumproduct",
+  "children": [
+   128,
+   129,
+   130,
+   131,
+   132,
+   133,
+   134
+  ],
+  "price_row": null
+ },
+ {
+  "row": 128,
+  "name": "Лууван,1 кг, Хятад",
+  "level": 4,
+  "item_no": 54,
+  "weight_template": 0.0069466180589048245,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 848
+ },
+ {
+  "row": 129,
+  "name": "Лууван,1 кг, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 849
+ },
+ {
+  "row": 130,
+  "name": "Хүрэн манжин,1 кг, Хятад",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 850
+ },
+ {
+  "row": 131,
+  "name": "Манжин, 1кг, Монгол",
+  "level": 4,
+  "item_no": 55,
+  "weight_template": 0.0031951004404299557,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 851
+ },
+ {
+  "row": 132,
+  "name": "Бөөрөнхий сонгино, 1 кг, Хятад",
+  "level": 4,
+  "item_no": 56,
+  "weight_template": 0.006197019734077176,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 852
+ },
+ {
+  "row": 133,
+  "name": "Саримс, 1 кг, Хятад",
+  "level": 4,
+  "item_no": 57,
+  "weight_template": 0.0005803748194249732,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 853
+ },
+ {
+  "row": 134,
+  "name": "Бор мөөг, 1 кг, Хятад",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 854
+ },
+ {
+  "row": 135,
+  "name": "01.1.7.4 ТӨМС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.01593239241377281,
+  "kind": "sumproduct",
+  "children": [
+   136
+  ],
+  "price_row": null
+ },
+ {
+  "row": 136,
+  "name": "Төмс, 1кг, Монгол",
+  "level": 4,
+  "item_no": 58,
+  "weight_template": 0.01593239241377281,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 856
+ },
+ {
+  "row": 137,
+  "name": "01.1.7.5 БУСАД БОЛОВСРУУЛСАН, САВЛАСАН ХҮНСНИЙ НОГОО",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0030963849276560993,
+  "kind": "sumproduct",
+  "children": [
+   138,
+   139,
+   140,
+   141,
+   142
+  ],
+  "price_row": null
+ },
+ {
+  "row": 138,
+  "name": "Өргөст хэмх, шилтэй, \"Урбанек\", 660 гр, 1 шил, Польш",
+  "level": 4,
+  "item_no": 59,
+  "weight_template": 0.0011962959525946993,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 858
+ },
+ {
+  "row": 139,
+  "name": "Алаг салат, шилтэй \"Газар шим\", 550 мл, 1 шил, Монгол",
+  "level": 4,
+  "item_no": 60,
+  "weight_template": 0.0007625594164254344,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 859
+ },
+ {
+  "row": 140,
+  "name": "Өег салат, шилтэй \"Газар шим\", 550 мл, 1 шил, Монгол",
+  "level": 4,
+  "item_no": 61,
+  "weight_template": 0.0007625594164254344,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 860
+ },
+ {
+  "row": 141,
+  "name": "Хаан чипс, ууттай, 40 гр, 1 уут, Монгол",
+  "level": 4,
+  "item_no": 62,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 861
+ },
+ {
+  "row": 142,
+  "name": "Пүнтүүз, ууттай, \"Тунгалаг\", 500 гр, 1 уут, Монгол",
+  "level": 4,
+  "item_no": 63,
+  "weight_template": 0.00037497014221053124,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 862
+ },
+ {
+  "row": 143,
+  "name": "01.1.8  СААХАР, ЖИМСНИЙ ЧАНАМАЛ, ЗӨГИЙН БАЛ, ЧИХЭР, ШОКОЛАД",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.01979098060302852,
+  "kind": "weighted_children",
+  "children": [
+   144,
+   149,
+   154,
+   160,
+   163
+  ],
+  "price_row": null
+ },
+ {
+  "row": 144,
+  "name": "01.1.8.1 ЭЛСЭН ЧИХЭР, ЧИХЭР",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.009229998670294117,
+  "kind": "sumproduct",
+  "children": [
+   145,
+   146,
+   147,
+   148
+  ],
+  "price_row": null
+ },
+ {
+  "row": 145,
+  "name": "Элсэн чихэр, ууттай, 1 кг, импорт",
+  "level": 4,
+  "item_no": 64,
+  "weight_template": 0.007243216757516697,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 865
+ },
+ {
+  "row": 146,
+  "name": "Бор элсэн чихэр, ууттай, 1 кг, импорт",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 866
+ },
+ {
+  "row": 147,
+  "name": "Хатуу чихэр, \"Барбарис\" 1 кг, задгай, Орос",
+  "level": 4,
+  "item_no": 65,
+  "weight_template": 0.001986781912777419,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 867
+ },
+ {
+  "row": 148,
+  "name": "Ёотон, хайрцагтай, 500 гр, 1 хайрцаг, Орос",
+  "level": 4,
+  "item_no": 66,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 868
+ },
+ {
+  "row": 149,
+  "name": "01.1.8.2 ЖИМСНИЙ ЧАНАМАЛ, ЗӨӨЛӨН ЧИХЭР",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.009417411919185669,
+  "kind": "sumproduct",
+  "children": [
+   150,
+   151,
+   152,
+   153
+  ],
+  "price_row": null
+ },
+ {
+  "row": 150,
+  "name": "Жимсний чанамал, шилтэй, \"Амтлаг\",  280 гр, 1 шил, Монгол",
+  "level": 4,
+  "item_no": 67,
+  "weight_template": 0.0028272919608647905,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 870
+ },
+ {
+  "row": 151,
+  "name": "Цэвэр зөгийн бал, шилтэй, үйлдвэрийн, 720 гр, 1 шил, импорт",
+  "level": 4,
+  "item_no": 68,
+  "weight_template": 0.00036315249765252314,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 871
+ },
+ {
+  "row": 152,
+  "name": "Зөөлөн чихэр, ууттай, \"Красная шапочка\", 500 гр, 1 уут, Орос",
+  "level": 4,
+  "item_no": 69,
+  "weight_template": 0.004358877222467848,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 872
+ },
+ {
+  "row": 153,
+  "name": "Резинен чихэр \"Haribo goldbaren\", 100 гр",
+  "level": 4,
+  "item_no": 70,
+  "weight_template": 0.0018680902382005064,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 873
+ },
+ {
+  "row": 154,
+  "name": "01.1.8.3 ШОКОЛАД",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00021411873600699413,
+  "kind": "sumproduct",
+  "children": [
+   155,
+   156,
+   157,
+   158,
+   159
+  ],
+  "price_row": null
+ },
+ {
+  "row": 155,
+  "name": "Шоколад, \"Alpen Gold\", 90 гр, 1 ш, Орос",
+  "level": 4,
+  "item_no": 71,
+  "weight_template": 6.423562080209824e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 875
+ },
+ {
+  "row": 156,
+  "name": "Шоколад, \"Голден говь\", 80 гр, 1 ш, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 876
+ },
+ {
+  "row": 157,
+  "name": "Шоколад, \"Snickers\", 50 гр, 1 ш, Орос",
+  "level": 4,
+  "item_no": 72,
+  "weight_template": 6.423562080209824e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 877
+ },
+ {
+  "row": 158,
+  "name": "Шоколадны крем, шилтэй, \"Gold M\", 250 гр, 1 шил, импорт",
+  "level": 4,
+  "item_no": 73,
+  "weight_template": 4.2823747201398824e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 878
+ },
+ {
+  "row": 159,
+  "name": "Набор \" Мерси\", 250 гр, импорт",
+  "level": 4,
+  "item_no": 74,
+  "weight_template": 4.2823747201398824e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 879
+ },
+ {
+  "row": 160,
+  "name": "01.1.8.4 МӨХӨӨЛДӨС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00047802866527184485,
+  "kind": "sumproduct",
+  "children": [
+   161,
+   162
+  ],
+  "price_row": null
+ },
+ {
+  "row": 161,
+  "name": "Зайрмаг, \"Venus\", 1 ш, энгийн, Монгол",
+  "level": 4,
+  "item_no": 75,
+  "weight_template": 0.00023901433263592243,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 881
+ },
+ {
+  "row": 162,
+  "name": "Зайрмаг, \"Золотой Стандарт\", 1 ш, энгийн, Орос",
+  "level": 4,
+  "item_no": 76,
+  "weight_template": 0.00023901433263592243,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 882
+ },
+ {
+  "row": 163,
+  "name": "01.1.8.5 БУСАД ЧИХРЭН БҮТЭЭГДЭХҮҮН",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0004514226122698973,
+  "kind": "sumproduct",
+  "children": [
+   164,
+   165,
+   166
+  ],
+  "price_row": null
+ },
+ {
+  "row": 164,
+  "name": "Бохь, боодолтой, \"Orbit\",  14 гр, 1 боодол, Орос",
+  "level": 4,
+  "item_no": 77,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 884
+ },
+ {
+  "row": 165,
+  "name": "Компот, шилтэй, \"Kowar\", 936 гр, интоор, 1 шил, Польш",
+  "level": 4,
+  "item_no": 78,
+  "weight_template": 0.00041301764471337574,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 885
+ },
+ {
+  "row": 166,
+  "name": "Жигнэмэг \"Choco Pie Original\" 12ш, импорт",
+  "level": 4,
+  "item_no": 79,
+  "weight_template": 3.8404967556521584e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 886
+ },
+ {
+  "row": 167,
+  "name": "01.1.9  БЭЛЭН ХООЛ, ХYНСНИЙ БУСАД БYТЭЭГДЭХYYН",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.006602931585182582,
+  "kind": "weighted_children",
+  "children": [
+   168,
+   170,
+   173,
+   180,
+   184
+  ],
+  "price_row": null
+ },
+ {
+  "row": 168,
+  "name": "01.1.9.1 БЭЛЭН ХООЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0004064540944986143,
+  "kind": "sumproduct",
+  "children": [
+   169
+  ],
+  "price_row": null
+ },
+ {
+  "row": 169,
+  "name": "Бэлэн гоймон, аягатай,\"Nongshim\"120 гр, 1 аяга, Солонгос",
+  "level": 4,
+  "item_no": 80,
+  "weight_template": 0.0004064540944986143,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 889
+ },
+ {
+  "row": 170,
+  "name": "01.1.9.2 ХҮҮХДИЙН ХООЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0017756481095525295,
+  "kind": "sumproduct",
+  "children": [
+   171,
+   172
+  ],
+  "price_row": null
+ },
+ {
+  "row": 171,
+  "name": "Хүүхдийн нэмэлт тэжээл, савтай, Нан №1, 800гр, 1 сав, Швейцарь",
+  "level": 4,
+  "item_no": 81,
+  "weight_template": 0.0017756481095525295,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 891
+ },
+ {
+  "row": 172,
+  "name": "Хүүхдийн будаа, ууттай,\"Слава манная\" 650 гр, 1 уут, импорт",
+  "level": 4,
+  "item_no": 82,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 892
+ },
+ {
+  "row": 173,
+  "name": "01.1.9.3 ДАВС, АМТЛАГЧ, СҮМС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0039320791871831975,
+  "kind": "sumproduct",
+  "children": [
+   174,
+   175,
+   176,
+   177,
+   178,
+   179
+  ],
+  "price_row": null
+ },
+ {
+  "row": 174,
+  "name": "Иоджуулсан давс, энгийн, цагаан нунтаг  1 кг, импорт",
+  "level": 4,
+  "item_no": 83,
+  "weight_template": 0.0031168536330787714,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 894
+ },
+ {
+  "row": 175,
+  "name": "Кетчуп, савтай, \"Улаанбаатар\" 900 гр, энгийн, Монгол",
+  "level": 4,
+  "item_no": 84,
+  "weight_template": 0.00026466392095156127,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 895
+ },
+ {
+  "row": 176,
+  "name": "Цуу, шилтэй \"Maggi\", 200 мл, 1 шил, Орос",
+  "level": 4,
+  "item_no": 85,
+  "weight_template": 0.00011260712621726688,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 896
+ },
+ {
+  "row": 177,
+  "name": "Майонез, хайрцагтай \"Улаанбаатар\" 500 гр, 1 хайрцаг, Монгол",
+  "level": 4,
+  "item_no": 86,
+  "weight_template": 0.0004379545069355981,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 897
+ },
+ {
+  "row": 178,
+  "name": "Амтлагч, савтай, \"Гүчүжан\", 200 гр, 1 сав, Солонгос",
+  "level": 4,
+  "item_no": 87,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 898
+ },
+ {
+  "row": 179,
+  "name": "Буурцагны цуу \"Soy sauce\", хуванцар савтай, 500гр",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 899
+ },
+ {
+  "row": 180,
+  "name": "01.1.9.4 ХООЛ АМТЛАГЧ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00015718595325535487,
+  "kind": "sumproduct",
+  "children": [
+   181,
+   182,
+   183
+  ],
+  "price_row": null
+ },
+ {
+  "row": 181,
+  "name": "Хоол амтлагч, ууттай \"Appetita\", 20 гр, 1 уут, импорт",
+  "level": 4,
+  "item_no": 88,
+  "weight_template": 6.287438130214194e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 901
+ },
+ {
+  "row": 182,
+  "name": "Хар перец, ууттай, \"Appetita\", 10 гр, 1 ууттай, импорт",
+  "level": 4,
+  "item_no": 89,
+  "weight_template": 6.287438130214194e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 902
+ },
+ {
+  "row": 183,
+  "name": "Лаврын навч, 20 гр, ууттай, импорт",
+  "level": 4,
+  "item_no": 90,
+  "weight_template": 3.143719065107097e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 903
+ },
+ {
+  "row": 184,
+  "name": "01.1.9.5 БУСАД БҮТЭЭГДЭХҮҮН",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.000331564240692886,
+  "kind": "sumproduct",
+  "children": [
+   185,
+   186
+  ],
+  "price_row": null
+ },
+ {
+  "row": 185,
+  "name": "Гурил исгэгч, ууттай, \"Данбаоли\", 12 гр, 1 уут, Хятад",
+  "level": 4,
+  "item_no": 91,
+  "weight_template": 0.000331564240692886,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 905
+ },
+ {
+  "row": 186,
+  "name": "Шөл, бульон, \"Үхэр, тахианы шөл\" 10 гр, 1 ширхэг, Орос",
+  "level": 4,
+  "item_no": 92,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 906
+ },
+ {
+  "row": 187,
+  "name": "01.2 СОГТУУРУУЛАХ БУС УНДАА",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.035594623239849466,
+  "kind": "weighted_children",
+  "children": [
+   188,
+   193,
+   197,
+   201,
+   205
+  ],
+  "price_row": null
+ },
+ {
+  "row": 188,
+  "name": "01.2.1  ЖИМСНИЙ БОЛОН НОГООНЫ ШYYС",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0005882062027327238,
+  "kind": "weighted_children",
+  "children": [
+   189
+  ],
+  "price_row": null
+ },
+ {
+  "row": 189,
+  "name": "01.2.1.1 ЖИМС, НОГООНЫ ШҮҮС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0005882062027327238,
+  "kind": "sumproduct",
+  "children": [
+   190,
+   191,
+   192
+  ],
+  "price_row": null
+ },
+ {
+  "row": 190,
+  "name": "Жимсний шүүс, \"Моя семья\",  алимны, 1 л, Орос",
+  "level": 4,
+  "item_no": 93,
+  "weight_template": 0.00023528248109308953,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 910
+ },
+ {
+  "row": 191,
+  "name": "Алое шүүс, савтай, \"Aloe vera\", 1.5 л, 1 сав, Солонгос",
+  "level": 4,
+  "item_no": 94,
+  "weight_template": 0.00023528248109308953,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 911
+ },
+ {
+  "row": 192,
+  "name": "Мултивитамины шүүс, хуванцар савтай, 500 мл, Монгол",
+  "level": 4,
+  "item_no": 95,
+  "weight_template": 0.00011764124054654477,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 912
+ },
+ {
+  "row": 193,
+  "name": "01.2.2  БYХ ТӨРЛИЙН КОФЕ, ЦАЙ, КАКАО",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0011771623413714691,
+  "kind": "weighted_children",
+  "children": [
+   194
+  ],
+  "price_row": null
+ },
+ {
+  "row": 194,
+  "name": "01.2.2.1 КОФЕ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0011771623413714691,
+  "kind": "sumproduct",
+  "children": [
+   195,
+   196
+  ],
+  "price_row": null
+ },
+ {
+  "row": 195,
+  "name": "Кофе, шилтэй, \"Jacobs\", энгийн, 95 гр, 1 шил, Орос",
+  "level": 4,
+  "item_no": 96,
+  "weight_template": 0.0008240136389600283,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 915
+ },
+ {
+  "row": 196,
+  "name": "Maxim кофе, 1 удаагийн, 1ш, импорт",
+  "level": 4,
+  "item_no": 97,
+  "weight_template": 0.0003531487024114407,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 916
+ },
+ {
+  "row": 197,
+  "name": "01.2.3  ЦАЙ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.01305649478541459,
+  "kind": "weighted_children",
+  "children": [
+   198
+  ],
+  "price_row": null
+ },
+ {
+  "row": 198,
+  "name": "01.2.3.1 КОФЕ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.01305649478541459,
+  "kind": "sumproduct",
+  "children": [
+   199,
+   200
+  ],
+  "price_row": null
+ },
+ {
+  "row": 199,
+  "name": "Гүрж ногоон цай, пакеттай, \"Stimo\", 90 гр, энгийн, 1 уут, Монгол",
+  "level": 4,
+  "item_no": 98,
+  "weight_template": 0.012122298376147745,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 919
+ },
+ {
+  "row": 200,
+  "name": "Байхуу цай, хайрцагтай, \"Липтон\", 25 ширхэгтэй, 1 хайрцаг, Орос",
+  "level": 4,
+  "item_no": 99,
+  "weight_template": 0.0009341964092668441,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 920
+ },
+ {
+  "row": 201,
+  "name": "01.2.5  ЦЭВЭР УС",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.00011521486974926694,
+  "kind": "weighted_children",
+  "children": [
+   202
+  ],
+  "price_row": null
+ },
+ {
+  "row": 202,
+  "name": "01.2.5.1 ЦЭВЭР УС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00011521486974926694,
+  "kind": "sumproduct",
+  "children": [
+   203,
+   204
+  ],
+  "price_row": null
+ },
+ {
+  "row": 203,
+  "name": "Цэвэр ус, савтай, \"Bonaqua\", 0.5 л, 1 сав, Монгол",
+  "level": 4,
+  "item_no": 100,
+  "weight_template": 5.760743487463347e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 923
+ },
+ {
+  "row": 204,
+  "name": "Рашаан, савтай \"Жанчивлан\", 500 мл, 1 сав, Монгол",
+  "level": 4,
+  "item_no": 101,
+  "weight_template": 5.760743487463347e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 924
+ },
+ {
+  "row": 205,
+  "name": "01.2.6  УНДАА",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.02065754504058142,
+  "kind": "weighted_children",
+  "children": [
+   206
+  ],
+  "price_row": null
+ },
+ {
+  "row": 206,
+  "name": "01.2.6.1 УНДАА",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.02065754504058142,
+  "kind": "sumproduct",
+  "children": [
+   207,
+   208
+  ],
+  "price_row": null
+ },
+ {
+  "row": 207,
+  "name": "Ундаа, савтай, \"Бидний ундаа, Coco Cola\", 1.25 л, 1 сав, Монгол",
+  "level": 4,
+  "item_no": 102,
+  "weight_template": 0.01032877252029071,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 927
+ },
+ {
+  "row": 208,
+  "name": "Ундаа, савтай \"MCS Fuze tea\", 0.5 л, 1 сав, Монгол",
+  "level": 4,
+  "item_no": 103,
+  "weight_template": 0.01032877252029071,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 928
+ },
+ {
+  "row": 209,
+  "name": "02.   СОГТУУРУУЛАХ УНДАА, ТАМХИ, МАНСУУРУУЛАХ БОДИС",
+  "level": 0,
+  "item_no": null,
+  "weight_template": 0.02788403187122293,
+  "kind": "weighted_children",
+  "children": [
+   210,
+   224
+  ],
+  "price_row": null
+ },
+ {
+  "row": 210,
+  "name": "02.1 СОГТУУРУУЛАХ УНДАА",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.0014939061919703922,
+  "kind": "weighted_children",
+  "children": [
+   211,
+   215,
+   220
+  ],
+  "price_row": null
+ },
+ {
+  "row": 211,
+  "name": "02.1.1  АРХИ, СПИРТ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0011277751411922373,
+  "kind": "weighted_children",
+  "children": [
+   212
+  ],
+  "price_row": null
+ },
+ {
+  "row": 212,
+  "name": "02.1.1.1 АРХИ, ЛИКЁР",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0011277751411922373,
+  "kind": "sumproduct",
+  "children": [
+   213,
+   214
+  ],
+  "price_row": null
+ },
+ {
+  "row": 213,
+  "name": "Цагаан архи, шилтэй, \"ARKHI EXPORT\" 0.75 л, 1 шил, Монгол",
+  "level": 4,
+  "item_no": 104,
+  "weight_template": 0.0011277751411922373,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 933
+ },
+ {
+  "row": 214,
+  "name": "Цагаан архи, шилтэй, \"Absolute\", 1.0 л, 1 шил, Швед",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 934
+ },
+ {
+  "row": 215,
+  "name": "02.1.2  ДАРС",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0003036666235838881,
+  "kind": "weighted_children",
+  "children": [
+   216,
+   218
+  ],
+  "price_row": null
+ },
+ {
+  "row": 216,
+  "name": "02.1.2.1 ЖИМСНИЙ ДАРС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00015183331179194405,
+  "kind": "sumproduct",
+  "children": [
+   217
+  ],
+  "price_row": null
+ },
+ {
+  "row": 217,
+  "name": "Дарс, шилтэй, \"Yellow Tail\" энгийн, 0.75 л, 1 шил, Австрали",
+  "level": 4,
+  "item_no": 105,
+  "weight_template": 0.00015183331179194405,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 937
+ },
+ {
+  "row": 218,
+  "name": "02.1.2.2 БУСАД ДАРС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00015183331179194405,
+  "kind": "sumproduct",
+  "children": [
+   219
+  ],
+  "price_row": null
+ },
+ {
+  "row": 219,
+  "name": "Оргилуун дарс, шилтэй, \"Советское Игристое\", 0.75 л, 1 шил, Орос",
+  "level": 4,
+  "item_no": 106,
+  "weight_template": 0.00015183331179194405,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 939
+ },
+ {
+  "row": 220,
+  "name": "02.1.3  ШАР АЙРАГ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 6.246442719426667e-05,
+  "kind": "weighted_children",
+  "children": [
+   221
+  ],
+  "price_row": null
+ },
+ {
+  "row": 221,
+  "name": "02.1.3.1 ШАР АЙРАГ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 6.246442719426667e-05,
+  "kind": "sumproduct",
+  "children": [
+   222,
+   223
+  ],
+  "price_row": null
+ },
+ {
+  "row": 222,
+  "name": "Шар айраг, шилтэй, Сэнгүр, энгийн, 450 мл, 1 шил, Монгол",
+  "level": 4,
+  "item_no": 107,
+  "weight_template": 6.246442719426667e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 942
+ },
+ {
+  "row": 223,
+  "name": "Шар айраг, лаазтай, \"Cass\", энгийн, 500 мл, 1 лааз, импорт",
+  "level": 4,
+  "item_no": 108,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 943
+ },
+ {
+  "row": 224,
+  "name": "02.3 ТАМХИ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.02639012567925254,
+  "kind": "weighted_children",
+  "children": [
+   225
+  ],
+  "price_row": null
+ },
+ {
+  "row": 225,
+  "name": "02.3.1 ТАМХИ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.02639012567925254,
+  "kind": "weighted_children",
+  "children": [
+   226
+  ],
+  "price_row": null
+ },
+ {
+  "row": 226,
+  "name": "02.3.0.1 ЯНЖУУР ТАМХИ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.02639012567925254,
+  "kind": "sumproduct",
+  "children": [
+   227,
+   228
+  ],
+  "price_row": null
+ },
+ {
+  "row": 227,
+  "name": "Янжуур тамхи, хайрцагтай \"Change Esse\",  1 хайрцаг, импорт",
+  "level": 4,
+  "item_no": 109,
+  "weight_template": 0.011133215912933153,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 947
+ },
+ {
+  "row": 228,
+  "name": "Янжуур тамхи, хайрцагтай, \"Улааншонхор\", 1 хайрцаг, Монгол",
+  "level": 4,
+  "item_no": 110,
+  "weight_template": 0.015256909766319387,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 948
+ },
+ {
+  "row": 229,
+  "name": "03.    ХУВЦАС, БӨС БАРАА, ГУТАЛ",
+  "level": 0,
+  "item_no": null,
+  "weight_template": 0.46162105501448386,
+  "kind": "weighted_children",
+  "children": [
+   230,
+   296
+  ],
+  "price_row": null
+ },
+ {
+  "row": 230,
+  "name": "03.1   ХУВЦАС, БӨС БАРАА",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.27111612886178404,
+  "kind": "weighted_children",
+  "children": [
+   231,
+   237,
+   282,
+   291
+  ],
+  "price_row": null
+ },
+ {
+  "row": 231,
+  "name": "03.1.1  ХӨВӨН, БӨС БАРАА",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.03681388180373654,
+  "kind": "weighted_children",
+  "children": [
+   232
+  ],
+  "price_row": null
+ },
+ {
+  "row": 232,
+  "name": "3.1.1.1 ХӨВӨН, БӨС, БАРАА",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.03681388180373654,
+  "kind": "sumproduct",
+  "children": [
+   233,
+   234,
+   235,
+   236
+  ],
+  "price_row": null
+ },
+ {
+  "row": 233,
+  "name": "Дээлийн даавуу, цулгуй, 150 см энтэй, 1 м, Хятад",
+  "level": 4,
+  "item_no": 111,
+  "weight_template": 0.0008752437704673869,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 953
+ },
+ {
+  "row": 234,
+  "name": "Эрээн даавуу, 150 см энтэй, 1 м, Хятад",
+  "level": 4,
+  "item_no": 112,
+  "weight_template": 2.4863124113917896e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 954
+ },
+ {
+  "row": 235,
+  "name": "Торго, хээтэй, 80 см энтэй, 1 м, Хятад",
+  "level": 4,
+  "item_no": 113,
+  "weight_template": 0.018714466853727144,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 955
+ },
+ {
+  "row": 236,
+  "name": "Ширмэл дотрын материал, 150см энтэй, 1 м, Хятад",
+  "level": 4,
+  "item_no": 114,
+  "weight_template": 0.017199308055428093,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 956
+ },
+ {
+  "row": 237,
+  "name": "03.1.2  БYХ ТӨРЛИЙН ХУВЦАС",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.22628370986177362,
+  "kind": "weighted_children",
+  "children": [
+   238,
+   257,
+   278
+  ],
+  "price_row": null
+ },
+ {
+  "row": 238,
+  "name": "3.1.2.1 ЭРЭГТЭЙ БЭЛЭН ХУВЦАС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.10312396806769564,
+  "kind": "sumproduct",
+  "children": [
+   239,
+   240,
+   241,
+   242,
+   243,
+   244,
+   245,
+   246,
+   247,
+   248,
+   249,
+   250,
+   251,
+   252,
+   253,
+   254,
+   255,
+   256
+  ],
+  "price_row": null
+ },
+ {
+  "row": 239,
+  "name": "Савхин хүрэм, хэмжээ 46-52 , Солонгос савхин",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 959
+ },
+ {
+  "row": 240,
+  "name": "Эрэгтэй хүний  куртка, хэмжээ 46-52, хавар намрын, ширмэл, синтофон дотортой, цувны материалтай, Хятад",
+  "level": 4,
+  "item_no": 115,
+  "weight_template": 0.009824665947431466,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 960
+ },
+ {
+  "row": 241,
+  "name": "Эрэгтэй хүний дотортой хүрэм, хэмжээ 46-52, малгайтай, \"Аляска\" загвар, Хятад",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 961
+ },
+ {
+  "row": 242,
+  "name": "Костюм, хэмжээ 46-52, 2 хос, энгийн хийцтэй, Хятад",
+  "level": 4,
+  "item_no": 116,
+  "weight_template": 0.0008343065597111202,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 962
+ },
+ {
+  "row": 243,
+  "name": "Ноосон цамц, хэмжээ 46-52, 50% ноос, дугуй захтай, Хятад",
+  "level": 4,
+  "item_no": 117,
+  "weight_template": 0.013272266658332862,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 963
+ },
+ {
+  "row": 244,
+  "name": "Сорочка, хэмжээ 46-52, урт ханцуйтай, 50-65% хөвөн даавуу, Хятад",
+  "level": 4,
+  "item_no": 118,
+  "weight_template": 0.007801307894367556,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 964
+ },
+ {
+  "row": 245,
+  "name": "Биеийн тамирын хослол, хэмжээ 46-52, энгийн, Хятад",
+  "level": 4,
+  "item_no": 119,
+  "weight_template": 0.009372968927888978,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 965
+ },
+ {
+  "row": 246,
+  "name": "Жинс, хэмжээ 30-36, энгийн, Хятад",
+  "level": 4,
+  "item_no": 120,
+  "weight_template": 0.0236094537347788,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 966
+ },
+ {
+  "row": 247,
+  "name": "Даавуун футболка, хэмжээ S-XXL, 100% даавуу, дугуй захтай, нимгэн, цулгуй, Хятад",
+  "level": 4,
+  "item_no": 121,
+  "weight_template": 0.002462865694458848,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 967
+ },
+ {
+  "row": 248,
+  "name": "Эрэгтэй дотоож, 80-100% хөвөн даавуу, богино гуятай, өргөн резинтэй, бие барьсан загвар, Хятад",
+  "level": 4,
+  "item_no": 122,
+  "weight_template": 0.009714877464913204,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 968
+ },
+ {
+  "row": 249,
+  "name": "Оймс, 100%, даавуун, Монгол",
+  "level": 4,
+  "item_no": 123,
+  "weight_template": 0.004016468707842919,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 969
+ },
+ {
+  "row": 250,
+  "name": "Эрэгтэй хүүхдийн өвлийн хүрэм, 8-10 нас, \"Аляска\" загвар, Хятад",
+  "level": 4,
+  "item_no": 124,
+  "weight_template": 0.012713660740300203,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 970
+ },
+ {
+  "row": 251,
+  "name": "Эрэгтэй хүүхдийн хавар, намрын куртка, 6-7 нас, синтефон дотортой, Хятад",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 971
+ },
+ {
+  "row": 252,
+  "name": "Эрэгтэй хүүхдийн жинсэн өмд, 8-10 нас, Хятад",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 972
+ },
+ {
+  "row": 253,
+  "name": "Эрэгтэй хүүхдийн биеийн тамирын хослол, 6-8 нас, Хятад",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 973
+ },
+ {
+  "row": 254,
+  "name": "Эрэгтэй хүүхдийн сорочка, цагаан, 8-12 нас, Хятад",
+  "level": 4,
+  "item_no": 125,
+  "weight_template": 0.005850980920775665,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 974
+ },
+ {
+  "row": 255,
+  "name": "Эрэгтэй хүүхдийн оймс, 5-7 нас, 100% даавуун, Монгол",
+  "level": 4,
+  "item_no": 126,
+  "weight_template": 0.0020082343539214596,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 975
+ },
+ {
+  "row": 256,
+  "name": "Эрэгтэй хүүхдийн футболка, 3-7 нас, даавуун, Хятад",
+  "level": 4,
+  "item_no": 127,
+  "weight_template": 0.0016419104629725653,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 976
+ },
+ {
+  "row": 257,
+  "name": "3.1.2.2 ЭМЭГТЭЙ БЭЛЭН ХУВЦАС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.12045445284237195,
+  "kind": "sumproduct",
+  "children": [
+   258,
+   259,
+   260,
+   261,
+   262,
+   263,
+   264,
+   265,
+   266,
+   267,
+   268,
+   269,
+   270,
+   271,
+   272,
+   273,
+   274,
+   275,
+   276,
+   277
+  ],
+  "price_row": null
+ },
+ {
+  "row": 258,
+  "name": "Савхин хүрэм, хэмжээ 38-46, хагас богино, солонгос савхин",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.007368499460573598,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 978
+ },
+ {
+  "row": 259,
+  "name": "Өвлийн куртка, хэмжээ 38-46, синтофон дотортой, хагас, үстэй малгайтай, цувны материалтай, Хятад",
+  "level": 4,
+  "item_no": 128,
+  "weight_template": 0.029665208394033804,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 979
+ },
+ {
+  "row": 260,
+  "name": "Нэхий дээл, хэмжээ 38-46, Дархан Нэхий ХК, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 980
+ },
+ {
+  "row": 261,
+  "name": "Эмэгтэй хүний доторгүй куртка, хэмжээ 38-46 богино, даавуун, Хятад",
+  "level": 4,
+  "item_no": 129,
+  "weight_template": 0.007368499460573598,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 981
+ },
+ {
+  "row": 262,
+  "name": "Эмэгтэй хослол, 2 хос, 38-46 размер, Хятад",
+  "level": 4,
+  "item_no": 130,
+  "weight_template": 0.0008343065597111202,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 982
+ },
+ {
+  "row": 263,
+  "name": "Ноосон цамц, хэмжээ 38-46, гурвалжин захтай, задгай энгэртэй, Хятад",
+  "level": 4,
+  "item_no": 131,
+  "weight_template": 0.007963359994999716,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 983
+ },
+ {
+  "row": 264,
+  "name": "Эмэгтэй ноолууран цамц, хэмжээ 38-46, джемпер, 100%  ноолуур, Говь ХК, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 984
+ },
+ {
+  "row": 265,
+  "name": "Эмэгтэй хүний  сорочкин цамц, хэмжээ 38-46, хөвөн даавуу болон синтетик холимог, Хятад",
+  "level": 4,
+  "item_no": 132,
+  "weight_template": 0.005850980920775665,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 985
+ },
+ {
+  "row": 266,
+  "name": "Юбка, хэмжээ 38-46, 50-60 см урт, хар, шулуун, 100 % полиестр, Хятад",
+  "level": 4,
+  "item_no": 133,
+  "weight_template": 0.0006543052363287439,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 986
+ },
+ {
+  "row": 267,
+  "name": "Эмэгтэй өмд, хэмжээ 38-46, 50% полиэстр, Хятад",
+  "level": 4,
+  "item_no": 134,
+  "weight_template": 0.017707090301084097,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 987
+ },
+ {
+  "row": 268,
+  "name": "Жинсэн өмд, хэмжээ 28-32, энгийн, Хятад",
+  "level": 4,
+  "item_no": 135,
+  "weight_template": 0.017707090301084097,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 988
+ },
+ {
+  "row": 269,
+  "name": "Ноосон өмд, зузаан, дотор нь зөөлөн, Хятад",
+  "level": 4,
+  "item_no": 136,
+  "weight_template": 0.00036154094082199023,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 989
+ },
+ {
+  "row": 270,
+  "name": "Хөхний даруулга, Хятад",
+  "level": 4,
+  "item_no": 137,
+  "weight_template": 0.004857438732456602,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 990
+ },
+ {
+  "row": 271,
+  "name": "Эмэгтэй дотоож, 60-100% хөвөн даавуу, Хятад",
+  "level": 4,
+  "item_no": 138,
+  "weight_template": 0.007286158098684902,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 991
+ },
+ {
+  "row": 272,
+  "name": "Трико, 100% полиамид, Хятад",
+  "level": 4,
+  "item_no": 139,
+  "weight_template": 0.0005568242217891248,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 992
+ },
+ {
+  "row": 273,
+  "name": "Оймс, 100% даавуун, Монгол",
+  "level": 4,
+  "item_no": 140,
+  "weight_template": 0.004016468707842919,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 993
+ },
+ {
+  "row": 274,
+  "name": "Охидын ноосон цамц, 8-10 нас, задгай энгэртэй, Хятад",
+  "level": 4,
+  "item_no": 141,
+  "weight_template": 0.005308906663333145,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 994
+ },
+ {
+  "row": 275,
+  "name": "Охидын даашинз, 7-8 нас, богино ханцуйтай, 60-100% даавуун, Хятад",
+  "level": 4,
+  "item_no": 142,
+  "weight_template": 0.00028041652985517603,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 995
+ },
+ {
+  "row": 276,
+  "name": "Охидын трико, 4-8 нас, 60-100% даавуун, Хятад",
+  "level": 4,
+  "item_no": 143,
+  "weight_template": 0.0002386389521953392,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 996
+ },
+ {
+  "row": 277,
+  "name": "Охид дотоож, 100% хөвөн даавуун, Хятад",
+  "level": 4,
+  "item_no": 144,
+  "weight_template": 0.002428719366228301,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 997
+ },
+ {
+  "row": 278,
+  "name": "3.1.2.3 ХYYХДИЙН БЭЛЭН ХУВЦАС, 0-2 НАС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.002705288951706035,
+  "kind": "sumproduct",
+  "children": [
+   279,
+   280,
+   281
+  ],
+  "price_row": null
+ },
+ {
+  "row": 279,
+  "name": "Хүүхдийн мөлхөө өмд, 7-8 сар, 60-100% даавуун, Хятад",
+  "level": 4,
+  "item_no": 145,
+  "weight_template": 0.0008115866855118104,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 999
+ },
+ {
+  "row": 280,
+  "name": "Хүүхдийн боди, 0-2 нас, даавуун, Хятад",
+  "level": 4,
+  "item_no": 146,
+  "weight_template": 0.0008115866855118104,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1000
+ },
+ {
+  "row": 281,
+  "name": "Хүүхдийн живх, 6-11 кг жинтэй, Mamy Poko, Япон",
+  "level": 4,
+  "item_no": 147,
+  "weight_template": 0.001082115580682414,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1001
+ },
+ {
+  "row": 282,
+  "name": "03.1.3  ЖИЖИГ ЭДЛЭЛ, ХЭРЭГСЭЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.008018537196273814,
+  "kind": "weighted_children",
+  "children": [
+   283
+  ],
+  "price_row": null
+ },
+ {
+  "row": 283,
+  "name": "03.1.3.1 ЖИЖИГ ЭДЛЭЛ, ХЭРЭГСЭЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.008018537196273814,
+  "kind": "sumproduct",
+  "children": [
+   284,
+   285,
+   286,
+   287,
+   288,
+   289,
+   290
+  ],
+  "price_row": null
+ },
+ {
+  "row": 284,
+  "name": "Эрэгтэй хүний ноосон малгай,  Хятад",
+  "level": 4,
+  "item_no": 148,
+  "weight_template": 0.0038741104723376374,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1004
+ },
+ {
+  "row": 285,
+  "name": "Эрэгтэй хүний ороолт, ноосон даавуу,  Хятад",
+  "level": 4,
+  "item_no": 149,
+  "weight_template": 0.002324466283402582,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1005
+ },
+ {
+  "row": 286,
+  "name": "Эмэгтэй савхин бээлий, хэмжээ 7-8, Монгол",
+  "level": 4,
+  "item_no": 150,
+  "weight_template": 0.00019157253040991303,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1006
+ },
+ {
+  "row": 287,
+  "name": "Эрэгтэй хүний өмдний бүс, хиймэл ширэн, төмөр, оломтой, Хятад",
+  "level": 4,
+  "item_no": 151,
+  "weight_template": 7.874372118862583e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1007
+ },
+ {
+  "row": 288,
+  "name": "Эмэгтэй хүний ноолууран малгай, давхар нэхээстэй, Говь ХК, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1008
+ },
+ {
+  "row": 289,
+  "name": "Эмэгтэй хүний ноолууран ороолт, богино, Говь ХК, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1009
+ },
+ {
+  "row": 290,
+  "name": "Хүүхдийн малгай ороолтны хослол, 7-9 нас, ноосон, Хятад",
+  "level": 4,
+  "item_no": 152,
+  "weight_template": 0.0015496441889350546,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1010
+ },
+ {
+  "row": 291,
+  "name": "03.1.4  ХУВЦАС ЗАСВАР, ЦЭВЭРЛЭГЭЭ, ТYРЭЭС",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   292,
+   294
+  ],
+  "price_row": null
+ },
+ {
+  "row": 292,
+  "name": "03.1.4.1 ХУВЦАС ЦЭВЭРЛЭГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   293
+  ],
+  "price_row": null
+ },
+ {
+  "row": 293,
+  "name": "Угаалга, хими цэвэрлэгээ, эрэгтэй костюм пиджак",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1013
+ },
+ {
+  "row": 294,
+  "name": "03.1.4.2 ХУВЦАС ЗАСВАР, ТҮРЭЭС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   295
+  ],
+  "price_row": null
+ },
+ {
+  "row": 295,
+  "name": "Хувцас захиалга, засвар, эрэгтэй хүний өмд хасуулах, манжеттай",
+  "level": 4,
+  "item_no": 153,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1015
+ },
+ {
+  "row": 296,
+  "name": "03.2  ГУТАЛ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.19050492615269976,
+  "kind": "weighted_children",
+  "children": [
+   297,
+   313
+  ],
+  "price_row": null
+ },
+ {
+  "row": 297,
+  "name": "03.2.1  БYХ ТӨРЛИЙН ГУТАЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.189848759717285,
+  "kind": "weighted_children",
+  "children": [
+   298,
+   303,
+   308
+  ],
+  "price_row": null
+ },
+ {
+  "row": 298,
+  "name": "3.2.1.1 ЭРЭГТЭЙ ГУТАЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.06661779215087514,
+  "kind": "sumproduct",
+  "children": [
+   299,
+   300,
+   301,
+   302
+  ],
+  "price_row": null
+ },
+ {
+  "row": 299,
+  "name": "Эрэгтэй өвлийн гутал, хэмжээ 39-43, хагас түрийтэй, хиймэл ширэн, Хятад",
+  "level": 4,
+  "item_no": 154,
+  "weight_template": 0.03338413935502135,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1019
+ },
+ {
+  "row": 300,
+  "name": "Эрэгтэй ботинк, хэмжээ 39-43, хиймэл ширэн, үдээстэй, Хятад",
+  "level": 4,
+  "item_no": 155,
+  "weight_template": 0.0024403083854175056,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1020
+ },
+ {
+  "row": 301,
+  "name": "Эрэгтэй хүний пүүз, хэмжээ 39-43, Хятад",
+  "level": 4,
+  "item_no": 156,
+  "weight_template": 0.030188205647123073,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1021
+ },
+ {
+  "row": 302,
+  "name": "Гэрийн углааш, хэмжээ 39-43, эрэгтэй, Хятад",
+  "level": 4,
+  "item_no": 157,
+  "weight_template": 0.0006051387633132056,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1022
+ },
+ {
+  "row": 303,
+  "name": "3.2.1.2 ЭМЭГТЭЙ ГУТАЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.09181914649343097,
+  "kind": "sumproduct",
+  "children": [
+   304,
+   305,
+   306,
+   307
+  ],
+  "price_row": null
+ },
+ {
+  "row": 304,
+  "name": "Эмэгтэй өвлийн гутал, хэмжээ 36-39, хиймэл ширэн, урт түрийтэй, цахилгаантай, Хятад",
+  "level": 4,
+  "item_no": 158,
+  "weight_template": 0.03338413935502135,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1024
+ },
+ {
+  "row": 305,
+  "name": "Эмэгтэй хавар, намрын гутал, хэмжээ 36-39, хиймэл ширэн, урт түрийтэй, Хятад",
+  "level": 4,
+  "item_no": 159,
+  "weight_template": 0.032560236616871296,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1025
+ },
+ {
+  "row": 306,
+  "name": "Эмэгтэй хүний туфли, хэмжээ 36-39, 5-6  см өндөр өсгийтэй, хиймэл ширэн, Хятад",
+  "level": 4,
+  "item_no": 160,
+  "weight_template": 0.00010601060753511373,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1026
+ },
+ {
+  "row": 307,
+  "name": "Эмэгтэй хавтгай ултай (баллерина) гутал, хэмжээ 36-39, хиймэл ширэн, Хятад",
+  "level": 4,
+  "item_no": 161,
+  "weight_template": 0.025768759914003212,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1027
+ },
+ {
+  "row": 308,
+  "name": "3.2.1.3 ХYYХДИЙН ГУТАЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.03141182107297887,
+  "kind": "sumproduct",
+  "children": [
+   309,
+   310,
+   311,
+   312
+  ],
+  "price_row": null
+ },
+ {
+  "row": 309,
+  "name": "Эрэгтэй хүүхдийн өвлийн пүүзэн гутал, 8-12 нас, хиймэл ширэн, Хятад",
+  "level": 4,
+  "item_no": 162,
+  "weight_template": 0.016692069677510676,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1029
+ },
+ {
+  "row": 310,
+  "name": "Охидын хавар намрын гутал, 6-8 нас, урт түрийтэй, хиймэл ширэн, Хятад",
+  "level": 4,
+  "item_no": 163,
+  "weight_template": 0.01395438712151627,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1030
+ },
+ {
+  "row": 311,
+  "name": "Охидын туфли, 6-8 нас, хиймэл ширэн, 2 см өсгийтэй, Хятад",
+  "level": 4,
+  "item_no": 164,
+  "weight_template": 2.650265188377843e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1031
+ },
+ {
+  "row": 312,
+  "name": "Хүүхдийн пүүз, 8-12 нас, хиймэл ширэн, Хятад",
+  "level": 4,
+  "item_no": 165,
+  "weight_template": 0.000738861622068149,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1032
+ },
+ {
+  "row": 313,
+  "name": "03.2.2 ГУТАЛ ЗАСВАР, ТҮРЭЭС",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0006561664354147823,
+  "kind": "weighted_children",
+  "children": [
+   314
+  ],
+  "price_row": null
+ },
+ {
+  "row": 314,
+  "name": "03.2.2.1 ГУТАЛ ЗАСВАР, ТҮРЭЭС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0006561664354147823,
+  "kind": "sumproduct",
+  "children": [
+   315
+  ],
+  "price_row": null
+ },
+ {
+  "row": 315,
+  "name": "Эмэгтэй хүний туфлийн өсгийд хатуу резин наах",
+  "level": 4,
+  "item_no": 166,
+  "weight_template": 0.0006561664354147823,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1035
+ },
+ {
+  "row": 316,
+  "name": "04.    ОРОН СУУЦ, УС, ЦАХИЛГААН, ХИЙН БОЛОН БУСАД ТYЛШ",
+  "level": 0,
+  "item_no": null,
+  "weight_template": 0.13748462711104004,
+  "kind": "weighted_children",
+  "children": [
+   317,
+   324,
+   342,
+   359
+  ],
+  "price_row": null
+ },
+ {
+  "row": 317,
+  "name": "04.1  ОРОН СУУЦНЫ БОДИТ ТYРЭЭС",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.003569648082630189,
+  "kind": "weighted_children",
+  "children": [
+   318
+  ],
+  "price_row": null
+ },
+ {
+  "row": 318,
+  "name": "04.1.1  СУУЦ төлбөрЛӨГЧИЙН ТӨЛСӨН БОДИТ ТYРЭЭС",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.003569648082630189,
+  "kind": "weighted_children",
+  "children": [
+   319
+  ],
+  "price_row": null
+ },
+ {
+  "row": 319,
+  "name": "04.1.1.1 СУУЦ төлбөрЛӨГЧИЙН ТӨЛСӨН БОДИТ ТҮРЭЭС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.003569648082630189,
+  "kind": "sumproduct",
+  "children": [
+   320,
+   321,
+   322,
+   323
+  ],
+  "price_row": null
+ },
+ {
+  "row": 320,
+  "name": "Сууц төлбөрлөгчийн төлсөн бодит түрээс, 1 өрөө байр, тавилгагүй",
+  "level": 4,
+  "item_no": 167,
+  "weight_template": 0.0017848240413150945,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1040
+ },
+ {
+  "row": 321,
+  "name": "Сууц төлбөрлөгчийн төлсөн бодит түрээс, 1 өрөө байр, тавилгатай",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1041
+ },
+ {
+  "row": 322,
+  "name": "Орон сууцны түрээслэх үнэ, 2 өрөө байр, тавилгагүй",
+  "level": 4,
+  "item_no": 168,
+  "weight_template": 0.0017848240413150945,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1042
+ },
+ {
+  "row": 323,
+  "name": "Орон сууцны түрээслэх үнэ, 2 өрөө байр, тавилгатай",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1043
+ },
+ {
+  "row": 324,
+  "name": "04.3  ОРОН СУУЦНЫ ТЕХНИКИЙН БОЛОН ЗАСВАРЫН YЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.04978636823453961,
+  "kind": "weighted_children",
+  "children": [
+   325,
+   338
+  ],
+  "price_row": null
+ },
+ {
+  "row": 325,
+  "name": "04.3.1  ОРОН СУУЦНЫ УРСГАЛ ЗАСВАРЫН БАРАА, МАТЕРИАЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.04978636823453961,
+  "kind": "weighted_children",
+  "children": [
+   326
+  ],
+  "price_row": null
+ },
+ {
+  "row": 326,
+  "name": "04.3.1.1  ОРОН СУУЦНЫ УРСГАЛ ЗАСВАРЫН БАРАА, МАТЕРИАЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.04978636823453961,
+  "kind": "sumproduct",
+  "children": [
+   327,
+   328,
+   329,
+   330,
+   331,
+   332,
+   333,
+   334,
+   335,
+   336,
+   337
+  ],
+  "price_row": null
+ },
+ {
+  "row": 327,
+  "name": "Ханын цаас, боодолтой, угаадаг, саа болон товгор хээгүй, 1 боодол, Солонгос",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1047
+ },
+ {
+  "row": 328,
+  "name": "Цагаан тосон будаг, энгийн, 1 л, импорт",
+  "level": 4,
+  "item_no": 169,
+  "weight_template": 0.0004892156863421244,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1048
+ },
+ {
+  "row": 329,
+  "name": "Плита, 20х30 см, ханын, цулгуй, 1 ш, Хятад",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1049
+ },
+ {
+  "row": 330,
+  "name": "Цемент, 50 кг, 1уут,  Монгол",
+  "level": 4,
+  "item_no": 170,
+  "weight_template": 0.0033923537973160585,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1050
+ },
+ {
+  "row": 331,
+  "name": "Тоосго, 1 ш, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1051
+ },
+ {
+  "row": 332,
+  "name": "Вакуум цонхны 1м.кв-ын үнэ,  2 давхар шилтэй, хуванцар хүрээтэй, Хятад",
+  "level": 4,
+  "item_no": 171,
+  "weight_template": 0.00566470596630762,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1052
+ },
+ {
+  "row": 333,
+  "name": "Паркетан шал, хээгүй, 1 м2, Хятад",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1053
+ },
+ {
+  "row": 334,
+  "name": "Хадаас, 70 мм, 100 гр, Хятад",
+  "level": 4,
+  "item_no": 172,
+  "weight_template": 2.514485703445172e-06,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1054
+ },
+ {
+  "row": 335,
+  "name": "5 ханатай гэрийн модон хаалга, хээгүй, энгийн",
+  "level": 4,
+  "item_no": 173,
+  "weight_template": 0.004733008726058258,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1055
+ },
+ {
+  "row": 336,
+  "name": "5 ханатай гэрийн гадуур бүрээс, цагаан ямбуу",
+  "level": 4,
+  "item_no": 174,
+  "weight_template": 0.021417040709023352,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1056
+ },
+ {
+  "row": 337,
+  "name": "5 ханатай гэрийн иж бүрдэл гэр, шалтай",
+  "level": 4,
+  "item_no": 175,
+  "weight_template": 0.014087528863788754,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1057
+ },
+ {
+  "row": 338,
+  "name": "04.3.2  ОРОН СУУЦНЫ ТЕХНИКИЙН БОЛОН ЗАСВАР YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   339
+  ],
+  "price_row": null
+ },
+ {
+  "row": 339,
+  "name": "04.3.2.1  ОРОН СУУЦНЫ ТЕХНИКИЙН БОЛОН ЗАСВАР YЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   340,
+   341
+  ],
+  "price_row": null
+ },
+ {
+  "row": 340,
+  "name": "Орон сууцанд энгийн засвар хийх төлбөр, 2 өрөө байр, /тааз эмульсдэх, хаалга, цонх, паар будах, ханын цаас /обой/ солих, гал тогооны өрөө, жорлон, ванны өрөөний плита солих/",
+  "level": 4,
+  "item_no": 176,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1060
+ },
+ {
+  "row": 341,
+  "name": "Хана өрөмдөх үйлчилгээний төлбөр, 1 нүх",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1061
+ },
+ {
+  "row": 342,
+  "name": "04.4  УСАН ХАНГАМЖ БОЛОН ОРОН СУУЦНЫ БУСАД YЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.008447682484967441,
+  "kind": "weighted_children",
+  "children": [
+   343,
+   347,
+   351,
+   354
+  ],
+  "price_row": null
+ },
+ {
+  "row": 343,
+  "name": "04.4.1  СУУЦНЫ ЦЭВЭР УСАН ХАНГАМЖТАЙ ХОЛБОГДОХ ЗАРДАЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.002224441204674553,
+  "kind": "weighted_children",
+  "children": [
+   344
+  ],
+  "price_row": null
+ },
+ {
+  "row": 344,
+  "name": "04.4.1.1  СУУЦНЫ ЦЭВЭР УСАН ХАНГАМЖТАЙ ХОЛБОГДОХ ЗАРДАЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.002224441204674553,
+  "kind": "sumproduct",
+  "children": [
+   345,
+   346
+  ],
+  "price_row": null
+ },
+ {
+  "row": 345,
+  "name": "Орон сууцны өрхийн цэвэр усны үнэ, 1 м3, 1 сар, НӨАТ-тэй",
+  "level": 4,
+  "item_no": 177,
+  "weight_template": 0.0016194737752501201,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1065
+ },
+ {
+  "row": 346,
+  "name": "Гэр хорооллын өрхийн худгийн цэвэр усны үнэ, 1 л,",
+  "level": 4,
+  "item_no": 178,
+  "weight_template": 0.0006049674294244332,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1066
+ },
+ {
+  "row": 347,
+  "name": "04.4.2  ХОГ ХАЯГДАЛТАЙ ХОЛБОГДОХ ЗАРДАЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0017528256220885443,
+  "kind": "weighted_children",
+  "children": [
+   348
+  ],
+  "price_row": null
+ },
+ {
+  "row": 348,
+  "name": "04.4.2.1  ХОГ ХАЯГДАЛТАЙ ХОЛБОГДОХ ЗАРДАЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0017528256220885443,
+  "kind": "sumproduct",
+  "children": [
+   349,
+   350
+  ],
+  "price_row": null
+ },
+ {
+  "row": 349,
+  "name": "Орон сууцны өрхийн хог хаягдлын төлбөр ,1 сар, НӨАТ-тэй",
+  "level": 4,
+  "item_no": 179,
+  "weight_template": 0.0008764128110442721,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1069
+ },
+ {
+  "row": 350,
+  "name": "Гэр хорооллын өрхийн хог хаягдлын төлбөр, 1 сар, НӨАТ-тэй",
+  "level": 4,
+  "item_no": 180,
+  "weight_template": 0.0008764128110442721,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1070
+ },
+ {
+  "row": 351,
+  "name": "04.4.3  БОХИР УСТАЙ ХОЛБОГДОХ ЗАРДАЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.000570312372440913,
+  "kind": "weighted_children",
+  "children": [
+   352
+  ],
+  "price_row": null
+ },
+ {
+  "row": 352,
+  "name": "04.4.3.1 БОХИР УСТАЙ ХОЛБОГДОХ ЗАРДАЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.000570312372440913,
+  "kind": "sumproduct",
+  "children": [
+   353
+  ],
+  "price_row": null
+ },
+ {
+  "row": 353,
+  "name": "Орон сууцны өрхийн бохир усны төлбөр, 1 м3, 1 сар, НӨАТ-тэй",
+  "level": 4,
+  "item_no": 181,
+  "weight_template": 0.000570312372440913,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1073
+ },
+ {
+  "row": 354,
+  "name": "04.4.4  ОРОН СУУЦТАЙ ХОЛБОГДОХ ЗАРДАЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.00390010328576343,
+  "kind": "weighted_children",
+  "children": [
+   355
+  ],
+  "price_row": null
+ },
+ {
+  "row": 355,
+  "name": "04.4.4.1  ОРОН СУУЦТАЙ ХОЛБОГДОХ ЗАРДАЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00390010328576343,
+  "kind": "sumproduct",
+  "children": [
+   356,
+   357,
+   358
+  ],
+  "price_row": null
+ },
+ {
+  "row": 356,
+  "name": "Сууц өмчлөгчдийн холбооны (СӨХ) төлбөр, 1 сар",
+  "level": 4,
+  "item_no": 182,
+  "weight_template": 0.00010641418257808942,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1076
+ },
+ {
+  "row": 357,
+  "name": "Орон сууцны өрхийн халаалтын төлбөр, 1м2, 1 сар, НӨАТ-тэй",
+  "level": 4,
+  "item_no": 183,
+  "weight_template": 0.0037936891031853407,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1077
+ },
+ {
+  "row": 358,
+  "name": "Гал тогооны холигч солих үйлчилгээний төлбөр",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1078
+ },
+ {
+  "row": 359,
+  "name": "04.5  ЦАХИЛГААН, ХИЙН БОЛОН БУСАД ТYЛШ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.0756809283089028,
+  "kind": "weighted_children",
+  "children": [
+   360,
+   365,
+   369,
+   374
+  ],
+  "price_row": null
+ },
+ {
+  "row": 360,
+  "name": "04.5.1  СУУЦНЫ ЦАХИЛГААН ХАНГАМЖТАЙ ХОЛБОГДОХ ЗАРДАЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.020400954065600635,
+  "kind": "weighted_children",
+  "children": [
+   361
+  ],
+  "price_row": null
+ },
+ {
+  "row": 361,
+  "name": "04.5.1.1  СУУЦНЫ ЦАХИЛГААН ХАНГАМЖТАЙ ХОЛБОГДОХ ЗАРДАЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.020400954065600635,
+  "kind": "sumproduct",
+  "children": [
+   362,
+   363,
+   364
+  ],
+  "price_row": null
+ },
+ {
+  "row": 362,
+  "name": "=$H$361*0.436",
+  "level": 1,
+  "item_no": 184,
+  "weight_template": 0.008894815972601876,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1082
+ },
+ {
+  "row": 363,
+  "name": "=$H$361*0.407",
+  "level": 1,
+  "item_no": 185,
+  "weight_template": 0.008303188304699458,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1083
+ },
+ {
+  "row": 364,
+  "name": "=$H$361*0.157",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.0032029497882993,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1084
+ },
+ {
+  "row": 365,
+  "name": "04.5.2 ХИЙН ТҮЛШ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   366
+  ],
+  "price_row": null
+ },
+ {
+  "row": 366,
+  "name": "04.5.2.1 ХИЙН ТҮЛШ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   367,
+   368
+  ],
+  "price_row": null
+ },
+ {
+  "row": 367,
+  "name": "Гэр ахуйн зориулалттай хийн түлш, 10 л, Дашваанжил, Монгол, баллоны үнэ орохгүй",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1087
+ },
+ {
+  "row": 368,
+  "name": "Гэр ахуйн зориулалттай 1 удаагийн хийн түлш, лаазтай, 1 лааз, 220 гр, импорт",
+  "level": 4,
+  "item_no": 186,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1088
+ },
+ {
+  "row": 369,
+  "name": "04.5.4  ХАТУУ ТYЛШ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.05527997424330215,
+  "kind": "weighted_children",
+  "children": [
+   370
+  ],
+  "price_row": null
+ },
+ {
+  "row": 370,
+  "name": "04.5.4.1 ХАТУУ ТҮЛШ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.05527997424330215,
+  "kind": "sumproduct",
+  "children": [
+   371,
+   372,
+   373
+  ],
+  "price_row": null
+ },
+ {
+  "row": 371,
+  "name": "Түлшний мод, шуудайтай, 1 шуудай",
+  "level": 4,
+  "item_no": 187,
+  "weight_template": 0.04583291934905897,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1091
+ },
+ {
+  "row": 372,
+  "name": "Сайжруулсан түлш, шуудайтай, 25 кг, 1 шуудай",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1092
+ },
+ {
+  "row": 373,
+  "name": "Нүүрс, шуудайтай, 1 шуудай",
+  "level": 4,
+  "item_no": 188,
+  "weight_template": 0.009447054894243186,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1093
+ },
+ {
+  "row": 374,
+  "name": "04.5.5  ХАЛУУН УС, УУР, МӨС",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   375
+  ],
+  "price_row": null
+ },
+ {
+  "row": 375,
+  "name": "04.5.5.1  ХАЛУУН УС, УУР, МӨС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   376
+  ],
+  "price_row": null
+ },
+ {
+  "row": 376,
+  "name": "Орон сууцны өрхийн хэрэглээний халуун усны төлбөр, 1м3, 1 сар, НӨАТ-тэй",
+  "level": 4,
+  "item_no": 189,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1096
+ },
+ {
+  "row": 377,
+  "name": "05.    ГЭР АХУЙН ТАВИЛГА, ГЭР АХУЙН БАРАА",
+  "level": 0,
+  "item_no": null,
+  "weight_template": 0.07435216397659006,
+  "kind": "weighted_children",
+  "children": [
+   378,
+   391,
+   400,
+   421,
+   433,
+   446
+  ],
+  "price_row": null
+ },
+ {
+  "row": 378,
+  "name": "05.1  ГЭР АХУЙН ТАВИЛГА, ХЭРЭГСЭЛ, ХИВС БОЛОН ШАЛНЫ БУСАД ДЭВСГЭР",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.02438156196776871,
+  "kind": "weighted_children",
+  "children": [
+   379,
+   387
+  ],
+  "price_row": null
+ },
+ {
+  "row": 379,
+  "name": "05.1.1  ГЭРИЙН ТАВИЛГА, ХЭРЭГСЭЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.012168978765725895,
+  "kind": "weighted_children",
+  "children": [
+   380
+  ],
+  "price_row": null
+ },
+ {
+  "row": 380,
+  "name": "05.1.1.1  ГЭРИЙН ТАВИЛГА, ХЭРЭГСЭЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.012168978765725895,
+  "kind": "sumproduct",
+  "children": [
+   381,
+   382,
+   383,
+   384,
+   385,
+   386
+  ],
+  "price_row": null
+ },
+ {
+  "row": 381,
+  "name": "Үйлдвэрийн модон ор, хэмжээ 2.0х1.5 м, энгийн, Хятад",
+  "level": 4,
+  "item_no": 190,
+  "weight_template": 0.0007834955985700588,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1101
+ },
+ {
+  "row": 382,
+  "name": "Хувцасны шүүгээ, 3 хаалгатай, энгийн, Хятад",
+  "level": 4,
+  "item_no": 191,
+  "weight_template": 0.004153325318866821,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1102
+ },
+ {
+  "row": 383,
+  "name": "Г хэлбэрийн буйдан, \"Бест буйдан\", даавуун гадартай,  Монгол",
+  "level": 4,
+  "item_no": 192,
+  "weight_template": 0.0017200609726476157,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1103
+ },
+ {
+  "row": 384,
+  "name": "Гал тогооны ширээ, 4 сандалтай, энгийн, Хятад",
+  "level": 4,
+  "item_no": 193,
+  "weight_template": 0.0023324397246914513,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1104
+ },
+ {
+  "row": 385,
+  "name": "Хуванцар жижиг сандал,  түшлэггүй, 30 см өндөртэй, Хятад",
+  "level": 4,
+  "item_no": 194,
+  "weight_template": 0.003179657150949948,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1105
+ },
+ {
+  "row": 386,
+  "name": "Орны матрас, 150х200 см, импорт",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1106
+ },
+ {
+  "row": 387,
+  "name": "05.1.2  ХИВС БОЛОН ШАЛНЫ БУСАД ДЭВСГЭР",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.012212583202042814,
+  "kind": "weighted_children",
+  "children": [
+   388
+  ],
+  "price_row": null
+ },
+ {
+  "row": 388,
+  "name": "05.1.2.1 ХИВС БОЛОН ШАЛНЫ БУСАД ДЭВСГЭР",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.012212583202042814,
+  "kind": "sumproduct",
+  "children": [
+   389,
+   390
+  ],
+  "price_row": null
+ },
+ {
+  "row": 389,
+  "name": "Хивс, \"Эрдэнэт хивс\", хэмжээ 2х3 м, хээтэй, Монгол",
+  "level": 4,
+  "item_no": 195,
+  "weight_template": 0.000717136729991307,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1109
+ },
+ {
+  "row": 390,
+  "name": "Шалны хулдаас, зузаавтар, 1 м, Хятад",
+  "level": 4,
+  "item_no": 196,
+  "weight_template": 0.011495446472051507,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1110
+ },
+ {
+  "row": 391,
+  "name": "05.2  ГЭР АХУЙН ОЁМОЛ, НЭХМЭЛ ЭДЛЭЛ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.006397601196527936,
+  "kind": "weighted_children",
+  "children": [
+   392
+  ],
+  "price_row": null
+ },
+ {
+  "row": 392,
+  "name": "05.2.1  ГЭР АХУЙН ОЁМОЛ, НЭХМЭЛ ЭДЛЭЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.006397601196527936,
+  "kind": "weighted_children",
+  "children": [
+   393
+  ],
+  "price_row": null
+ },
+ {
+  "row": 393,
+  "name": "05.2.1.1  ГЭР АХУЙН ОЁМОЛ, НЭХМЭЛ ЭДЛЭЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.006397601196527936,
+  "kind": "sumproduct",
+  "children": [
+   394,
+   395,
+   396,
+   397,
+   398,
+   399
+  ],
+  "price_row": null
+ },
+ {
+  "row": 394,
+  "name": "Орны бүтээлэг, хэмжээ 150х200 см, хэрээсэн оёдолтой, Хятад",
+  "level": 4,
+  "item_no": 197,
+  "weight_template": 0.0012036581151480016,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1114
+ },
+ {
+  "row": 395,
+  "name": "2 хүний зузаан хөнжил, 200х230 см, импорт",
+  "level": 4,
+  "item_no": 198,
+  "weight_template": 0.0016202455434587027,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1115
+ },
+ {
+  "row": 396,
+  "name": "2 хүний ор, хөнжлийн даавуу, хэмжээ 2х2.3 м, Хятад",
+  "level": 4,
+  "item_no": 199,
+  "weight_template": 0.0016202455434587027,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1116
+ },
+ {
+  "row": 397,
+  "name": "Хөшиг нимгэн, силикен, хээгүй, 1 м,  Хятад",
+  "level": 4,
+  "item_no": 200,
+  "weight_template": 0.0008245052809029072,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1117
+ },
+ {
+  "row": 398,
+  "name": "Гар нүүрийн алчуур, хэмжээ 30х60 см, Хятад",
+  "level": 4,
+  "item_no": 201,
+  "weight_template": 0.0010783045385276489,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1118
+ },
+ {
+  "row": 399,
+  "name": "Угаалгын өрөөний том алчуур, хэмжээ 70х150 см, Хятад",
+  "level": 4,
+  "item_no": 202,
+  "weight_template": 5.0642175031971305e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1119
+ },
+ {
+  "row": 400,
+  "name": "05.3  ГЭР АХУЙН ЦАХИЛГААН БАРАА",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.012149809854952929,
+  "kind": "weighted_children",
+  "children": [
+   401,
+   414,
+   418
+  ],
+  "price_row": null
+ },
+ {
+  "row": 401,
+  "name": "05.3.1  ГЭР АХУЙН УДААН ЭДЭЛГЭЭТ ЦАХИЛГААН БОЛОН БУСАД БАРАА",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.011432326486321217,
+  "kind": "weighted_children",
+  "children": [
+   402,
+   409,
+   412
+  ],
+  "price_row": null
+ },
+ {
+  "row": 402,
+  "name": "05.3.1.1 ГАЛ ТОГООНЫ УДААН ЭДЭЛГЭЭТ ЦАХИЛГААН ХЭРЭГСЭЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00736294583657574,
+  "kind": "sumproduct",
+  "children": [
+   403,
+   404,
+   405,
+   406,
+   407,
+   408
+  ],
+  "price_row": null
+ },
+ {
+  "row": 403,
+  "name": "2 хаалгатай хөргөгч, өндөр 150-180 см, импорт",
+  "level": 4,
+  "item_no": 203,
+  "weight_template": 0.0018753939556343333,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1123
+ },
+ {
+  "row": 404,
+  "name": "Хөлдөөгч, 200 литр, импорт",
+  "level": 4,
+  "item_no": 204,
+  "weight_template": 0.0018753939556343333,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1124
+ },
+ {
+  "row": 405,
+  "name": "Kерамик плитка, 1 ширэмтэй, Хятад",
+  "level": 4,
+  "item_no": 205,
+  "weight_template": 0.0015433175468188563,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1125
+ },
+ {
+  "row": 406,
+  "name": "Халуун тогоо, Хятад",
+  "level": 4,
+  "item_no": 206,
+  "weight_template": 0.0015433175468188563,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1126
+ },
+ {
+  "row": 407,
+  "name": "Будаа агшаагч, хэмжээ 1.8 л, энгийн, импорт",
+  "level": 4,
+  "item_no": 207,
+  "weight_template": 0.0005255228316693602,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1127
+ },
+ {
+  "row": 408,
+  "name": "Богино долгионы зуух, хэмжээ 20-22л, хүч 800 ватт, импорт",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1128
+ },
+ {
+  "row": 409,
+  "name": "05.3.1.2 УГААЛЫН МАШИН, ХАТААГЧ МАШИН",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0039006248834365454,
+  "kind": "sumproduct",
+  "children": [
+   410,
+   411
+  ],
+  "price_row": null
+ },
+ {
+  "row": 410,
+  "name": "Угаалгын машин, хагас автомат, 7-9 кг багтаамжтай, импорт",
+  "level": 4,
+  "item_no": 208,
+  "weight_template": 0.0039006248834365454,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1130
+ },
+ {
+  "row": 411,
+  "name": "Угаалгын машин, бүрэн автомат, 7-9 кг багтаамжтай, импорт",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1131
+ },
+ {
+  "row": 412,
+  "name": "05.3.1.3 ЦЭВЭРЛЭЭГЭЭНИЙ ЗОРИУЛАЛТТАЙ ГЭР АХУЙН ЦАХИЛГААН ХЭРЭГСЭЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00016875576630893117,
+  "kind": "sumproduct",
+  "children": [
+   413
+  ],
+  "price_row": null
+ },
+ {
+  "row": 413,
+  "name": "Тоос сорогч, хүч 1800-2000 ватт, импорт",
+  "level": 4,
+  "item_no": 209,
+  "weight_template": 0.00016875576630893117,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1133
+ },
+ {
+  "row": 414,
+  "name": "05.3.2  ГЭР АХУЙН ЖИЖИГ ЦАХИЛГААН ХЭРЭГСЭЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0007174833686317121,
+  "kind": "weighted_children",
+  "children": [
+   415
+  ],
+  "price_row": null
+ },
+ {
+  "row": 415,
+  "name": "05.3.2.1 ГЭХ АХУЙН ЖИЖИГ ЦАХИЛГААН ХЭРЭГСЭЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0007174833686317121,
+  "kind": "sumproduct",
+  "children": [
+   416,
+   417
+  ],
+  "price_row": null
+ },
+ {
+  "row": 416,
+  "name": "Цахилгаан индүү, уур гаргадаг, импорт",
+  "level": 4,
+  "item_no": 210,
+  "weight_template": 3.547377964007928e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1136
+ },
+ {
+  "row": 417,
+  "name": "Ус буцалгагч, 1.7 л, никель гадаргуутай, импорт",
+  "level": 4,
+  "item_no": 211,
+  "weight_template": 0.0006820095889916328,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1137
+ },
+ {
+  "row": 418,
+  "name": "05.3.3  ЦАХИЛГААН ХЭРЭГСЛИЙН ЗАСВАР",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   419
+  ],
+  "price_row": null
+ },
+ {
+  "row": 419,
+  "name": "05.3.3.1 ЦАХИЛГААН ХЭРЭГСЛИЙН ЗАСВАР",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   420
+  ],
+  "price_row": null
+ },
+ {
+  "row": 420,
+  "name": "Угаалгын хагас автомат машин засварын төлбөр, мотор солих",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1140
+ },
+ {
+  "row": 421,
+  "name": "05.4  ГЭР АХУЙН ШИЛЭН ЭДЛЭЛ, САВ СУУЛГА",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.006636468486692151,
+  "kind": "weighted_children",
+  "children": [
+   422
+  ],
+  "price_row": null
+ },
+ {
+  "row": 422,
+  "name": "05.4.0  ГЭР АХУЙН ШИЛЭН ЭДЛЭЛ, САВ СУУЛГА",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.006636468486692151,
+  "kind": "weighted_children",
+  "children": [
+   423,
+   426,
+   428
+  ],
+  "price_row": null
+ },
+ {
+  "row": 423,
+  "name": "05.4.0.1 ШИЛЭН АЯГА, САВ СУУЛГА",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0044572748861643075,
+  "kind": "sumproduct",
+  "children": [
+   424,
+   425
+  ],
+  "price_row": null
+ },
+ {
+  "row": 424,
+  "name": "Шаазан аяга, цайны, хэмжээ 250 мл, диаметр 10 см,1 ш, Хятад",
+  "level": 4,
+  "item_no": 212,
+  "weight_template": 0.0022286374430821538,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1144
+ },
+ {
+  "row": 425,
+  "name": "Шаазан таваг, 1-р хоолны, диаметр 20 см, Хятад",
+  "level": 4,
+  "item_no": 213,
+  "weight_template": 0.0022286374430821538,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1145
+ },
+ {
+  "row": 426,
+  "name": "05.4.0.2 ХУТГА БОЛОН БУСАД ИРТЭЙ ГАЛ ТОГООНЫ ХЭРЭГСЭЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.001019063055132578,
+  "kind": "sumproduct",
+  "children": [
+   427
+  ],
+  "price_row": null
+ },
+ {
+  "row": 427,
+  "name": "Гал тогооны хутга, хуванцар бариултай, импорт",
+  "level": 4,
+  "item_no": 214,
+  "weight_template": 0.001019063055132578,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1147
+ },
+ {
+  "row": 428,
+  "name": "05.4.0.3 ГАЛ ТОГООНЫ ЖИЖИГ ХЭРЭГСЭЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0011601305453952666,
+  "kind": "sumproduct",
+  "children": [
+   429,
+   430,
+   431,
+   432
+  ],
+  "price_row": null
+ },
+ {
+  "row": 429,
+  "name": "Хайруулын таваг, ган ширмэн, диаметр 30-35 см, импорт",
+  "level": 4,
+  "item_no": 215,
+  "weight_template": 0.00018697967430560486,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1149
+ },
+ {
+  "row": 430,
+  "name": "Данх, никель, хэмжээ 3л, Хятад",
+  "level": 4,
+  "item_no": 216,
+  "weight_template": 0.00018697967430560486,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1150
+ },
+ {
+  "row": 431,
+  "name": "Цайны халуун сав, хэмжээ 2 л, хуванцар гадартай, Хятад",
+  "level": 4,
+  "item_no": 217,
+  "weight_template": 0.0005368649643765838,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1151
+ },
+ {
+  "row": 432,
+  "name": "Хоолны төмөр сав, хэмжээ 3-5л, никель, Хятад",
+  "level": 4,
+  "item_no": 218,
+  "weight_template": 0.0002493062324074732,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1152
+ },
+ {
+  "row": 433,
+  "name": "05.5  ГЭР АХУЙ, ЦЭЦЭРЛЭГИЙН ЗОРИУЛАЛТТАЙ ХӨДӨЛМӨРИЙН БАГАЖ ХЭРЭГСЭЛ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.0031669853450856855,
+  "kind": "weighted_children",
+  "children": [
+   434
+  ],
+  "price_row": null
+ },
+ {
+  "row": 434,
+  "name": "05.5.1  ЖИЖИГ БАГАЖ ХЭРЭГСЭЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0031669853450856855,
+  "kind": "weighted_children",
+  "children": [
+   435
+  ],
+  "price_row": null
+ },
+ {
+  "row": 435,
+  "name": "05.5.1.1 ГЭР АХУЙН ЖИЖИГ БАГАЖ ХЭРЭГСЭЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0031669853450856855,
+  "kind": "sumproduct",
+  "children": [
+   436,
+   437,
+   438,
+   439,
+   440,
+   441,
+   442,
+   443,
+   444,
+   445
+  ],
+  "price_row": null
+ },
+ {
+  "row": 436,
+  "name": "Алх, толгойн жин 300 гр, бариул хуванцар, Хятад",
+  "level": 4,
+  "item_no": 219,
+  "weight_template": 3.2849259351135205e-06,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1156
+ },
+ {
+  "row": 437,
+  "name": "Отверка, 15 см урт, энгийн, импорт",
+  "level": 4,
+  "item_no": 220,
+  "weight_template": 2.1899506234090135e-06,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1157
+ },
+ {
+  "row": 438,
+  "name": "Бахь, 15 см урт, энгийн, импорт",
+  "level": 4,
+  "item_no": 221,
+  "weight_template": 3.2849259351135205e-06,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1158
+ },
+ {
+  "row": 439,
+  "name": "Төмөр зуух, ширмэн төмрөөр хийсэн, энгийн, Монгол",
+  "level": 4,
+  "item_no": 222,
+  "weight_template": 0.0011876187528952658,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1159
+ },
+ {
+  "row": 440,
+  "name": "Хуруу зай, 1.5 вольт, \"GP\", Хятад",
+  "level": 4,
+  "item_no": 223,
+  "weight_template": 0.0003910177679413035,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1160
+ },
+ {
+  "row": 441,
+  "name": "Гэрлийн шил, 100 ватт, энгийн, Орос",
+  "level": 4,
+  "item_no": 224,
+  "weight_template": 0.0001324174388378046,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1161
+ },
+ {
+  "row": 442,
+  "name": "Хэмнэлттэй чийдэнгийн шил, 18 ватт, импорт",
+  "level": 4,
+  "item_no": 225,
+  "weight_template": 0.0001324174388378046,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1162
+ },
+ {
+  "row": 443,
+  "name": "Скоч, эн 4,8 см, урт 66 м, Хятад",
+  "level": 4,
+  "item_no": 226,
+  "weight_template": 0.0003529581121160494,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1163
+ },
+ {
+  "row": 444,
+  "name": "Босоо хогийн шүүр, тосгуурын хамт, Хятад",
+  "level": 4,
+  "item_no": 227,
+  "weight_template": 0.0006088379198477724,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1164
+ },
+ {
+  "row": 445,
+  "name": "Цавуу, Наалдан пад, 1ш, Хятад",
+  "level": 4,
+  "item_no": 228,
+  "weight_template": 0.0003529581121160494,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1165
+ },
+ {
+  "row": 446,
+  "name": "05.6  ГЭР АХУЙН ЦЭВЭРЛЭГЭЭНИЙ БОЛОН БУСАД ЖИЖИГ БАРАА, ГЭРИЙН YЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.021619737125562668,
+  "kind": "weighted_children",
+  "children": [
+   447,
+   458
+  ],
+  "price_row": null
+ },
+ {
+  "row": 447,
+  "name": "05.6.1  ГЭР АХУЙН БАРАА",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.021619737125562668,
+  "kind": "weighted_children",
+  "children": [
+   448,
+   455
+  ],
+  "price_row": null
+ },
+ {
+  "row": 448,
+  "name": "05.6.1.1 ЦЭВЭРЛЭГЭЭ БОЛОН ЗАСВАРЫН БАРАА",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.020215040181424768,
+  "kind": "sumproduct",
+  "children": [
+   449,
+   450,
+   451,
+   452,
+   453,
+   454
+  ],
+  "price_row": null
+ },
+ {
+  "row": 449,
+  "name": "Эдийн саван, \"Popular\", 150 гр, 1ш, импорт",
+  "level": 4,
+  "item_no": 229,
+  "weight_template": 0.0038242891731397385,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1169
+ },
+ {
+  "row": 450,
+  "name": "Угаалгын нунтаг, ууттай, \"OMO\", 800 гр, импорт",
+  "level": 4,
+  "item_no": 230,
+  "weight_template": 0.007925308211997415,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1170
+ },
+ {
+  "row": 451,
+  "name": "Угаалгын нунтаг, ууттай, \"Ariel\", 3кг, 1 уут, автомат машинд зориулсан, импорт",
+  "level": 4,
+  "item_no": 231,
+  "weight_template": 0.007925308211997415,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1171
+ },
+ {
+  "row": 452,
+  "name": "Аяга, таваг угаагч шингэн, савтай, \"Fairy\", 450мл, 1 сав, импорт",
+  "level": 4,
+  "item_no": 232,
+  "weight_template": 6.322489831897521e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1172
+ },
+ {
+  "row": 453,
+  "name": "Цэвэрлэгээний бодис, ууттай, \"Comet\", 400-500 гр, нунтаг, 1уут, импорт",
+  "level": 4,
+  "item_no": 233,
+  "weight_template": 6.322489831897521e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1173
+ },
+ {
+  "row": 454,
+  "name": "Гутлын тос, дугуй савтай, \"Kangaroo\", 40 гр, 1 ш, импорт",
+  "level": 4,
+  "item_no": 234,
+  "weight_template": 0.0004136847876522479,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1174
+ },
+ {
+  "row": 455,
+  "name": "05.6.1.2 БУСАД ГЭР АХУЙН БАРАА",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.001404696944137901,
+  "kind": "sumproduct",
+  "children": [
+   456,
+   457
+  ],
+  "price_row": null
+ },
+ {
+  "row": 456,
+  "name": "Лаа, боодолтой, \"Монлаа\", урт нь 15 см, 1 боодол, Монгол",
+  "level": 4,
+  "item_no": 235,
+  "weight_template": 1.4817528551145828e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1176
+ },
+ {
+  "row": 457,
+  "name": "Шүдэнз, боодол, 1х10 ш, Орос",
+  "level": 4,
+  "item_no": 236,
+  "weight_template": 0.0013898794155867552,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1177
+ },
+ {
+  "row": 458,
+  "name": "05.6.2 ГЭР АХУЙН ҮЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   459
+  ],
+  "price_row": null
+ },
+ {
+  "row": 459,
+  "name": "05.6.2.1 ГЭР АХУЙН ҮЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   460
+  ],
+  "price_row": null
+ },
+ {
+  "row": 460,
+  "name": "Дуудлагаар хивс цэвэрлэх үйлчилгээний төлбөр, 1м2",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1180
+ },
+ {
+  "row": 461,
+  "name": "06.    ЭМ, ТАРИА, ЭМНЭЛГИЙН YЙЛЧИЛГЭЭ",
+  "level": 0,
+  "item_no": null,
+  "weight_template": 0.21856950185943577,
+  "kind": "weighted_children",
+  "children": [
+   462,
+   486,
+   500
+  ],
+  "price_row": null
+ },
+ {
+  "row": 462,
+  "name": "06.1  ЭМ, ТАРИА, ЭМНЭЛГИЙН ХЭРЭГСЭЛ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.15647122516400858,
+  "kind": "weighted_children",
+  "children": [
+   463,
+   477
+  ],
+  "price_row": null
+ },
+ {
+  "row": 463,
+  "name": "06.1.1  ЭМ, ТАРИА",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.15646957133739348,
+  "kind": "weighted_children",
+  "children": [
+   464
+  ],
+  "price_row": null
+ },
+ {
+  "row": 464,
+  "name": "06.1.1.1 ЭМ, ТАРИА",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.15646957133739348,
+  "kind": "sumproduct",
+  "children": [
+   465,
+   466,
+   467,
+   468,
+   469,
+   470,
+   471,
+   472,
+   473,
+   474,
+   475,
+   476
+  ],
+  "price_row": null
+ },
+ {
+  "row": 465,
+  "name": "Парацетамол, 10х1 таблет, Моносфарм, Монгол",
+  "level": 4,
+  "item_no": 237,
+  "weight_template": 0.014873818840913005,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1185
+ },
+ {
+  "row": 466,
+  "name": "Терафлю, хэмжээ 22.1 гр, 1 уут, Франц",
+  "level": 4,
+  "item_no": 238,
+  "weight_template": 0.014873818840913005,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1186
+ },
+ {
+  "row": 467,
+  "name": "Диклоденк, 100 мг, 10х1 таблет, Герман",
+  "level": 4,
+  "item_no": 239,
+  "weight_template": 0.014873818840913005,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1187
+ },
+ {
+  "row": 468,
+  "name": "Амокциллин, 500 мг, 10х1 таблет, Монгол",
+  "level": 4,
+  "item_no": 240,
+  "weight_template": 0.014873818840913005,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1188
+ },
+ {
+  "row": 469,
+  "name": "Витамин \"С\", үрлэн, 50ш, 1 уут, Монгол",
+  "level": 4,
+  "item_no": 241,
+  "weight_template": 0.014873818840913005,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1189
+ },
+ {
+  "row": 470,
+  "name": "Хлорфенамен, 4мг, 20х1 таблет, Моносфарм, Монгол",
+  "level": 4,
+  "item_no": 242,
+  "weight_template": 0.014873818840913005,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1190
+ },
+ {
+  "row": 471,
+  "name": "Цифазолин, тариагаар, 1 сая, Орос",
+  "level": 4,
+  "item_no": 243,
+  "weight_template": 0.007436909420456502,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1191
+ },
+ {
+  "row": 472,
+  "name": "Даралтын эм, Энап-10 мг,  10х1 таблет, Орос",
+  "level": 4,
+  "item_no": 244,
+  "weight_template": 0.014873818840913005,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1192
+ },
+ {
+  "row": 473,
+  "name": "Параденк, хүүхдийн лаа, 250 мг, 1 ш, Герман",
+  "level": 4,
+  "item_no": 245,
+  "weight_template": 0.014873818840913005,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1193
+ },
+ {
+  "row": 474,
+  "name": "Метронидазол, 500 мг, 10х1 таблет, Хятад",
+  "level": 4,
+  "item_no": 246,
+  "weight_template": 0.007436909420456502,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1194
+ },
+ {
+  "row": 475,
+  "name": "\"Mixaflu\", 4х1 таблет, Индонез",
+  "level": 4,
+  "item_no": 247,
+  "weight_template": 0.014873818840913005,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1195
+ },
+ {
+  "row": 476,
+  "name": "Дуслын шингэн, натрын хлорид 0.9%, 500мл, Монгол",
+  "level": 4,
+  "item_no": 248,
+  "weight_template": 0.00773138292826343,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1196
+ },
+ {
+  "row": 477,
+  "name": "06.1.2 ЭРҮҮЛ МЭНДИЙН БУСАД БАРАА",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 1.6538266151191231e-06,
+  "kind": "weighted_children",
+  "children": [
+   478
+  ],
+  "price_row": null
+ },
+ {
+  "row": 478,
+  "name": "06.1.2.1 ЭРҮҮЛ МЭНДИЙН БУСАД БАРАА",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 1.6538266151191231e-06,
+  "kind": "sumproduct",
+  "children": [
+   479,
+   480,
+   481,
+   482,
+   483,
+   484,
+   485
+  ],
+  "price_row": null
+ },
+ {
+  "row": 479,
+  "name": "Хурууны лент, 1ш, импорт",
+  "level": 4,
+  "item_no": 249,
+  "weight_template": 3.307653230238246e-07,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1199
+ },
+ {
+  "row": 480,
+  "name": "Хөвөн, боодолтой, 50гр, 1 боодол, Монгол",
+  "level": 4,
+  "item_no": 250,
+  "weight_template": 1.653826615119123e-07,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1200
+ },
+ {
+  "row": 481,
+  "name": "Тариур, 5гр, 1 ш, Хятад",
+  "level": 4,
+  "item_no": 251,
+  "weight_template": 1.653826615119123e-07,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1201
+ },
+ {
+  "row": 482,
+  "name": "Бэлгэвч,  хайрцагтай, \"Trust\" энгийн, 1 хайрцаг, импорт",
+  "level": 4,
+  "item_no": 252,
+  "weight_template": 3.307653230238246e-07,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1202
+ },
+ {
+  "row": 483,
+  "name": "Том хүний амны хаалт, 1ш, Хятад",
+  "level": 4,
+  "item_no": 253,
+  "weight_template": 3.307653230238246e-07,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1203
+ },
+ {
+  "row": 484,
+  "name": "Халуун хэмжигч, хуванцар, 1 ш, Хятад",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1204
+ },
+ {
+  "row": 485,
+  "name": "Жирэмсний тест, ууттай, 1 ш, Хятад",
+  "level": 4,
+  "item_no": 254,
+  "weight_template": 3.307653230238246e-07,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1205
+ },
+ {
+  "row": 486,
+  "name": "06.2  АМБУЛТОРЫН YЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.034235324816686986,
+  "kind": "weighted_children",
+  "children": [
+   487,
+   491,
+   495
+  ],
+  "price_row": null
+ },
+ {
+  "row": 487,
+  "name": "06.2.1  АМБУЛАТОРИЙН YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0004578549188210003,
+  "kind": "weighted_children",
+  "children": [
+   488
+  ],
+  "price_row": null
+ },
+ {
+  "row": 488,
+  "name": "06.2.1.1 АМБУЛАТОРИЙН ҮЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0004578549188210003,
+  "kind": "sumproduct",
+  "children": [
+   489,
+   490
+  ],
+  "price_row": null
+ },
+ {
+  "row": 489,
+  "name": "Хувийн эмнэлгийн амбулаторийн үзлэгийн төлбөр, дотрын тасаг, том хүн",
+  "level": 4,
+  "item_no": 255,
+  "weight_template": 0.00022892745941050015,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1209
+ },
+ {
+  "row": 490,
+  "name": "Хувийн эмнэлгийн амбулаторийн үзлэгийн төлбөр, дотрын тасаг, хүүхэд",
+  "level": 4,
+  "item_no": 256,
+  "weight_template": 0.00022892745941050015,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1210
+ },
+ {
+  "row": 491,
+  "name": "06.2.2  ШYДНИЙ ЭМНЭЛГИЙН YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.013560668487375997,
+  "kind": "weighted_children",
+  "children": [
+   492
+  ],
+  "price_row": null
+ },
+ {
+  "row": 492,
+  "name": "06.2.2.1  ШYДНИЙ ЭМНЭЛГИЙН YЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.013560668487375997,
+  "kind": "sumproduct",
+  "children": [
+   493,
+   494
+  ],
+  "price_row": null
+ },
+ {
+  "row": 493,
+  "name": "Шүдний эмчид үзүүлэх, араанд өөрөө хатуурагч ломб тавиулах, том хүн",
+  "level": 4,
+  "item_no": 257,
+  "weight_template": 0.0067803342436879984,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1213
+ },
+ {
+  "row": 494,
+  "name": "Шүдний эмчид үзүүлэх, араанд өөрөө хатуурагч ломб тавиулах, хүүхэд",
+  "level": 4,
+  "item_no": 258,
+  "weight_template": 0.0067803342436879984,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1214
+ },
+ {
+  "row": 495,
+  "name": "06.2.3  ЭМНЭЛГИЙН ТУСЛАХ YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.02021680141048999,
+  "kind": "weighted_children",
+  "children": [
+   496
+  ],
+  "price_row": null
+ },
+ {
+  "row": 496,
+  "name": "06.2.3.1 ЭМНЭЛГИЙН ТУСЛАХ ҮЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.02021680141048999,
+  "kind": "sumproduct",
+  "children": [
+   497,
+   498,
+   499
+  ],
+  "price_row": null
+ },
+ {
+  "row": 497,
+  "name": "Хувийн эмнэлгийн хэвлийн эход харуулах төлбөр, элэг, цөс, бөөр",
+  "level": 4,
+  "item_no": 259,
+  "weight_template": 0.008086720564195996,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1217
+ },
+ {
+  "row": 498,
+  "name": "Хувийн лабораторид цусны ерөнхий шинжилгээ хийлгэх төлбөр",
+  "level": 4,
+  "item_no": 260,
+  "weight_template": 0.0060650404231469964,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1218
+ },
+ {
+  "row": 499,
+  "name": "Хувийн лабораторид шээсний ерөнхий шинжилгээ хийлгэх төлбөр",
+  "level": 4,
+  "item_no": 261,
+  "weight_template": 0.0060650404231469964,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1219
+ },
+ {
+  "row": 500,
+  "name": "06.3  ЭМНЭЛЭГТ ХЭВТЭЖ YЗYYЛСЭН YЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.027862951878740275,
+  "kind": "weighted_children",
+  "children": [
+   501
+  ],
+  "price_row": null
+ },
+ {
+  "row": 501,
+  "name": "06.3.1  ЭМНЭЛЭГТ ХЭВТЭЖ YЗYYЛСЭН YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.027862951878740275,
+  "kind": "weighted_children",
+  "children": [
+   502
+  ],
+  "price_row": null
+ },
+ {
+  "row": 502,
+  "name": "06.3.1.1  ЭМНЭЛЭГТ ХЭВТЭЖ YЗYYЛСЭН YЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.027862951878740275,
+  "kind": "sumproduct",
+  "children": [
+   503,
+   504
+  ],
+  "price_row": null
+ },
+ {
+  "row": 503,
+  "name": "Улсын эмнэлгийн 1 өдрийн ор хоногийн төлбөр, даатгалгүй иргэн",
+  "level": 4,
+  "item_no": 262,
+  "weight_template": 0.013931475939370138,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1223
+ },
+ {
+  "row": 504,
+  "name": "Хувийн эмнэлгийн 1 өдрийн ор хоногийн төлбөр, даатгалгүй иргэн",
+  "level": 4,
+  "item_no": 263,
+  "weight_template": 0.013931475939370138,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1224
+ },
+ {
+  "row": 505,
+  "name": "07.    ТЭЭВЭР",
+  "level": 0,
+  "item_no": null,
+  "weight_template": 0.17911070866239506,
+  "kind": "weighted_children",
+  "children": [
+   506,
+   516,
+   537
+  ],
+  "price_row": null
+ },
+ {
+  "row": 506,
+  "name": "07.1  ТЭЭВРИЙН ХЭРЭГСЛИЙН ХУДАЛДАН АВАЛТ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.0038652392869294745,
+  "kind": "weighted_children",
+  "children": [
+   507,
+   510,
+   513
+  ],
+  "price_row": null
+ },
+ {
+  "row": 507,
+  "name": "07.1.1  АВТОМАШИН, МОТОЦИКЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   508
+  ],
+  "price_row": null
+ },
+ {
+  "row": 508,
+  "name": "07.1.1.1  АВТОМАШИН, МОТОЦИКЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   509
+  ],
+  "price_row": null
+ },
+ {
+  "row": 509,
+  "name": "Суудлын жижиг тэрэг, \"Toyota Prius 41\", 2015 онд үйлдвэрлэсэн, мөнгөлөг өнгөтэй, S загвар, Япон",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1229
+ },
+ {
+  "row": 510,
+  "name": "07.1.2 МОТОЦИКЛЬ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0037963037258256444,
+  "kind": "weighted_children",
+  "children": [
+   511
+  ],
+  "price_row": null
+ },
+ {
+  "row": 511,
+  "name": "07.1.2.1 МОТОЦИКЛЬ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0037963037258256444,
+  "kind": "sumproduct",
+  "children": [
+   512
+  ],
+  "price_row": null
+ },
+ {
+  "row": 512,
+  "name": "Мотоцикл, \"Mustang\", \"Dayun\" цилиндр 124 См3, рамтай, Хятад",
+  "level": 4,
+  "item_no": 264,
+  "weight_template": 0.0037963037258256444,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1232
+ },
+ {
+  "row": 513,
+  "name": "07.1.3  УНАДАГ ДУГУЙ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 6.893556110383029e-05,
+  "kind": "weighted_children",
+  "children": [
+   514
+  ],
+  "price_row": null
+ },
+ {
+  "row": 514,
+  "name": "07.1.3.1  УНАДАГ ДУГУЙ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 6.893556110383029e-05,
+  "kind": "sumproduct",
+  "children": [
+   515
+  ],
+  "price_row": null
+ },
+ {
+  "row": 515,
+  "name": "Унадаг дугуй, 6-8 араатай, том хүний, амортизатортай, импорт",
+  "level": 4,
+  "item_no": 265,
+  "weight_template": 6.893556110383029e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1235
+ },
+ {
+  "row": 516,
+  "name": "07.2  ХУВИЙН ТЭЭВРИЙН ХЭРЭГСЛИЙН ЗАСВАР, YЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.145184509155371,
+  "kind": "weighted_children",
+  "children": [
+   517,
+   520,
+   527,
+   531
+  ],
+  "price_row": null
+ },
+ {
+  "row": 517,
+  "name": "07.2.1  ХУВИЙН ТЭЭВРИЙН ХЭРЭГСЛИЙН СЭЛБЭГ, ХЭРЭГСЭЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   518
+  ],
+  "price_row": null
+ },
+ {
+  "row": 518,
+  "name": "07.2.1.1  ХУВИЙН ТЭЭВРИЙН ХЭРЭГСЛИЙН СЭЛБЭГ, ХЭРЭГСЭЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   519
+  ],
+  "price_row": null
+ },
+ {
+  "row": 519,
+  "name": "Суудлын тэрэгний дугуй, 16R,  хэмжээ 205х60х16, Япон",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1239
+ },
+ {
+  "row": 520,
+  "name": "07.2.2  ХУВИЙН ТЭЭВРИЙН ХЭРЭГСЛИЙН ШАТАХ, ТОСЛОХ МАТЕРИАЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.14044502790644023,
+  "kind": "weighted_children",
+  "children": [
+   521
+  ],
+  "price_row": null
+ },
+ {
+  "row": 521,
+  "name": "=SUM(H522:H525)",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.14044502790644023,
+  "kind": "sumproduct",
+  "children": [
+   522,
+   523,
+   524,
+   525,
+   526
+  ],
+  "price_row": null
+ },
+ {
+  "row": 522,
+  "name": "=H522/$B$521",
+  "level": 1,
+  "item_no": 266,
+  "weight_template": 0.01931511807950068,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1242
+ },
+ {
+  "row": 523,
+  "name": "=H523/$B$521",
+  "level": 1,
+  "item_no": 267,
+  "weight_template": 0.07082209962483582,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1243
+ },
+ {
+  "row": 524,
+  "name": "=H524/$B$521",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1244
+ },
+ {
+  "row": 525,
+  "name": "=H525/$B$521",
+  "level": 1,
+  "item_no": 268,
+  "weight_template": 0.03863023615900136,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1245
+ },
+ {
+  "row": 526,
+  "name": "Суудлын тэрэгний бензин хөдөлгүүрийн тос, 1 л, OW20, импорт",
+  "level": 4,
+  "item_no": 269,
+  "weight_template": 0.011677574043102382,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1246
+ },
+ {
+  "row": 527,
+  "name": "07.2.3  ТЭЭВРИЙН ХЭРЭГСЛИЙН ЗАСВАР, YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0047394812489307695,
+  "kind": "weighted_children",
+  "children": [
+   528
+  ],
+  "price_row": null
+ },
+ {
+  "row": 528,
+  "name": "07.2.3.1 ТЭЭВРИЙН ХЭРЭГСЛИЙН ЗАСВАР",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0047394812489307695,
+  "kind": "sumproduct",
+  "children": [
+   529,
+   530
+  ],
+  "price_row": null
+ },
+ {
+  "row": 529,
+  "name": "Машины дугуй нөхөх төлбөр, суудлын тэрэг, 1 дугуй",
+  "level": 4,
+  "item_no": 270,
+  "weight_template": 0.0018957924995723079,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1249
+ },
+ {
+  "row": 530,
+  "name": "Суудлын машины моторын тос солиулах төлбөр, 1 удаа",
+  "level": 4,
+  "item_no": 271,
+  "weight_template": 0.0028436887493584616,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1250
+ },
+ {
+  "row": 531,
+  "name": "07.2.4 ТЭЭВРИЙН ХЭРЭГСЛИЙН ҮЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   532,
+   535
+  ],
+  "price_row": null
+ },
+ {
+  "row": 532,
+  "name": "07.2.4.1 ТЭЭВРИЙН ХЭРЭГСЛИЙН ҮЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   533,
+   534
+  ],
+  "price_row": null
+ },
+ {
+  "row": 533,
+  "name": "Задгай  зогсоолын 1 цагийн төлбөр",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1253
+ },
+ {
+  "row": 534,
+  "name": "Автомашины оношилгоо, үзлэгийн жилийн төлбөр, моторын багтаамж 1800 сс",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1254
+ },
+ {
+  "row": 535,
+  "name": "07.2.4.2 ЖОЛООНЫ КУРС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   536
+  ],
+  "price_row": null
+ },
+ {
+  "row": 536,
+  "name": "Жолооны сургалтын төлбөр, \"B\" ангилал",
+  "level": 4,
+  "item_no": 272,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1256
+ },
+ {
+  "row": 537,
+  "name": "07.3  ТЭЭВРИЙН YЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.030060960220094586,
+  "kind": "weighted_children",
+  "children": [
+   538,
+   542,
+   547,
+   551
+  ],
+  "price_row": null
+ },
+ {
+  "row": 538,
+  "name": "07.3.1  ТӨМӨР ЗАМЫН ЗОРЧИГЧ ТЭЭВРИЙН YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   539
+  ],
+  "price_row": null
+ },
+ {
+  "row": 539,
+  "name": "07.3.1.1  ТӨМӨР ЗАМЫН ЗОРЧИГЧ ТЭЭВРИЙН YЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   540,
+   541
+  ],
+  "price_row": null
+ },
+ {
+  "row": 540,
+  "name": "Аймгийн төвөөс Улаанбаатар хот хүрэх гал тэрэгний тийзний төлбөр, том хүн, нэг талдаа, купе",
+  "level": 4,
+  "item_no": 273,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1260
+ },
+ {
+  "row": 541,
+  "name": "Улаанбаатараас Бээжин хүрэх гал тэрэгний тийзний төлбөр, том хүн, нэг талдаа, купе",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1261
+ },
+ {
+  "row": 542,
+  "name": "07.3.2  АВТО ЗАМЫН ЗОРЧИГЧ ТЭЭВРИЙН YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.030060960220094586,
+  "kind": "weighted_children",
+  "children": [
+   543
+  ],
+  "price_row": null
+ },
+ {
+  "row": 543,
+  "name": "07.3.2.1 АВТО ЗАМЫН ЗОРЧИГЧ ТЭЭВРИЙН YЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.030060960220094586,
+  "kind": "sumproduct",
+  "children": [
+   544,
+   545,
+   546
+  ],
+  "price_row": null
+ },
+ {
+  "row": 544,
+  "name": "Автобусны билет, том хүн",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1264
+ },
+ {
+  "row": 545,
+  "name": "Хот доторх таксины төлбөр, 1 км",
+  "level": 4,
+  "item_no": 274,
+  "weight_template": 1.3268415247719252e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1265
+ },
+ {
+  "row": 546,
+  "name": "Аймгын төвөөс Улаанбаатар хот хүрэх автобусны билет, нэг талдаа",
+  "level": 4,
+  "item_no": 275,
+  "weight_template": 0.030047691804846868,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1266
+ },
+ {
+  "row": 547,
+  "name": "07.3.3  АГААРЫН ЗОРЧИГЧ ТЭЭВРИЙН YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   548
+  ],
+  "price_row": null
+ },
+ {
+  "row": 548,
+  "name": "07.3.3.1  АГААРЫН ЗОРЧИГЧ ТЭЭВРИЙН YЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   549,
+   550
+  ],
+  "price_row": null
+ },
+ {
+  "row": 549,
+  "name": "Аймгийн төвөөс Улаанбаатар хүрэх онгоцны тийзний төлбөр, том хүн, нэг талдаа",
+  "level": 4,
+  "item_no": 276,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1269
+ },
+ {
+  "row": 550,
+  "name": "Улаанбаатараас Сөүэл хүрэх онгоцны тийзний төлбөр, том хүн, нэг талдаа",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1270
+ },
+ {
+  "row": 551,
+  "name": "07.3.6  ТЭЭВРИЙН ХЭРЭГСЛИЙН БУСАД YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   552
+  ],
+  "price_row": null
+ },
+ {
+  "row": 552,
+  "name": "07.3.6.1  ТЭЭВРИЙН ХЭРЭГСЛИЙН БУСАД YЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   553
+  ],
+  "price_row": null
+ },
+ {
+  "row": 553,
+  "name": "Нийслэл доторх ачаа тээврийн төлбөр, портер машинаар, 15 км",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1273
+ },
+ {
+  "row": 554,
+  "name": "08.    ХОЛБООНЫ ХЭРЭГСЭЛ, ШУУДАНГИЙН YЙЛЧИЛГЭЭ",
+  "level": 0,
+  "item_no": null,
+  "weight_template": 0.09912444557356485,
+  "kind": "weighted_children",
+  "children": [
+   555,
+   567
+  ],
+  "price_row": null
+ },
+ {
+  "row": 555,
+  "name": "08.1 МЭДЭЭЛЭЛ ХОЛБООНЫ ХЭРЭГСЭЛ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.016697630895811784,
+  "kind": "weighted_children",
+  "children": [
+   556,
+   560,
+   564
+  ],
+  "price_row": null
+ },
+ {
+  "row": 556,
+  "name": "08.1.2  ХӨДӨЛГӨӨНТ ХОЛБООНЫ ХЭРЭГСЭЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.013967520141216492,
+  "kind": "weighted_children",
+  "children": [
+   557
+  ],
+  "price_row": null
+ },
+ {
+  "row": 557,
+  "name": "08.1.2.1  ХӨДӨЛГӨӨНТ ХОЛБООНЫ ХЭРЭГСЭЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.013967520141216492,
+  "kind": "sumproduct",
+  "children": [
+   558,
+   559
+  ],
+  "price_row": null
+ },
+ {
+  "row": 558,
+  "name": "Гар утас, \"Iphone 14\" энгийн, 128GB,  хуучин, Импорт",
+  "level": 4,
+  "item_no": 277,
+  "weight_template": 0.013595494055513078,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1278
+ },
+ {
+  "row": 559,
+  "name": "Ухаалаг андройд утасны цэнэглэгч, Хятад",
+  "level": 4,
+  "item_no": 278,
+  "weight_template": 0.00037202608570341357,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1279
+ },
+ {
+  "row": 560,
+  "name": "08.1.3  МЭДЭЭЛЭЛ БОЛОВСРУУЛАХ ХЭРЭГСЭЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   561
+  ],
+  "price_row": null
+ },
+ {
+  "row": 561,
+  "name": "08.1.3.1 МЭДЭЭЛЭЛ БОЛОВСРУУЛАХ ХЭРЭГСЭЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   562,
+   563
+  ],
+  "price_row": null
+ },
+ {
+  "row": 562,
+  "name": "Зөөврийн компьютер, \"DELL\", CPU-i5, 8GB Ram, 256GB SSD, дэлгэцийн хэмжээ 15.6 инч",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1282
+ },
+ {
+  "row": 563,
+  "name": "Суурин компюьтер, \"DELL\", CPU-i5, 8GB Ram, 1 TB HDD, дэлгэцийн хэмжээ 22-24 инч",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1283
+ },
+ {
+  "row": 564,
+  "name": "08.1.4  ДУУ, ДYРСИЙГ ХYЛЭЭН АВАХ, БИЧЛЭГ ХИЙХ ТӨХӨӨРӨМЖ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.002730110754595291,
+  "kind": "weighted_children",
+  "children": [
+   565
+  ],
+  "price_row": null
+ },
+ {
+  "row": 565,
+  "name": "08.1.4.1  МЭДЭЭЛЭЛ ХОЛБООНЫ БАГЦЫН ҮЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.002730110754595291,
+  "kind": "sumproduct",
+  "children": [
+   566
+  ],
+  "price_row": null
+ },
+ {
+  "row": 566,
+  "name": "LED телевизор, дэлгэцийн хэмжээ 55 инч, импорт",
+  "level": 4,
+  "item_no": 279,
+  "weight_template": 0.002730110754595291,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1286
+ },
+ {
+  "row": 567,
+  "name": "08.3  МЭДЭЭЛЭЛ, ХОЛБООНЫ ҮЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.08242681467775306,
+  "kind": "weighted_children",
+  "children": [
+   568,
+   577
+  ],
+  "price_row": null
+ },
+ {
+  "row": 568,
+  "name": "08.3.2  ТЕЛЕФОН УТАС, ИНТЕРНЕТИЙН YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.06630746035850939,
+  "kind": "weighted_children",
+  "children": [
+   569
+  ],
+  "price_row": null
+ },
+ {
+  "row": 569,
+  "name": "08.3.2.1  ТЕЛЕФОН УТАС, ИНТЕРНЕТИЙН YЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.06630746035850939,
+  "kind": "sumproduct",
+  "children": [
+   570,
+   571,
+   572,
+   573,
+   574,
+   575,
+   576
+  ],
+  "price_row": null
+ },
+ {
+  "row": 570,
+  "name": "Суурин утаснаас суурин утсанд  ярих 1 минутын тариф",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.011220086051791643,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1290
+ },
+ {
+  "row": 571,
+  "name": "Мобикомын сүлжээндээ 1 мин ярих төлбөр, НӨАТ-тэй /урьдчилсан төлбөрт картын хэрэглэгчийн /",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.011220086051791643,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1291
+ },
+ {
+  "row": 572,
+  "name": "Скайтелийн сүлжээндээ 1 мин ярих төлбөр, НӨАТ-тэй /урьдчилсан төлбөрт картын хэрэглэгчийн /",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.011220086051791643,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1292
+ },
+ {
+  "row": 573,
+  "name": "Юнителийн сүлжээндээ 1 мин ярих төлбөр, НӨАТ-тэй /урьдчилсан төлбөрт картын хэрэглэгчийн /",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.011220086051791643,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1293
+ },
+ {
+  "row": 574,
+  "name": "Жи-Мобайлийн сүлжээндээ 1 мин ярих төлбөр, НӨАТ-тэй /урьдчилсан төлбөрт картын хэрэглэгчийн /",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.011220086051791643,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1294
+ },
+ {
+  "row": 575,
+  "name": "PС тоглоомын газрын нэг цагийн төлбөр",
+  "level": 4,
+  "item_no": 280,
+  "weight_template": 0.0020414060199102353,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1295
+ },
+ {
+  "row": 576,
+  "name": "Гэрийн интернэтийн сарын төлбөр, \"Мобинет\", 10mbps",
+  "level": 4,
+  "item_no": 281,
+  "weight_template": 0.008165624079640941,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1296
+ },
+ {
+  "row": 577,
+  "name": "08.3.4  МЭДЭЭЛЭЛ ХОЛБООНЫ БАГЦЫН ҮЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.016119354319243672,
+  "kind": "weighted_children",
+  "children": [
+   578
+  ],
+  "price_row": null
+ },
+ {
+  "row": 578,
+  "name": "08.3.4.1  МЭДЭЭЛЭЛ ХОЛБООНЫ БАГЦЫН ҮЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.016119354319243672,
+  "kind": "sumproduct",
+  "children": [
+   579,
+   580
+  ],
+  "price_row": null
+ },
+ {
+  "row": 579,
+  "name": "Юнивишний гурвалсан үйлчилгээний төлбөр, энгийн, 1 сар",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1299
+ },
+ {
+  "row": 580,
+  "name": "Зурагтын хураамж, \" МҮОНРТ \", 1 сар",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.016119354319243672,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1300
+ },
+ {
+  "row": 581,
+  "name": "09.    АМРАЛТ, ЧӨЛӨӨТ ЦАГ, СОЁЛЫН БАРАА, YЙЛЧИЛГЭЭ",
+  "level": 0,
+  "item_no": null,
+  "weight_template": 0.012101196202982169,
+  "kind": "weighted_children",
+  "children": [
+   582,
+   587,
+   595,
+   605,
+   624
+  ],
+  "price_row": null
+ },
+ {
+  "row": 582,
+  "name": "09.1   ДУУ, ДYРС, ГЭРЭЛ ЗУРАГ, МЭДЭЭЛЛИЙГ БОЛОВСРУУЛАХ ТОНОГ ТӨХӨӨРӨМЖ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.000749051552327972,
+  "kind": "weighted_children",
+  "children": [
+   583
+  ],
+  "price_row": null
+ },
+ {
+  "row": 583,
+  "name": "09.1.1  ДУУ, ДYРСИЙГ ХYЛЭЭН АВАХ, БИЧЛЭГ ХИЙХ, ХУВИЛАХ ТОНОГ ТӨХӨӨРӨМЖ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.000749051552327972,
+  "kind": "weighted_children",
+  "children": [
+   584
+  ],
+  "price_row": null
+ },
+ {
+  "row": 584,
+  "name": "09.1.1.3 ХАРАА ЗҮЙН БАГАЖ ХЭРЭГСЭЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.000749051552327972,
+  "kind": "sumproduct",
+  "children": [
+   585,
+   586
+  ],
+  "price_row": null
+ },
+ {
+  "row": 585,
+  "name": "2 нүдний дуран, таталтын хэмжээ 8х30, Орос",
+  "level": 4,
+  "item_no": 282,
+  "weight_template": 0.00010730451004631404,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1305
+ },
+ {
+  "row": 586,
+  "name": "Харааны шилний төлбөр, хүрээгүй, цилиндргүй",
+  "level": 4,
+  "item_no": 283,
+  "weight_template": 0.000641747042281658,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1306
+ },
+ {
+  "row": 587,
+  "name": "09.2   ЧӨЛӨӨТ ЦАГТ ЗОРИУЛСАН БУСАД ХЭРЭГСЭЛ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.00014582475045286784,
+  "kind": "weighted_children",
+  "children": [
+   588
+  ],
+  "price_row": null
+ },
+ {
+  "row": 588,
+  "name": "09.2.1 ТОГЛООМ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.00014582475045286784,
+  "kind": "weighted_children",
+  "children": [
+   589
+  ],
+  "price_row": null
+ },
+ {
+  "row": 589,
+  "name": "09.2.1.1 ТОГЛООМ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00014582475045286784,
+  "kind": "sumproduct",
+  "children": [
+   590,
+   591,
+   592,
+   593,
+   594
+  ],
+  "price_row": null
+ },
+ {
+  "row": 590,
+  "name": "Шатар, хөлөгт тоглоом, 24х24см, хуванцар, 1 ш, Хятад",
+  "level": 4,
+  "item_no": 284,
+  "weight_template": 2.454971602849867e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1310
+ },
+ {
+  "row": 591,
+  "name": "Барби хүүхэлдэй, хайрцагтай, 1 ш, өндөр 15-20 см, Хятад",
+  "level": 4,
+  "item_no": 285,
+  "weight_template": 2.648712966570912e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1311
+ },
+ {
+  "row": 592,
+  "name": "Тоглоомон машин, 1 ш, Хятад",
+  "level": 4,
+  "item_no": 286,
+  "weight_template": 6.624734785877745e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1312
+ },
+ {
+  "row": 593,
+  "name": "Сагсан бөмбөг, хиймэл арьсан, 1 ш, Хятад",
+  "level": 4,
+  "item_no": 287,
+  "weight_template": 1.4270278449941297e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1313
+ },
+ {
+  "row": 594,
+  "name": "Хөзөр, цаасан, 1 хайрцаг, Хятад",
+  "level": 4,
+  "item_no": 288,
+  "weight_template": 1.4270278449941297e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1314
+ },
+ {
+  "row": 595,
+  "name": "09.4   ЧӨЛӨӨТ ЦАГ, СОЁЛЫН YЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   596,
+   600
+  ],
+  "price_row": null
+ },
+ {
+  "row": 596,
+  "name": "09.4.3  ЧӨЛӨӨТ ЦАГ, СОЁЛЫН YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   597
+  ],
+  "price_row": null
+ },
+ {
+  "row": 597,
+  "name": "09.4.3.1  ЧӨЛӨӨТ ЦАГ, СОЁЛЫН YЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   598,
+   599
+  ],
+  "price_row": null
+ },
+ {
+  "row": 598,
+  "name": "Пүүл билльярд тоглох 1 цагийн төлбөр",
+  "level": 4,
+  "item_no": 289,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1318
+ },
+ {
+  "row": 599,
+  "name": "Спорт заал түрээслэх төлбөр, 1 цаг, энгийн заал, бүтэн",
+  "level": 4,
+  "item_no": 290,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1319
+ },
+ {
+  "row": 600,
+  "name": "09.4.2  СОЁЛЫН YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   601,
+   603
+  ],
+  "price_row": null
+ },
+ {
+  "row": 601,
+  "name": "09.4.2.1  ҮЗВЭР YЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   602
+  ],
+  "price_row": null
+ },
+ {
+  "row": 602,
+  "name": "Кино театрын үзвэрийн үнэ, том хүн, 1 удаа, хямдралын бус өдөр",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1322
+ },
+ {
+  "row": 603,
+  "name": "09.4.2.3 СОЁЛЫН БУСАД ҮЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   604
+  ],
+  "price_row": null
+ },
+ {
+  "row": 604,
+  "name": "Дижитал эх үүсвэрээс фотозураг угаалгах, 10х15см",
+  "level": 4,
+  "item_no": 291,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1324
+ },
+ {
+  "row": 605,
+  "name": "09.7   СОНИН, СЭТГҮҮЛ, НОМ, БИЧГИЙН ХЭРЭГСЭЛ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.01120631990020133,
+  "kind": "weighted_children",
+  "children": [
+   606,
+   610,
+   613,
+   616
+  ],
+  "price_row": null
+ },
+ {
+  "row": 606,
+  "name": "09.7.1 НОМ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0023267477150531153,
+  "kind": "weighted_children",
+  "children": [
+   607
+  ],
+  "price_row": null
+ },
+ {
+  "row": 607,
+  "name": "09.7.1.1 НОМ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0023267477150531153,
+  "kind": "sumproduct",
+  "children": [
+   608,
+   609
+  ],
+  "price_row": null
+ },
+ {
+  "row": 608,
+  "name": "Англи-Монгол толь бичиг, 30000 үгтэй, Pocket Dictionary Oxford",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1328
+ },
+ {
+  "row": 609,
+  "name": "Үлгэрийн ном, \"Монгол үлгэрүүд\", 20-30 хуудастай",
+  "level": 4,
+  "item_no": 292,
+  "weight_template": 0.0023267477150531153,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1329
+ },
+ {
+  "row": 610,
+  "name": "09.7.2 СОНИН, СЭТГҮҮЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   611
+  ],
+  "price_row": null
+ },
+ {
+  "row": 611,
+  "name": "09.7.2.1 СОНИН СЭТГҮҮЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   612
+  ],
+  "price_row": null
+ },
+ {
+  "row": 612,
+  "name": "Өдөр тутмын сонины захиалгын төлбөр, \"Өдрийн сонин\", 1 улирал",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1332
+ },
+ {
+  "row": 613,
+  "name": "09.7.3  БУСАД ХЭВЛЭМЭЛ ЗYЙЛС",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 7.946137319468955e-06,
+  "kind": "weighted_children",
+  "children": [
+   614
+  ],
+  "price_row": null
+ },
+ {
+  "row": 614,
+  "name": "09.7.3.1  БУСАД ХЭВЛЭМЭЛ ЗYЙЛС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 7.946137319468955e-06,
+  "kind": "sumproduct",
+  "children": [
+   615
+  ],
+  "price_row": null
+ },
+ {
+  "row": 615,
+  "name": "Монгол зурхайн цаг тооны бичиг, Л.Тэрбиш",
+  "level": 4,
+  "item_no": 293,
+  "weight_template": 7.946137319468955e-06,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1335
+ },
+ {
+  "row": 616,
+  "name": "09.7.4  БИЧГИЙН БОЛОН ЗУРГИЙН ХЭРЭГСЭЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.008871626047828743,
+  "kind": "weighted_children",
+  "children": [
+   617
+  ],
+  "price_row": null
+ },
+ {
+  "row": 617,
+  "name": "09.7.4.1  БИЧГИЙН БОЛОН ЗУРГИЙН ХЭРЭГСЭЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.008871626047828743,
+  "kind": "sumproduct",
+  "children": [
+   618,
+   619,
+   620,
+   621,
+   622,
+   623
+  ],
+  "price_row": null
+ },
+ {
+  "row": 618,
+  "name": "Сурах бичиг, \"Математикийн бодлогын хураамж\", 3-р анги",
+  "level": 4,
+  "item_no": 294,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1338
+ },
+ {
+  "row": 619,
+  "name": "Сурагчийн дэвтэр, \"Улаанбаатар Принтинг\" дөрвөлжин шугамтай, 12 хуудастай, Монгол",
+  "level": 4,
+  "item_no": 295,
+  "weight_template": 0.004156183832194635,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1339
+ },
+ {
+  "row": 620,
+  "name": "Харандаа, 0.5 мм балтай, 1 ш, Хятад",
+  "level": 4,
+  "item_no": 296,
+  "weight_template": 4.58011409225477e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1340
+ },
+ {
+  "row": 621,
+  "name": "Үзгэн бал, \"Zero\", цэнхэр өнгө, Хятад",
+  "level": 4,
+  "item_no": 297,
+  "weight_template": 0.0016743462931220557,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1341
+ },
+ {
+  "row": 622,
+  "name": "Үзгэн балны запас, \"Zero\", цэнхэр өнгө, 0.5 мм, Хятад",
+  "level": 4,
+  "item_no": 298,
+  "weight_template": 0.0011162308620813704,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1342
+ },
+ {
+  "row": 623,
+  "name": "Хуванцар шугам, \"Deli\", 20см, Хятад",
+  "level": 4,
+  "item_no": 299,
+  "weight_template": 0.0018790639195081344,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1343
+ },
+ {
+  "row": 624,
+  "name": "09.8  АМРАЛТ, АЯЛАЛ, ЖУУЛЧЛАЛ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   625
+  ],
+  "price_row": null
+ },
+ {
+  "row": 625,
+  "name": "09.8.1 АМРАЛТ, АЯЛАЛ, ЖУУЛЧЛАЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   626
+  ],
+  "price_row": null
+ },
+ {
+  "row": 626,
+  "name": "09.8.1.1 АМРАЛТ, АЯЛАЛ, ЖУУЛЧЛАЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   627
+  ],
+  "price_row": null
+ },
+ {
+  "row": 627,
+  "name": "Монгол аялал, жуулчлал, /Хөвсгөл нуур, 6 өдөр/",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1347
+ },
+ {
+  "row": 628,
+  "name": "10.    БОЛОВСРОЛЫН YЙЛЧИЛГЭЭ",
+  "level": 0,
+  "item_no": null,
+  "weight_template": 0.10167018593001032,
+  "kind": "weighted_children",
+  "children": [
+   629,
+   634,
+   638,
+   643
+  ],
+  "price_row": null
+ },
+ {
+  "row": 629,
+  "name": "10.1   БАГА БОЛОВСРОЛЫН YЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   630
+  ],
+  "price_row": null
+ },
+ {
+  "row": 630,
+  "name": "10.1.1 БАГА БОЛОВСРОЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   631
+  ],
+  "price_row": null
+ },
+ {
+  "row": 631,
+  "name": "10.1.1.1 БАГА БОЛОВСРОЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   632,
+   633
+  ],
+  "price_row": null
+ },
+ {
+  "row": 632,
+  "name": "Хувийн цэцэрлэгийн төлбөр, 1 сар",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1352
+ },
+ {
+  "row": 633,
+  "name": "Хувийн бага сургуулийн сургалтын төлбөр, 1 жил",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1353
+ },
+ {
+  "row": 634,
+  "name": "10.2 БҮРЭН ДУНД БОЛОВСРОЛ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   635
+  ],
+  "price_row": null
+ },
+ {
+  "row": 635,
+  "name": "10.2.1 БҮРЭН ДУНД БОЛОВСРОЛ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   636
+  ],
+  "price_row": null
+ },
+ {
+  "row": 636,
+  "name": "10.2.1.1 БҮРЭН ДУНД БОЛОВСРОЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   637
+  ],
+  "price_row": null
+ },
+ {
+  "row": 637,
+  "name": "Хувийн дунд сургуулийн сургалтын төлбөр, 1 жил",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1357
+ },
+ {
+  "row": 638,
+  "name": "10.4  ДЭЭД БОЛОВСРОЛЫН YЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.10167018593001032,
+  "kind": "weighted_children",
+  "children": [
+   639
+  ],
+  "price_row": null
+ },
+ {
+  "row": 639,
+  "name": "10.4.1 БОЛОВСРОЛ ОЛГОХ БУСАД ҮЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.10167018593001032,
+  "kind": "weighted_children",
+  "children": [
+   640
+  ],
+  "price_row": null
+ },
+ {
+  "row": 640,
+  "name": "10.4.1 БОЛОВСРОЛ ОЛГОХ БУСАД ҮЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.10167018593001032,
+  "kind": "sumproduct",
+  "children": [
+   641,
+   642
+  ],
+  "price_row": null
+ },
+ {
+  "row": 641,
+  "name": "Улсын их, дээд сургуулийн сургалтын төлбөр, 1-р дамжаа, 1 жил",
+  "level": 4,
+  "item_no": 300,
+  "weight_template": 0.10167018593001032,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1361
+ },
+ {
+  "row": 642,
+  "name": "Хувийн их, дээд сургуулийн сургалтын төлбөр, 1-р дамжаа, 1 жил",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1362
+ },
+ {
+  "row": 643,
+  "name": "10.5 БОЛОВСРОЛ ОЛГОХ БУСАД ҮЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   644
+  ],
+  "price_row": null
+ },
+ {
+  "row": 644,
+  "name": "10.5.1 БОЛОВСРОЛ ОЛГОХ БУСАД ҮЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   645
+  ],
+  "price_row": null
+ },
+ {
+  "row": 645,
+  "name": "10.5.1.1 БОЛОВСРОЛ ОЛГОХ БУСАД ҮЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   646
+  ],
+  "price_row": null
+ },
+ {
+  "row": 646,
+  "name": "Англи хэлний сургалтын төвийн төлбөр, хүүхэд, анхан шат, 1 сар",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1366
+ },
+ {
+  "row": 647,
+  "name": "11.    ЗОЧИД БУУДАЛ, НИЙТИЙН ХООЛ, ДОТУУР БАЙРНЫ YЙЛЧИЛГЭЭ",
+  "level": 0,
+  "item_no": null,
+  "weight_template": 0.007177407233913679,
+  "kind": "weighted_children",
+  "children": [
+   648,
+   658
+  ],
+  "price_row": null
+ },
+ {
+  "row": 648,
+  "name": "11.1   НИЙТИЙН ХООЛНЫ YЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.007177407233913679,
+  "kind": "weighted_children",
+  "children": [
+   649,
+   654
+  ],
+  "price_row": null
+ },
+ {
+  "row": 649,
+  "name": "11.1.1 РЕСТОРАН, КАФЕ, БУСАД ЗООГИЙН ГАЗАР",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0021532221701741033,
+  "kind": "weighted_children",
+  "children": [
+   650
+  ],
+  "price_row": null
+ },
+ {
+  "row": 650,
+  "name": "11.1.1.1 РЕСТОРАН, КАФЕ, БУСАД ЗООГИЙН ГАЗАР",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0021532221701741033,
+  "kind": "sumproduct",
+  "children": [
+   651,
+   652,
+   653
+  ],
+  "price_row": null
+ },
+ {
+  "row": 651,
+  "name": "Зоогийн газрын хоолны үнэ /Үхрийн шарсан мах/",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1371
+ },
+ {
+  "row": 652,
+  "name": "Пицца захиалгын үнэ, гэрт хүргэх төлбөрийн хамт, 24 см, холимог пицца",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1372
+ },
+ {
+  "row": 653,
+  "name": "Пиво, шилтэй, \"Сэнгүр\", 450 мл, 1 шил /Зоогийн газарт/",
+  "level": 4,
+  "item_no": 301,
+  "weight_template": 0.0021532221701741033,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1373
+ },
+ {
+  "row": 654,
+  "name": "11.1.2 ГУАНЗ, ЦАЙНЫ ГАЗАР",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.005024185063739575,
+  "kind": "weighted_children",
+  "children": [
+   655
+  ],
+  "price_row": null
+ },
+ {
+  "row": 655,
+  "name": "11.1.2.1 ГУАНЗ, ЦАЙНЫ ГАЗАР",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.005024185063739575,
+  "kind": "sumproduct",
+  "children": [
+   656,
+   657
+  ],
+  "price_row": null
+ },
+ {
+  "row": 656,
+  "name": "Гуанзны хоолны үнэ, /цуйван/",
+  "level": 4,
+  "item_no": 302,
+  "weight_template": 0.002870962893565471,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1376
+ },
+ {
+  "row": 657,
+  "name": "Гуанзны хоолны үнэ, гуляш",
+  "level": 4,
+  "item_no": 303,
+  "weight_template": 0.0021532221701741033,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1377
+ },
+ {
+  "row": 658,
+  "name": "11.2   ЗОЧИД БУУДАЛ ДОТУУР БАЙРНЫ YЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   659
+  ],
+  "price_row": null
+ },
+ {
+  "row": 659,
+  "name": "11.2.1  ЗОЧИД БУУДАЛ, ДОТУУР БАЙРНЫ YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   660
+  ],
+  "price_row": null
+ },
+ {
+  "row": 660,
+  "name": "11.2.1.1  ЗОЧИД БУУДАЛ, ДОТУУР БАЙРНЫ YЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   661,
+   662
+  ],
+  "price_row": null
+ },
+ {
+  "row": 661,
+  "name": "Зочид буудлын төлбөр, энгийн, 1 хүн, 1 хоног",
+  "level": 4,
+  "item_no": 304,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1381
+ },
+ {
+  "row": 662,
+  "name": "Оюутны дотуур байрны төлбөр, 1 жил",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1382
+ },
+ {
+  "row": 663,
+  "name": "12.   ДААТГАЛ, САНХҮҮГИЙН ҮЙЛЧИЛГЭЭ",
+  "level": 0,
+  "item_no": null,
+  "weight_template": 0.0043484419630623,
+  "kind": "weighted_children",
+  "children": [
+   664,
+   674
+  ],
+  "price_row": null
+ },
+ {
+  "row": 664,
+  "name": "12.1  ДААТГАЛ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.0028963672202383466,
+  "kind": "weighted_children",
+  "children": [
+   665,
+   668,
+   671
+  ],
+  "price_row": null
+ },
+ {
+  "row": 665,
+  "name": "12.1.1 ЭРҮҮЛ МЭНДИЙН ДААТГАЛЫН ҮЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0024722345791034868,
+  "kind": "weighted_children",
+  "children": [
+   666
+  ],
+  "price_row": null
+ },
+ {
+  "row": 666,
+  "name": "12.1.1.1 ЭРҮҮЛ МЭНДИЙН ДААТГАЛЫН ҮЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0024722345791034868,
+  "kind": "sumproduct",
+  "children": [
+   667
+  ],
+  "price_row": null
+ },
+ {
+  "row": 667,
+  "name": "Эрүүл мэндийн даатгал сайн дураараа төлөх",
+  "level": 4,
+  "item_no": 305,
+  "weight_template": 0.0024722345791034868,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1387
+ },
+ {
+  "row": 668,
+  "name": "12.1.2 ОРОН СУУЦНЫ ДААТГАЛЫН ҮЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "weighted_children",
+  "children": [
+   669
+  ],
+  "price_row": null
+ },
+ {
+  "row": 669,
+  "name": "12.1.2.1 ОРОН СУУЦНЫ ДААТГАЛЫН ҮЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "sumproduct",
+  "children": [
+   670
+  ],
+  "price_row": null
+ },
+ {
+  "row": 670,
+  "name": "Орон сууцны даатгал",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1390
+ },
+ {
+  "row": 671,
+  "name": "12.1.3  ТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛЫН ҮЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.00042413264113485996,
+  "kind": "weighted_children",
+  "children": [
+   672
+  ],
+  "price_row": null
+ },
+ {
+  "row": 672,
+  "name": "12.1.3.1 ХУВИЙН ТЭЭВРИЙН ХЭРЭГСЛИЙН ДААТГАЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.00042413264113485996,
+  "kind": "sumproduct",
+  "children": [
+   673
+  ],
+  "price_row": null
+ },
+ {
+  "row": 673,
+  "name": "Тээврийн хэрэгслийн даатгал, суудлын автомашины, моторын багтаамж 1800 сс, 1 жил",
+  "level": 4,
+  "item_no": 306,
+  "weight_template": 0.00042413264113485996,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1393
+ },
+ {
+  "row": 674,
+  "name": "12.2 САНХYYГИЙН YЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.0014520747428239532,
+  "kind": "weighted_children",
+  "children": [
+   675,
+   679
+  ],
+  "price_row": null
+ },
+ {
+  "row": 675,
+  "name": "12.2.1 САНХYYГИЙН БАЙГУУЛЛАГЫН ШУУД БУС YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0014506957828456669,
+  "kind": "weighted_children",
+  "children": [
+   676
+  ],
+  "price_row": null
+ },
+ {
+  "row": 676,
+  "name": "12.2.1.1 САНХYYГИЙН БАЙГУУЛЛАГЫН ШУУД БУС YЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0014506957828456669,
+  "kind": "sumproduct",
+  "children": [
+   677,
+   678
+  ],
+  "price_row": null
+ },
+ {
+  "row": 677,
+  "name": "Лизингийн зээлийн өргөдлийн хураамж",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1397
+ },
+ {
+  "row": 678,
+  "name": "Банк хоорондын шилжүүлгийн төлбөр, Хаан банк",
+  "level": 4,
+  "item_no": 307,
+  "weight_template": 0.0014506957828456669,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1398
+ },
+ {
+  "row": 679,
+  "name": "12.2.2 БУСАД YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 1.3789599782862579e-06,
+  "kind": "weighted_children",
+  "children": [
+   680
+  ],
+  "price_row": null
+ },
+ {
+  "row": 680,
+  "name": "12.2.2.1 БУСАД YЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 1.3789599782862579e-06,
+  "kind": "sumproduct",
+  "children": [
+   681,
+   682,
+   683
+  ],
+  "price_row": null
+ },
+ {
+  "row": 681,
+  "name": "Оршуулгын машин түрээслэх үйлчилгээний төлбөр",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1401
+ },
+ {
+  "row": 682,
+  "name": "Иргэний үнэмлэх нотариатаар батлуулах төлбөр",
+  "level": 4,
+  "item_no": 308,
+  "weight_template": 1.3789599782862579e-06,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1402
+ },
+ {
+  "row": 683,
+  "name": "ТҮЦ машинаас иргэний үнэмлэхийн лавлагаа авах",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1403
+ },
+ {
+  "row": 684,
+  "name": "13.    БУСАД БАРАА, YЙЛЧИЛГЭЭ",
+  "level": 0,
+  "item_no": null,
+  "weight_template": 0.09600642166854727,
+  "kind": "weighted_children",
+  "children": [
+   685,
+   709
+  ],
+  "price_row": null
+ },
+ {
+  "row": 685,
+  "name": "13.1   ХУВЬ ХYНД ХАНДСАН YЙЛЧИЛГЭЭ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.08670805318418169,
+  "kind": "weighted_children",
+  "children": [
+   686,
+   702
+  ],
+  "price_row": null
+ },
+ {
+  "row": 686,
+  "name": "13.1.1 ГОО САЙХНЫ ХЭРЭГЦЭЭНД ЗОРИУЛСАН БУСАД ЭД ЗYЙЛС",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0717817328296625,
+  "kind": "weighted_children",
+  "children": [
+   687
+  ],
+  "price_row": null
+ },
+ {
+  "row": 687,
+  "name": "13.1.1.1 ГОО САЙХНЫ ХЭРЭГЦЭЭНД ЗОРИУЛСАН БУСАД ЭД ЗYЙЛС",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0717817328296625,
+  "kind": "sumproduct",
+  "children": [
+   688,
+   689,
+   690,
+   691,
+   692,
+   693,
+   694,
+   695,
+   696,
+   697,
+   698,
+   699,
+   700,
+   701
+  ],
+  "price_row": null
+ },
+ {
+  "row": 688,
+  "name": "Эмэгтэй хүний нүүрний шингэн энгэсэг, \"VDL\", Солонгос",
+  "level": 4,
+  "item_no": 309,
+  "weight_template": 0.020719092314542307,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1408
+ },
+ {
+  "row": 689,
+  "name": "Сахлын татуурга, нэг удаагийн, Хятад",
+  "level": 4,
+  "item_no": 310,
+  "weight_template": 5.519740506543942e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1409
+ },
+ {
+  "row": 690,
+  "name": "Гар нүүрийн саван, \"Safeguard\" хэмжээ 90 гр, Орос",
+  "level": 4,
+  "item_no": 311,
+  "weight_template": 0.007676091744902412,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1410
+ },
+ {
+  "row": 691,
+  "name": "Yсний шампунь, савтай, \"Pantene\", 400 мл, энгийн",
+  "level": 4,
+  "item_no": 312,
+  "weight_template": 0.014016500442857169,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1411
+ },
+ {
+  "row": 692,
+  "name": "Биеийн шингэн тос, \"Baby Oil\" хэмжээ 200мл, Орос",
+  "level": 4,
+  "item_no": 313,
+  "weight_template": 0.0016788524874496414,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1412
+ },
+ {
+  "row": 693,
+  "name": "Шүдний оо, хайрцагтай \"Colgate total\", 125 мл, энгийн, 1 хайрцаг, Орос",
+  "level": 4,
+  "item_no": 314,
+  "weight_template": 0.010359546157271153,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1413
+ },
+ {
+  "row": 694,
+  "name": "Шүдний сойз, том хүний, импорт",
+  "level": 4,
+  "item_no": 315,
+  "weight_template": 0.0034531820524237177,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1414
+ },
+ {
+  "row": 695,
+  "name": "Ариун цэврийн цаас, \"Өд \", 1 ш, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1415
+ },
+ {
+  "row": 696,
+  "name": "Ариун цэврийн цаас, \"Living\", 1 ш, 70 м, Солонгос",
+  "level": 4,
+  "item_no": 316,
+  "weight_template": 0.004558116889284797,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1416
+ },
+ {
+  "row": 697,
+  "name": "Нойтон салфетка, Ариун, 30ш, Монгол",
+  "level": 4,
+  "item_no": 317,
+  "weight_template": 0.001823246755713919,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1417
+ },
+ {
+  "row": 698,
+  "name": "Нойтон салфетка, 30ш, Импорт",
+  "level": 4,
+  "item_no": 318,
+  "weight_template": 0.001823246755713919,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1418
+ },
+ {
+  "row": 699,
+  "name": "Хуурай салфетка, Ариун, Монгол",
+  "level": 4,
+  "item_no": 319,
+  "weight_template": 0.0009116233778569594,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1419
+ },
+ {
+  "row": 700,
+  "name": "Эмэгтэй хүний ариун цэврийн хэрэглэл, \"KOTEX\", боодол, дотроо 14 ш, хэмжээ M, Солонгос",
+  "level": 4,
+  "item_no": 320,
+  "weight_template": 0.003028183959131431,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1420
+ },
+ {
+  "row": 701,
+  "name": "Үсний будаг, Londa, хар хүрэн, 1 хайрцаг, Орос",
+  "level": 4,
+  "item_no": 321,
+  "weight_template": 0.0016788524874496414,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1421
+ },
+ {
+  "row": 702,
+  "name": "13.1.2 YСЧИН БОЛОН ГОО САЙХНЫ YЙЛЧИЛГЭЭ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.01492632035451918,
+  "kind": "weighted_children",
+  "children": [
+   703
+  ],
+  "price_row": null
+ },
+ {
+  "row": 703,
+  "name": "13.1.2.1 YСЧИН БОЛОН ГОО САЙХНЫ YЙЛЧИЛГЭЭ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.01492632035451918,
+  "kind": "sumproduct",
+  "children": [
+   704,
+   705,
+   706,
+   707,
+   708
+  ],
+  "price_row": null
+ },
+ {
+  "row": 704,
+  "name": "Эрэгтэй үс засуулах төлбөр",
+  "level": 4,
+  "item_no": 322,
+  "weight_template": 0.005957088923193451,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1424
+ },
+ {
+  "row": 705,
+  "name": "Эмэгтэй үс засуулах төлбөр, энгийн тайралт",
+  "level": 4,
+  "item_no": 323,
+  "weight_template": 0.008935633384790174,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1425
+ },
+ {
+  "row": 706,
+  "name": "Нүүрэнд тостой иллэг хийх төлбөр, 1 удаа",
+  "level": 4,
+  "item_no": 324,
+  "weight_template": 1.0079413960666574e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1426
+ },
+ {
+  "row": 707,
+  "name": "Гарын хумсанд маникюр хийлгэх төлбөр, энгийн",
+  "level": 4,
+  "item_no": 325,
+  "weight_template": 1.34392186142221e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1427
+ },
+ {
+  "row": 708,
+  "name": "Нийтийн халуун усны төлбөр, том хүн",
+  "level": 4,
+  "item_no": 326,
+  "weight_template": 1.0079413960666574e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1428
+ },
+ {
+  "row": 709,
+  "name": "13.2 ХУВЬ ХYНИЙ ЭД ЗYЙЛ, ХЭРЭГЛЭЛ",
+  "level": 1,
+  "item_no": null,
+  "weight_template": 0.009298368484365575,
+  "kind": "weighted_children",
+  "children": [
+   710,
+   716
+  ],
+  "price_row": null
+ },
+ {
+  "row": 710,
+  "name": "13.2.1 YНЭТ ЭДЛЭЛ, ТӨРӨЛ БYРИЙН ЦАГ",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0036539973258626866,
+  "kind": "weighted_children",
+  "children": [
+   711
+  ],
+  "price_row": null
+ },
+ {
+  "row": 711,
+  "name": "13.2.1.1 YНЭТ ЭДЛЭЛ, ТӨРӨЛ БYРИЙН ЦАГ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.0036539973258626866,
+  "kind": "sumproduct",
+  "children": [
+   712,
+   713,
+   714,
+   715
+  ],
+  "price_row": null
+ },
+ {
+  "row": 712,
+  "name": "Мөнгөн аяга, хээгүй, 6-гийн,  дунд гарын, диаметр 15.8-16 см",
+  "level": 4,
+  "item_no": 327,
+  "weight_template": 0.0018269986629313433,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1432
+ },
+ {
+  "row": 713,
+  "name": "Алтан бөгж, 3.0 гр, 999 сорьцтой, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1433
+ },
+ {
+  "row": 714,
+  "name": "Монетон бөгж, цагираг, шигтгээгүй, 2.5гр, 585 сорьцтой, Монгол",
+  "level": 4,
+  "item_no": 328,
+  "weight_template": 0.0018269986629313433,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1434
+ },
+ {
+  "row": 715,
+  "name": "Монетон ээмэг, 585 сорьцтой, 3гр, Монгол",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1435
+ },
+ {
+  "row": 716,
+  "name": "13.2.2 ХУВЬ ХYНИЙ БУСАД ЭД ЗYЙЛС",
+  "level": 2,
+  "item_no": null,
+  "weight_template": 0.0056443711585028875,
+  "kind": "weighted_children",
+  "children": [
+   717,
+   722
+  ],
+  "price_row": null
+ },
+ {
+  "row": 717,
+  "name": "13.2.2.1 ЦҮНХ, ЧЕМОДАН, ТҮРИЙВЧ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 0.005594473257915328,
+  "kind": "sumproduct",
+  "children": [
+   718,
+   719,
+   720,
+   721
+  ],
+  "price_row": null
+ },
+ {
+  "row": 718,
+  "name": "Эмэгтэй  түрийвч, хиймэл арьсан, импорт",
+  "level": 4,
+  "item_no": 329,
+  "weight_template": 1.5412544135363714e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1438
+ },
+ {
+  "row": 719,
+  "name": "Сурагчийн цүнх, бага ангийн охидын, үүрдэг, импорт",
+  "level": 4,
+  "item_no": 330,
+  "weight_template": 0.004682115468997303,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1439
+ },
+ {
+  "row": 720,
+  "name": "Чемодан, зөөлөн даавуун гадаргуутай, чирдэг, дугуйтай, 18 кг дундаж хэмжээтэй, Хятад",
+  "level": 4,
+  "item_no": 331,
+  "weight_template": 0.0008969452447826608,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1440
+ },
+ {
+  "row": 721,
+  "name": "Хүүхдийн тэрэг, 4 дугуйтай, энгийн, Хятад",
+  "level": 4,
+  "item_no": null,
+  "weight_template": 0.0,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1441
+ },
+ {
+  "row": 722,
+  "name": "13.2.2.2 ХУВЬ ХYНИЙ БУСАД ЭД ЗYЙЛ, ХЭРЭГЛЭЛ",
+  "level": 3,
+  "item_no": null,
+  "weight_template": 4.9897900587559815e-05,
+  "kind": "sumproduct",
+  "children": [
+   723
+  ],
+  "price_row": null
+ },
+ {
+  "row": 723,
+  "name": "Эмэгтэй хүний нарны шил, хүрээтэй, хар, Хятад",
+  "level": 4,
+  "item_no": 332,
+  "weight_template": 4.9897900587559815e-05,
+  "kind": "elementary",
+  "children": [],
+  "price_row": 1443
+ }
+]
