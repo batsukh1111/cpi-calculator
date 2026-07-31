@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CPI тооцоолуур — 2023=100</title>
+  <meta name="description" content="Монгол Улсын хэрэглээний үнийн индекс — аймаг, бүс, тусгай бүлэг, YoY/YTD/MoM" />
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-icon">📈</div>
+      <div>
+        <h1>Хэрэглээний үнийн <span>индекс</span></h1>
+        <p>Суурь 2023=100 · Аймаг → Улс · Нийтлэлийн хүснэгт</p>
+      </div>
+    </div>
+    <div class="controls">
+      <div>
+        <label>Хугацаа</label><br/>
+        <select id="period"></select>
+      </div>
+      <div style="align-self:flex-end">
+        <button class="btn btn-primary" id="btnLoad" onclick="loadDashboard()">Шинэчлэх</button>
+      </div>
+      <div style="align-self:flex-end">
+        <button class="btn btn-success" id="btnPublish" onclick="publishTables()">Table 1–11 татах</button>
+      </div>
+      <div style="align-self:flex-end">
+        <button class="btn btn-ghost" onclick="recalculate()">Дахин тооцоолох</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="status" class="status"></div>
+    <div id="loader" class="loader">
+      <div class="spinner"></div>
+      <div>Excel уншиж, индекс тооцоолж байна… (30–90 сек)</div>
+    </div>
+
+    <div id="content" style="display:none">
+      <div class="kpis" id="kpis"></div>
+
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-tab="overview">Ерөнхий</button>
+        <button class="tab" data-tab="aimags">Аймгууд</button>
+        <button class="tab" data-tab="groups">Бүлэг</button>
+        <button class="tab" data-tab="special">Тусгай бүлэг</button>
+        <button class="tab" data-tab="regions">Бүс</button>
+        <button class="tab" data-tab="download">Татах</button>
+      </div>
+
+      <section class="panel active" id="panel-overview">
+        <div class="grid-2">
+          <div class="card">
+            <h2>Улсын индекс <span id="chartPeriod"></span></h2>
+            <div class="chart-wrap"><canvas id="chartOverall"></canvas></div>
+          </div>
+          <div class="card">
+            <h2>Инфляц (жилийн %)</h2>
+            <div class="chart-wrap"><canvas id="chartYoy"></canvas></div>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Сонгосон сарын харьцуулалт</h2>
+          <div class="scroll">
+            <table class="data" id="tblCompare">
+              <thead>
+                <tr>
+                  <th>Хамрах хүрээ</th>
+                  <th>Индекс</th>
+                  <th>Өмнөх оны мөн үе %</th>
+                  <th>Өмнөх оны эцэс %</th>
+                  <th>Өмнөх сар %</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-aimags">
+        <div class="card">
+          <h2>Аймаг / нийслэл</h2>
+          <div class="chart-wrap" style="height:360px"><canvas id="chartAimags"></canvas></div>
+          <div class="scroll" style="margin-top:1rem">
+            <table class="data" id="tblAimags">
+              <thead>
+                <tr>
+                  <th>Код</th><th>Нэр</th><th>Жин</th>
+                  <th>Индекс</th><th>YoY %</th><th>YTD %</th><th>MoM %</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-groups">
+        <div class="card">
+          <h2>COICOP бүлэг — Улс</h2>
+          <div class="scroll">
+            <table class="data" id="tblGroups">
+              <thead>
+                <tr>
+                  <th>Бүлэг</th><th>Жин</th>
+                  <th>Индекс</th><th>YoY %</th><th>YTD %</th><th>MoM %</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-special">
+        <div class="card">
+          <h2>Тусгай барааны бүлэг (УБ + Улс)</h2>
+          <div class="scroll">
+            <table class="data" id="tblSpecial">
+              <thead>
+                <tr>
+                  <th>Бүлэг</th>
+                  <th>УБ индекс</th><th>УБ YoY</th>
+                  <th>Улс индекс</th><th>Улс YoY</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-regions">
+        <div class="card">
+          <h2>
+            Бүс
+            <select id="regionScheme" onchange="renderRegions()" style="margin-left:0.5rem;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:0.25rem 0.5rem">
+              <option value="traditional">Уламжлалт</option>
+              <option value="new">Шинэ бүс</option>
+            </select>
+          </h2>
+          <div class="chart-wrap"><canvas id="chartRegions"></canvas></div>
+          <div class="scroll" style="margin-top:1rem">
+            <table class="data" id="tblRegions">
+              <thead>
+                <tr>
+                  <th>Бүс</th><th>Аймгууд</th><th>Жин</th>
+                  <th>Индекс</th><th>YoY %</th><th>YTD %</th><th>MoM %</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-download">
+        <div class="card">
+          <h2>Файл татах</h2>
+          <p class="hint">Сонгосон хугацаагаар нийтлэлийн хүснэгт (table 1–11) болон бусад үр дүн.</p>
+          <div class="actions">
+            <button class="btn btn-success" onclick="publishTables()">📊 National table 1–11 (.xlsx)</button>
+            <a class="btn btn-ghost" href="/api/download/result" id="dlResult">📈 CPI үр дүн (.xlsx)</a>
+            <a class="btn btn-ghost" href="/api/download/comparison" id="dlComp">📋 Харьцуулалт (.csv)</a>
+          </div>
+          <p class="hint" id="dlHint"></p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    CPI calculator · 2023=100 · локал тооцоолол · Excel өгөгдөл
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

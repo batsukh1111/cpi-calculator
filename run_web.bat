@@ -1,25 +1,31 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-title CPI web
+title CPI Web Site
 
 echo.
-echo  Starting CPI web interface...
-echo  Browser will open. Keep this window open.
-echo  Close this window to stop the server.
+echo  ========================================
+echo   CPI веб сайт эхлүүлж байна...
+echo   Хөтөч: http://127.0.0.1:5050
+echo   Хаахдаа энэ цонхыг хаана.
+echo  ========================================
 echo.
 
 set "PY=%~dp0.venv\Scripts\python.exe"
 if not exist "%PY%" set "PY=python"
 
-"%PY%" -c "import streamlit" 1>nul 2>nul
+"%PY%" -c "import flask" 1>nul 2>nul
 if errorlevel 1 (
-  echo Installing streamlit...
-  "%PY%" -m pip install streamlit pandas openpyxl
+  echo Flask суулгаж байна...
+  "%PY%" -m pip install flask openpyxl pandas
 )
 
-echo Opening http://localhost:8501 ...
-start "" http://localhost:8501
-"%PY%" -m streamlit run "%~dp0app.py" --server.headless true
+echo.
+echo Эхний удаа Excel тооцоолол 30-90 сек болно.
+echo.
+
+start "" http://127.0.0.1:5050
+"%PY%" "%~dp0server.py"
+
 pause
 endlocal

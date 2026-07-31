@@ -54,6 +54,24 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+## Веб сайт (хамгийн хялбар)
+
+Desktop дээр **`CPI_WEB.bat`** (эсвэл `CPI WEB` shortcut) дээр 2 товших.
+
+эсвэл:
+
+```bash
+python server.py
+```
+
+Хөтөч: **http://127.0.0.1:5050**
+
+| Товч | Үйлдэл |
+|------|--------|
+| Хугацаа сонгох | YoY / YTD / MoM автомат |
+| Дахин тооцоолох | Excel-ээс шинэ индекс |
+| Table 1–11 татах | Нийтлэлийн Excel |
+
 ## Ашиглах
 
 ### 1) Командын мөр
