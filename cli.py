@@ -23,6 +23,8 @@ from cpi.engine import CPICalculator, inflation_yoy
 from cpi.export import export_excel, export_json, export_overall_csv
 from cpi.special_groups import compute_ub_and_national_special
 from cpi.regions import compute_all_regions
+from cpi.period import parse_period, latest_period, three_way_changes, period_index
+from cpi.publication import publish_for_period, generate_publication
 import json as _json
 
 
@@ -164,6 +166,97 @@ def cmd_calculate(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_publish(args: argparse.Namespace) -> int:
+    """Хугацаа оруулаад table 1–11 нийтлэлийн Excel гаргах."""
+    excel = Path(args.input)
+    if not excel.exists():
+        print(f"Файл олдсонгүй: {excel}", file=sys.stderr)
+        return 1
+
+    template = Path(args.template) if args.template else Path(
+        r"C:\Users\batsukh\Desktop\National_202607_2023.xlsx"
+    )
+    if not template.exists():
+        print(f"Загвар файл олдсонгүй: {template}", file=sys.stderr)
+        print("  --template замаар National_*.xlsx өгнө үү.")
+        return 1
+
+    out_dir = Path(args.output)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    print(f"Уншиж байна: {excel}")
+    t0 = time.perf_counter()
+    data = load_workbook_data(excel)
+    result = CPICalculator(data).calculate()
+    print(f"  Тооцоо дууслаа ({time.perf_counter()-t0:.1f}s)")
+
+    if args.period:
+        period = parse_period(args.period)
+    else:
+        period = latest_period(result.months, result.national.overall)
+        print(f"  Хугацаа автомат: {period.key}")
+
+    t = period_index(result.months, period)
+    ch = three_way_changes(result.national.overall, t)
+    print()
+    print(f"=== Улс — {period.title_mn()} ({period.roman}) ===")
+    print(f"  Индекс (2023=100): {ch['index']:.2f}" if ch["index"] is not None else "  Индекс: —")
+    if ch["yoy"] is not None:
+        print(f"  Өмнөх оны мөн үе:     {ch['yoy']:+.1f}%")
+    if ch["ytd"] is not None:
+        print(f"  Өмнөх оны эцэс:       {ch['ytd']:+.1f}%")
+    if ch["mom"] is not None:
+        print(f"  Өмнөх сар:            {ch['mom']:+.1f}%")
+
+    out_path = out_dir / f"National_{period.yyyymm}_2023.xlsx"
+    print()
+    print(f"Нийтлэлийн хүснэгт (table 1–11) үүсгэж байна...")
+    print(f"  Загвар: {template}")
+    generate_publication(
+        result,
+        data,
+        period,
+        template,
+        out_path,
+        tables_only=not args.keep_all_sheets,
+    )
+    print(f"  Хадгаллаа: {out_path}")
+
+    # also write comparison summary csv
+    import csv
+
+    csv_path = out_dir / f"comparison_{period.yyyymm}.csv"
+    with open(csv_path, "w", encoding="utf-8-sig", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(
+            [
+                "code",
+                "name",
+                "index",
+                "yoy_pct",
+                "ytd_pct",
+                "mom_pct",
+            ]
+        )
+        chn = three_way_changes(result.national.overall, t)
+        w.writerow(
+            [
+                "00",
+                "Улс",
+                chn["index"],
+                chn["yoy"],
+                chn["ytd"],
+                chn["mom"],
+            ]
+        )
+        for code in sorted(result.regions.keys()):
+            rr = result.regions[code]
+            c = three_way_changes(rr.overall, t)
+            w.writerow([code, rr.name, c["index"], c["yoy"], c["ytd"], c["mom"]])
+    print(f"  Харьцуулалт CSV: {csv_path}")
+    return 0
+
+
 def cmd_validate(args: argparse.Namespace) -> int:
     """Excel-ийн data_only утгатай харьцуулах."""
     import openpyxl
@@ -272,6 +365,36 @@ def main(argv: list[str] | None = None) -> int:
     v.add_argument("-i", "--input", required=True)
     v.add_argument("--tol", type=float, default=0.01, help="зөвшөөрөгдөх зөрүү")
     v.set_defaults(func=cmd_validate)
+
+    pub = sub.add_parser(
+        "publish",
+        help="Хугацаагаар YoY/YTD/MoM тооцоод table 1–11 гаргах",
+    )
+    pub.add_argument(
+        "-i",
+        "--input",
+        required=True,
+        help="cpi calculation 2023=100.xlsx",
+    )
+    pub.add_argument(
+        "-p",
+        "--period",
+        default=None,
+        help="Хугацаа: 2026-06 эсвэл 2026.06 (хоосон=сүүлийн сар)",
+    )
+    pub.add_argument(
+        "-t",
+        "--template",
+        default=None,
+        help="National_*.xlsx загвар (table 1–11)",
+    )
+    pub.add_argument("-o", "--output", default="output", help="гаралтын хавтас")
+    pub.add_argument(
+        "--keep-all-sheets",
+        action="store_true",
+        help="Загварын бүх sheet үлдээх (default: зөвхөн table 1–11)",
+    )
+    pub.set_defaults(func=cmd_publish)
 
     args = p.parse_args(argv)
     return args.func(args)

@@ -109,6 +109,32 @@ git commit -m "CPI calculator 2023=100 — aimag to national"
 gh repo create cpi-calculator --public --source=. --remote=origin --push
 ```
 
+## Нийтлэлийн хүснэгт (table 1–11) + хугацааны харьцуулалт
+
+Хугацаа оруулахад **3 төрлийн** өөрчлөлтийг автоматаар тооцно:
+
+| Харьцуулалт | Тайлбар | Excel томьёо |
+|-------------|---------|--------------|
+| **YoY** | Өмнөх оны мөн үе | \(I_t/I_{t-12}\times100-100\) |
+| **YTD** | Өмнөх оны эцэс (XII) | \(I_t/I_{\mathrm{Dec}}\times100-100\) |
+| **MoM** | Өмнөх сар | \(I_t/I_{t-1}\times100-100\) |
+
+### Ажиллуулах
+
+**Desktop:** `CPI_PUBLISH.bat` дээр 2 товших → хугацаа асууна (ж.нь `2026-06`)
+
+эсвэл:
+
+```bash
+python cli.py publish -i "C:\Users\...\cpi calculation 2023=100.xlsx" -p 2026-06 -t "C:\Users\...\National_202607_2023.xlsx" -o output
+```
+
+Гаралт:
+- `output/National_202606_2023.xlsx` — **table 1 … table 11** (олон нийтийн формат)
+- `output/comparison_202606.csv` — аймаг бүрийн YoY / YTD / MoM
+
+Загвар файл: `National_202607_2023.xlsx` (Desktop). Хугацаа хоосон үлдээвэл **сүүлийн сар** автоматаар сонгогдоно.
+
 ## Тусгай барааны бүлэг + бүс (`Бүлэг.xlsx`)
 
 `Бүлэг.xlsx` файлын 3 sheet-ийг ашиглана:
