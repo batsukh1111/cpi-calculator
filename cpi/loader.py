@@ -91,6 +91,41 @@ def load_months() -> list[dict[str, Any]]:
     return _load_json("months.json")
 
 
+def detect_months_from_sheet(ws, header_row: int = 7) -> list[dict[str, Any]]:
+    """
+    Sheet-ийн header мөрөөс сарын багануудыг автоматаар уншина.
+    «2023.01/ 2023», «2026.07/ 2023» гэх мэт.
+    Шинэ сар (ж.нь 7-р сар) нэмэгдэхэд months.json шинэчлэх шаардлагагүй.
+    """
+    months: list[dict[str, Any]] = []
+    # Read a wide row (up to col 120)
+    for row in ws.iter_rows(
+        min_row=header_row, max_row=header_row, min_col=1, max_col=120, values_only=False
+    ):
+        for cell in row:
+            v = cell.value
+            if v is None:
+                continue
+            s = str(v).strip()
+            m = re.match(r"(\d{4})\.(\d{2})", s)
+            if not m:
+                continue
+            # 0-based column index for openpyxl values_only rows
+            col0 = cell.column - 1  # openpyxl column is 1-based
+            months.append(
+                {
+                    "col": col0,
+                    "label": s,
+                    "period": f"{m.group(1)}-{m.group(2)}",
+                }
+            )
+    # Keep only contiguous price/index months starting near K (col 10+)
+    # Prefer labels that look like "YYYY.MM/ YYYY"
+    months = [x for x in months if x["col"] >= MONTH_COL0]
+    months.sort(key=lambda x: x["col"])
+    return months
+
+
 def _to_float(v: Any) -> float | None:
     if v is None:
         return None
@@ -113,13 +148,18 @@ def _read_region_sheet(
     ws,
     code: str,
     name: str,
-    n_months: int,
+    months: list[dict[str, Any]],
     index_rows: list[int],
     price_rows: list[int],
 ) -> RegionData:
     """Унших: H багана (жин) index мөрүүдээс, үнэ price мөрүүдээс."""
     weights: dict[int, float] = {}
     prices: dict[int, list[float | None]] = {}
+    n_months = len(months)
+    # absolute max col needed (1-based openpyxl)
+    max_col0 = max((m["col"] for m in months), default=MONTH_COL0) 
+    max_col = max_col0 + 1  # openpyxl max_col is 1-based inclusive when used carefully
+    # values_only rows are 0-indexed by position from min_col=1 → index = col-1
 
     # Index section: weights in col H (index 7)
     for i, row in enumerate(
@@ -135,21 +175,21 @@ def _read_region_sheet(
         h = _to_float(row[7] if len(row) > 7 else None)
         weights[i] = h if h is not None else 0.0
 
-    # Price section: months start at col K (index 10)
-    max_col = MONTH_COL0 + n_months
+    # Price section: use actual column indices from months detection
+    read_max = max_col0 + 1
     for i, row in enumerate(
         ws.iter_rows(
             min_row=PRICE_START,
             max_row=PRICE_START + (INDEX_END - INDEX_START),
             min_col=1,
-            max_col=max_col,
+            max_col=read_max,
             values_only=True,
         ),
         PRICE_START,
     ):
         month_vals = []
-        for m in range(n_months):
-            col_i = MONTH_COL0 + m
+        for m in months:
+            col_i = m["col"]  # 0-based in values_only row starting min_col=1
             val = row[col_i] if col_i < len(row) else None
             month_vals.append(_to_float(val))
         prices[i] = month_vals
@@ -172,8 +212,6 @@ def load_workbook_data(
     excel_path = Path(excel_path)
     structure, by_row = load_structure()
     aimags = load_aimags()
-    months = load_months()
-    n_months = len(months)
 
     if aimag_codes is None:
         aimag_codes = sorted(aimags.keys())
@@ -187,6 +225,24 @@ def load_workbook_data(
     regions: dict[str, RegionData] = {}
 
     try:
+        # Саруудыг Excel header-ээс автоматаар (шинэ сар нэмэгдвэл аяндаа)
+        probe = None
+        for code in ("20", "01") + tuple(aimag_codes):
+            if code in wb.sheetnames:
+                probe = code
+                break
+        if probe is None:
+            raise KeyError(f"Аймгийн sheet олдсонгүй: {excel_path}")
+        months = detect_months_from_sheet(wb[probe])
+        if not months:
+            months = load_months()  # fallback
+        # Persist for reference (optional)
+        try:
+            with open(_DATA_DIR / "months.json", "w", encoding="utf-8") as f:
+                json.dump(months, f, ensure_ascii=False, indent=2)
+        except OSError:
+            pass
+
         for code in aimag_codes:
             if code not in wb.sheetnames:
                 raise KeyError(f"Sheet '{code}' олдсонгүй: {excel_path}")
@@ -196,7 +252,7 @@ def load_workbook_data(
                 name = "Улаанбаатар"
             ws = wb[code]
             regions[code] = _read_region_sheet(
-                ws, code, name, n_months, index_rows, price_rows
+                ws, code, name, months, index_rows, price_rows
             )
     finally:
         wb.close()
