@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CPI — Хэрэглээний үнийн индекс (2023=100)</title>
   <meta name="description" content="Монгол Улсын CPI: аймаг, бүс, тусгай бүлэг, инфляцын оролцоо. Онлайн дашбоард." />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=4" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 </head>
 <body>
@@ -37,16 +37,29 @@
       </div>
       <button class="btn btn-ghost" type="button" onclick="fillDefaults()">Стандарт</button>
       <button class="btn" type="button" id="btnGo" onclick="render()">Тооцох</button>
+      <button class="btn btn-price" type="button" onclick="openPricesTab()">✏️ УБ үнэ оруулах</button>
     </div>
   </header>
 
   <main>
     <div id="status" class="status"></div>
+
+    <!-- Always visible entry point (even while data loads) -->
+    <div class="price-banner" id="priceBanner">
+      <div>
+        <strong>Улаанбаатарын барааны үнэ оруулах</strong>
+        <span class="hint" style="display:block;margin-top:0.2rem">
+          Сар сонгоод үнэ бичнэ → «Индекс тооцох». Зөвхөн нийслэл.
+        </span>
+      </div>
+      <button class="btn btn-price" type="button" onclick="openPricesTab()">Нээх →</button>
+    </div>
+
     <div id="content" style="display:none">
       <div class="kpis" id="kpis"></div>
-      <div class="tabs">
+      <div class="tabs" id="mainTabs">
+        <button class="tab" data-tab="prices" id="tabPrices">✏️ Үнэ оруулах (УБ)</button>
         <button class="tab active" data-tab="overview">Ерөнхий</button>
-        <button class="tab" data-tab="prices">Үнэ оруулах (УБ)</button>
         <button class="tab" data-tab="aimags">Аймгууд</button>
         <button class="tab" data-tab="groups">Бүлэг</button>
         <button class="tab" data-tab="special">Тусгай</button>
@@ -237,7 +250,7 @@
   <footer>
     <div id="footerMeta">CPI 2023=100 · GitHub Pages</div>
   </footer>
-  <script src="prices.js"></script>
-  <script src="app.js"></script>
+  <script src="prices.js?v=4"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>

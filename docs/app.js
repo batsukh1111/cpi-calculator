@@ -104,13 +104,38 @@ function shortName(s) {
 }
 
 // Tabs
+function switchTab(tabName) {
+  document.querySelectorAll(".tab").forEach((b) => b.classList.remove("active"));
+  document.querySelectorAll(".panel").forEach((p) => p.classList.remove("active"));
+  const btn = document.querySelector('.tab[data-tab="' + tabName + '"]');
+  const panel = document.getElementById("panel-" + tabName);
+  if (btn) btn.classList.add("active");
+  if (panel) panel.classList.add("active");
+  if (tabName === "prices") {
+    try {
+      if (typeof renderPriceEditor === "function") renderPriceEditor();
+      if (typeof fillPriceTable === "function") fillPriceTable();
+    } catch (e) {
+      console.error(e);
+      showStatus("Үнэ оруулах алдаа: " + e.message, "err");
+    }
+  }
+  try {
+    history.replaceState(null, "", "#" + tabName);
+  } catch (_) {}
+}
+
+function openPricesTab() {
+  // show content area if hidden
+  const content = document.getElementById("content");
+  if (content) content.style.display = "block";
+  switchTab("prices");
+  const panel = document.getElementById("panel-prices");
+  if (panel) panel.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 document.querySelectorAll(".tab").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".tab").forEach((b) => b.classList.remove("active"));
-    document.querySelectorAll(".panel").forEach((p) => p.classList.remove("active"));
-    btn.classList.add("active");
-    $("panel-" + btn.dataset.tab).classList.add("active");
-  });
+  btn.addEventListener("click", () => switchTab(btn.dataset.tab));
 });
 
 function fillDefaults() {
@@ -523,9 +548,12 @@ async function init() {
   bindInputs();
   showStatus("Өгөгдөл ачаалж байна…", "info");
   try {
-    const res = await fetch("data/cpi_bundle.json?v=" + Date.now());
+    const res = await fetch("data/cpi_bundle.json?v=4&t=" + Date.now());
     if (!res.ok) throw new Error("cpi_bundle.json олдсонгүй — web-export хийнэ үү");
     DATA = await res.json();
+    if (!DATA.ub_edit || !DATA.ub_edit.products || !DATA.ub_edit.products.length) {
+      console.warn("ub_edit missing in bundle");
+    }
     const dl = $("periodList");
     DATA.months.forEach((p) => {
       const o = document.createElement("option");
@@ -568,6 +596,12 @@ async function init() {
 
     if (typeof renderPriceEditor === "function") renderPriceEditor();
     render();
+
+    // #prices hash or first visit highlight
+    const hash = (location.hash || "").replace("#", "");
+    if (hash === "prices" || hash === "price") {
+      openPricesTab();
+    }
   } catch (e) {
     showStatus("Алдаа: " + e.message, "err");
   }

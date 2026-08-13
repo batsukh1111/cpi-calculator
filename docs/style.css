@@ -110,6 +110,36 @@ table.data tr:hover td { background: rgba(56,189,248,.06); }
 .hint { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.55rem; }
 footer { text-align: center; padding: 1.8rem; color: var(--muted); font-size: 0.78rem; }
 
+.btn-price {
+  background: linear-gradient(135deg, #f59e0b, #ef4444) !important;
+  color: #fff !important;
+  font-weight: 750 !important;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+  white-space: nowrap;
+}
+.price-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 1rem 1.15rem;
+  border-radius: 14px;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  background: linear-gradient(135deg, rgba(245,158,11,.15), rgba(239,68,68,.1));
+}
+.price-banner strong { font-size: 1.05rem; color: #fde68a; }
+.tab[data-tab="prices"] {
+  border: 1px solid rgba(245, 158, 11, 0.5) !important;
+  color: #fde68a !important;
+  background: rgba(245, 158, 11, 0.12) !important;
+}
+.tab[data-tab="prices"].active {
+  background: rgba(245, 158, 11, 0.28) !important;
+  color: #fff !important;
+}
+
 /* Price entry */
 .price-toolbar {
   display: flex; flex-wrap: wrap; gap: 0.75rem 1rem;
