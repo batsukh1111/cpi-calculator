@@ -24,6 +24,7 @@ def build_web_bundle(result: CPIResult) -> dict[str, Any]:
     groups_cfg = load_special_groups()
     labels = groups_cfg["labels_mn"]
     group_members = groups_cfg["groups"]
+    group_order = groups_cfg.get("order") or list(group_members.keys())
     n = len(months)
 
     def pack_scope(weights: dict[int, float], indices: dict[int, list[float]]):
@@ -51,12 +52,25 @@ def build_web_bundle(result: CPIResult) -> dict[str, Any]:
     def pack_special(weights, indices):
         total = weights.get(8, 0.0) or 0.0
         out = {}
-        for key, members in group_members.items():
+        # stable order: config order first, then any extras
+        keys = list(group_order)
+        for k in group_members:
+            if k not in keys:
+                keys.append(k)
+        for key in keys:
+            members = group_members.get(key)
+            if not members:
+                continue
             series, abs_w = special_group_index(members, weights, indices, n)
             w_rel = (abs_w / total * 100.0) if total else 0.0
             out[key] = {
                 "label": labels.get(key, key),
                 "weight": round(w_rel, 6),
+                "n_items": sum(
+                    1
+                    for r in members
+                    if (weights.get(r, 0.0) or 0.0) > 0 and r in indices
+                ),
                 "indices": [round(x, 6) for x in series],
             }
         return out
@@ -102,7 +116,9 @@ def build_web_bundle(result: CPIResult) -> dict[str, Any]:
         "ulaanbaatar": ub,
         "aimags": aimags,
         "special": special,
+        "special_order": group_order,
         "regions": regions_out,
+        "scopes_note": "Тусгай бүлэг зөвхөн Улс + Улаанбаатар",
     }
 
 

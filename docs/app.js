@@ -260,17 +260,18 @@ function render() {
       )
       .join("");
 
-    // Special
+    // Special — зөвхөн Улс + УБ, Excel-ийн 1 тэмдэглэлтэй дэлгэрэнгүй бүлгүүд
     const sn = DATA.special.national || {};
     const su = DATA.special.ulaanbaatar || {};
-    const keys = Object.keys(sn);
+    const keys = (DATA.special_order || Object.keys(sn)).filter((k) => sn[k]);
     $("tblSpecial").querySelector("tbody").innerHTML = keys
       .map((k) => {
         const n = sn[k];
         const u = su[k];
         const cn = threeWay(n.indices, ctx.t, ctx.t1, ctx.t2, ctx.t3);
         const cu = u ? threeWay(u.indices, ctx.t, ctx.t1, ctx.t2, ctx.t3) : {};
-        return `<tr><td>${n.label}</td><td>${fmt(cu.index, 2)}</td>${pctCell(cu.c1)}<td>${fmt(cn.index, 2)}</td>${pctCell(cn.c1)}</tr>`;
+        const nItems = n.n_items != null ? n.n_items : "";
+        return `<tr><td>${n.label}${nItems !== "" ? ` <span style="color:#8fa3bf;font-size:0.75rem">(${nItems})</span>` : ""}</td><td>${fmt(n.weight, 2)}</td><td>${fmt(cu.index, 2)}</td>${pctCell(cu.c1)}${pctCell(cu.c2)}${pctCell(cu.c3)}<td>${fmt(cn.index, 2)}</td>${pctCell(cn.c1)}${pctCell(cn.c2)}${pctCell(cn.c3)}</tr>`;
       })
       .join("");
 
@@ -423,7 +424,8 @@ function renderContrib() {
       overall: true,
     },
   ];
-  Object.keys(sp).forEach((k) => {
+  const spKeys = (DATA.special_order || Object.keys(sp)).filter((k) => sp[k]);
+  spKeys.forEach((k) => {
     const g = sp[k];
     const idxT = g.indices[ctx.t];
     const idxB = g.indices[tBase];

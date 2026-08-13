@@ -162,7 +162,12 @@ def special_contributions(
         }
     ]
 
-    for key, members in groups.items():
+    order = groups_cfg.get("order") or list(groups.keys())
+    keys = list(order) + [k for k in groups if k not in order]
+    for key in keys:
+        members = groups.get(key)
+        if not members:
+            continue
         series, abs_w = special_group_index(members, weights, indices, n)
         if t >= len(series) or t_base >= len(series):
             continue
