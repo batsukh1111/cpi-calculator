@@ -114,10 +114,10 @@ function switchTab(tabName) {
   if (tabName === "prices") {
     try {
       if (typeof renderPriceEditor === "function") renderPriceEditor();
-      if (typeof fillPriceTable === "function") fillPriceTable();
+      else if (typeof fillPriceView === "function") fillPriceView();
     } catch (e) {
       console.error(e);
-      showStatus("Үнэ оруулах алдаа: " + e.message, "err");
+      showStatus("Үнэ харах алдаа: " + e.message, "err");
     }
   }
   try {
@@ -374,6 +374,10 @@ function render() {
     renderContrib();
     renderRegions();
     $("content").style.display = "block";
+    // refresh price view if open / always sync table headers
+    try {
+      if (typeof fillPriceView === "function") fillPriceView();
+    } catch (_) {}
     showStatus(
       "Сар: " + ctx.p + " · vs " + ctx.v1 + " / " + ctx.v2 + " / " + ctx.v3 +
         " · шинэчилсэн: " + (DATA.generated || ""),
@@ -582,22 +586,9 @@ async function init() {
     $("footerMeta").textContent =
       "CPI 2023=100 · " + DATA.months.length + " сар · шинэчилсэн " + (DATA.generated || "");
 
-    // Хэрэв УБ үнэ localStorage-д байвал автомат дахин тооцоо
-    try {
-      const ov = typeof ubLoadOverrides === "function" ? ubLoadOverrides() : {};
-      if (DATA.ub_edit && Object.keys(ov).length && typeof recomputeUB === "function") {
-        const rec = recomputeUB(DATA);
-        applyUBToData(DATA, rec);
-        showStatus("УБ-ын хадгалсан үнээр индекс шинэчлэгдлээ (local).", "ok");
-      }
-    } catch (e) {
-      console.warn("UB recompute skip", e);
-    }
-
     if (typeof renderPriceEditor === "function") renderPriceEditor();
     render();
 
-    // #prices hash or first visit highlight
     const hash = (location.hash || "").replace("#", "");
     if (hash === "prices" || hash === "price") {
       openPricesTab();

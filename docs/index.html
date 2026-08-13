@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CPI — Хэрэглээний үнийн индекс (2023=100)</title>
   <meta name="description" content="Монгол Улсын CPI: аймаг, бүс, тусгай бүлэг, инфляцын оролцоо. Онлайн дашбоард." />
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 </head>
 <body>
@@ -37,29 +37,18 @@
       </div>
       <button class="btn btn-ghost" type="button" onclick="fillDefaults()">Стандарт</button>
       <button class="btn" type="button" id="btnGo" onclick="render()">Тооцох</button>
-      <button class="btn btn-price" type="button" onclick="openPricesTab()">✏️ УБ үнэ оруулах</button>
+      <button class="btn btn-price" type="button" onclick="openPricesTab()">Үнэ харах (УБ)</button>
     </div>
   </header>
 
   <main>
     <div id="status" class="status"></div>
 
-    <!-- Always visible entry point (even while data loads) -->
-    <div class="price-banner" id="priceBanner">
-      <div>
-        <strong>Улаанбаатарын барааны үнэ оруулах</strong>
-        <span class="hint" style="display:block;margin-top:0.2rem">
-          Сар сонгоод үнэ бичнэ → «Индекс тооцох». Зөвхөн нийслэл.
-        </span>
-      </div>
-      <button class="btn btn-price" type="button" onclick="openPricesTab()">Нээх →</button>
-    </div>
-
     <div id="content" style="display:none">
       <div class="kpis" id="kpis"></div>
       <div class="tabs" id="mainTabs">
-        <button class="tab" data-tab="prices" id="tabPrices">✏️ Үнэ оруулах (УБ)</button>
         <button class="tab active" data-tab="overview">Ерөнхий</button>
+        <button class="tab" data-tab="prices" id="tabPrices">Үнэ харах (УБ)</button>
         <button class="tab" data-tab="aimags">Аймгууд</button>
         <button class="tab" data-tab="groups">Бүлэг</button>
         <button class="tab" data-tab="special">Тусгай</button>
@@ -68,37 +57,51 @@
       </div>
 
       <section class="panel" id="panel-prices">
-        <div class="card" id="priceEditor">
-          <h2>Улаанбаатар — сарын дундаж үнэ оруулах</h2>
+        <div class="card">
+          <h2>Улаанбаатар — барааны үнэ (3 түвшин харьцуулалт)</h2>
           <p class="hint">
-            Зөвхөн нийслэлийн барааны үнэ. Өөрчлөлт таны браузерт (localStorage) хадгалагдана.
-            «Индекс тооцох» дарвал УБ-ын индекс, тусгай бүлэг, оролцоо шинэчлэгдэнэ.
+            Дээрх <strong>Үндсэн сар</strong> болон <strong>Харьцуулах 1 / 2 / 3</strong>-тай ижил саруудаар
+            бараа бүрийн дундаж үнийг харьцуулна. Зөвхөн харах — засах шаардлагагүй.
           </p>
           <div class="price-toolbar">
-            <div>
-              <label>Сар</label><br/>
-              <select id="priceMonth" onchange="fillPriceTable()"></select>
-            </div>
-            <div>
-              <label>Хайх</label><br/>
-              <input type="search" id="priceSearch" placeholder="будаа, гурил…" oninput="fillPriceTable()" style="width:180px" />
+            <div style="flex:1;min-width:220px">
+              <label>Бараа хайх / сонгох</label><br/>
+              <input type="search" id="priceSearch" list="productList" placeholder="ж.нь: будаа, гурил, талх…"
+                style="width:100%;max-width:420px" oninput="onProductSearch()" />
+              <datalist id="productList"></datalist>
             </div>
             <div style="align-self:flex-end">
               <label class="hint" style="display:flex;align-items:center;gap:0.35rem;cursor:pointer">
-                <input type="checkbox" id="priceOnlyWeight" checked onchange="fillPriceTable()" />
+                <input type="checkbox" id="priceOnlyWeight" checked onchange="fillPriceView()" />
                 Зөвхөн жинтэй бараа
               </label>
             </div>
-            <div style="align-self:flex-end;display:flex;flex-wrap:wrap;gap:0.4rem">
-              <button class="btn" type="button" onclick="recomputeFromPrices()">Индекс тооцох</button>
-              <button class="btn btn-ghost" type="button" onclick="downloadPriceCSV()">CSV татах</button>
-              <button class="btn btn-ghost" type="button" onclick="document.getElementById('csvImport').click()">CSV оруулах</button>
-              <input type="file" id="csvImport" accept=".csv,text/csv" hidden onchange="if(this.files[0])importPriceCSV(this.files[0])" />
-              <button class="btn btn-ghost" type="button" onclick="downloadBundleJSON()">JSON татах</button>
-              <button class="btn btn-ghost" type="button" onclick="clearPriceEdits()">Цэвэрлэх</button>
-            </div>
           </div>
           <p class="hint" id="priceStatus"></p>
+
+          <!-- Selected product detail -->
+          <div id="productDetail" class="product-detail" style="display:none">
+            <h3 id="productDetailName"></h3>
+            <div class="kpis" id="productPriceKpis"></div>
+            <div class="grid-2" style="margin-top:0.75rem">
+              <div class="chart-wrap" style="height:260px"><canvas id="cProductPrice"></canvas></div>
+              <div class="scroll">
+                <table class="data" id="tblProductCompare">
+                  <thead>
+                    <tr>
+                      <th>Түвшин</th>
+                      <th>Сар</th>
+                      <th>Үнэ (₮)</th>
+                      <th>Өөрчлөлт %</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <h2 style="margin-top:1.25rem;font-size:0.95rem">Бүх бараа — үнийн хүснэгт</h2>
           <div class="scroll price-table-wrap">
             <table class="data" id="tblPrices">
               <thead>
@@ -106,8 +109,13 @@
                   <th>#</th>
                   <th>Бараа</th>
                   <th>Жин</th>
-                  <th>Өмнөх сар</th>
-                  <th>Үнэ (₮)</th>
+                  <th id="thP0">Үндсэн</th>
+                  <th id="thP1">vs1</th>
+                  <th id="thP2">vs2</th>
+                  <th id="thP3">vs3</th>
+                  <th>vs1 %</th>
+                  <th>vs2 %</th>
+                  <th>vs3 %</th>
                 </tr>
               </thead>
               <tbody></tbody>
@@ -250,7 +258,7 @@
   <footer>
     <div id="footerMeta">CPI 2023=100 · GitHub Pages</div>
   </footer>
-  <script src="prices.js?v=4"></script>
-  <script src="app.js?v=4"></script>
+  <script src="prices.js?v=5"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>
