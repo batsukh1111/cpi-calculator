@@ -109,6 +109,39 @@ table.data tr:hover td { background: rgba(56,189,248,.06); }
 .status.ok { background: rgba(74,222,128,.1); border: 1px solid rgba(74,222,128,.3); color: #bbf7d0; }
 .hint { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.55rem; }
 footer { text-align: center; padding: 1.8rem; color: var(--muted); font-size: 0.78rem; }
+
+/* Price entry */
+.price-toolbar {
+  display: flex; flex-wrap: wrap; gap: 0.75rem 1rem;
+  align-items: flex-end; margin-bottom: 0.75rem;
+}
+.price-toolbar label { font-size: 0.72rem; color: var(--muted); }
+.price-toolbar select, .price-toolbar input[type="search"] {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.42rem 0.6rem;
+  font-size: 0.88rem;
+}
+.price-table-wrap { max-height: 560px; }
+.price-input {
+  width: 110px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.9rem;
+  text-align: right;
+}
+.price-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(56,189,248,.2);
+}
+tr.price-edited td { background: rgba(56,189,248,.08); }
+.price-name { max-width: 420px; text-align: left !important; }
 .badge {
   display: inline-block; font-size: 0.68rem; padding: 0.15rem 0.5rem; border-radius: 999px;
   background: rgba(74,222,128,.12); color: #86efac; border: 1px solid rgba(74,222,128,.3);

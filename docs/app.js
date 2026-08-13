@@ -553,6 +553,20 @@ async function init() {
     _skip = false;
     $("footerMeta").textContent =
       "CPI 2023=100 · " + DATA.months.length + " сар · шинэчилсэн " + (DATA.generated || "");
+
+    // Хэрэв УБ үнэ localStorage-д байвал автомат дахин тооцоо
+    try {
+      const ov = typeof ubLoadOverrides === "function" ? ubLoadOverrides() : {};
+      if (DATA.ub_edit && Object.keys(ov).length && typeof recomputeUB === "function") {
+        const rec = recomputeUB(DATA);
+        applyUBToData(DATA, rec);
+        showStatus("УБ-ын хадгалсан үнээр индекс шинэчлэгдлээ (local).", "ok");
+      }
+    } catch (e) {
+      console.warn("UB recompute skip", e);
+    }
+
+    if (typeof renderPriceEditor === "function") renderPriceEditor();
     render();
   } catch (e) {
     showStatus("Алдаа: " + e.message, "err");

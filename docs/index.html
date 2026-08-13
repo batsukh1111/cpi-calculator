@@ -46,12 +46,62 @@
       <div class="kpis" id="kpis"></div>
       <div class="tabs">
         <button class="tab active" data-tab="overview">Ерөнхий</button>
+        <button class="tab" data-tab="prices">Үнэ оруулах (УБ)</button>
         <button class="tab" data-tab="aimags">Аймгууд</button>
         <button class="tab" data-tab="groups">Бүлэг</button>
         <button class="tab" data-tab="special">Тусгай</button>
         <button class="tab" data-tab="contrib">Оролцоо</button>
         <button class="tab" data-tab="regions">Бүс</button>
       </div>
+
+      <section class="panel" id="panel-prices">
+        <div class="card" id="priceEditor">
+          <h2>Улаанбаатар — сарын дундаж үнэ оруулах</h2>
+          <p class="hint">
+            Зөвхөн нийслэлийн барааны үнэ. Өөрчлөлт таны браузерт (localStorage) хадгалагдана.
+            «Индекс тооцох» дарвал УБ-ын индекс, тусгай бүлэг, оролцоо шинэчлэгдэнэ.
+          </p>
+          <div class="price-toolbar">
+            <div>
+              <label>Сар</label><br/>
+              <select id="priceMonth" onchange="fillPriceTable()"></select>
+            </div>
+            <div>
+              <label>Хайх</label><br/>
+              <input type="search" id="priceSearch" placeholder="будаа, гурил…" oninput="fillPriceTable()" style="width:180px" />
+            </div>
+            <div style="align-self:flex-end">
+              <label class="hint" style="display:flex;align-items:center;gap:0.35rem;cursor:pointer">
+                <input type="checkbox" id="priceOnlyWeight" checked onchange="fillPriceTable()" />
+                Зөвхөн жинтэй бараа
+              </label>
+            </div>
+            <div style="align-self:flex-end;display:flex;flex-wrap:wrap;gap:0.4rem">
+              <button class="btn" type="button" onclick="recomputeFromPrices()">Индекс тооцох</button>
+              <button class="btn btn-ghost" type="button" onclick="downloadPriceCSV()">CSV татах</button>
+              <button class="btn btn-ghost" type="button" onclick="document.getElementById('csvImport').click()">CSV оруулах</button>
+              <input type="file" id="csvImport" accept=".csv,text/csv" hidden onchange="if(this.files[0])importPriceCSV(this.files[0])" />
+              <button class="btn btn-ghost" type="button" onclick="downloadBundleJSON()">JSON татах</button>
+              <button class="btn btn-ghost" type="button" onclick="clearPriceEdits()">Цэвэрлэх</button>
+            </div>
+          </div>
+          <p class="hint" id="priceStatus"></p>
+          <div class="scroll price-table-wrap">
+            <table class="data" id="tblPrices">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Бараа</th>
+                  <th>Жин</th>
+                  <th>Өмнөх сар</th>
+                  <th>Үнэ (₮)</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
 
       <section class="panel active" id="panel-overview">
         <div class="grid-2">
@@ -187,6 +237,7 @@
   <footer>
     <div id="footerMeta">CPI 2023=100 · GitHub Pages</div>
   </footer>
+  <script src="prices.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

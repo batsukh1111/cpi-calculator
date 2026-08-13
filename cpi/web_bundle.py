@@ -16,9 +16,13 @@ from .export import MAJOR_ROWS
 from .special_groups import load_special_groups, special_group_index
 from .regions import compute_all_regions
 from .contribution import rel_weight
+from .loader import WorkbookData
 
 
-def build_web_bundle(result: CPIResult) -> dict[str, Any]:
+def build_web_bundle(
+    result: CPIResult,
+    data: WorkbookData | None = None,
+) -> dict[str, Any]:
     months = [m["period"] for m in result.months]
     names = {n.row: (n.name or str(n.row)) for n in result.structure}
     groups_cfg = load_special_groups()
@@ -108,6 +112,61 @@ def build_web_bundle(result: CPIResult) -> dict[str, Any]:
                 "overall": [round(x, 6) for x in agg["overall"]],
             }
 
+    # --- УБ үнэ оруулах (веб форм) ---
+    ub_edit: dict[str, Any] | None = None
+    if data is not None and "20" in data.regions and "20" in result.regions:
+        ub_reg = data.regions["20"]
+        ub_res = result.regions["20"]
+        rel = ub_res.rel_weights
+        products = []
+        for node in result.structure:
+            if node.kind != "elementary" or not node.price_row:
+                continue
+            prices = ub_reg.prices.get(node.price_row, [None] * n)
+            # pad
+            if len(prices) < n:
+                prices = list(prices) + [None] * (n - len(prices))
+            products.append(
+                {
+                    "row": node.row,
+                    "price_row": node.price_row,
+                    "name": node.name or f"row {node.row}",
+                    "item_no": node.item_no,
+                    "weight": round(rel.get(node.row, 0.0), 8),
+                    "weight_abs": round(ub_reg.weights.get(node.row, 0.0) or 0.0, 8),
+                    "prices": [
+                        (round(p, 4) if isinstance(p, (int, float)) else None)
+                        for p in prices[:n]
+                    ],
+                }
+            )
+        # hierarchy for browser re-aggregation
+        structure_export = []
+        for node in result.structure:
+            structure_export.append(
+                {
+                    "row": node.row,
+                    "name": node.name,
+                    "kind": node.kind,
+                    "children": list(node.children or []),
+                    "price_row": node.price_row,
+                    "weight": round(rel.get(node.row, 0.0), 8),
+                }
+            )
+        # special members for UB
+        special_members = {
+            k: list(v) for k, v in group_members.items()
+        }
+        ub_edit = {
+            "code": "20",
+            "name": "Улаанбаатар",
+            "base_n": 12,
+            "products": products,
+            "structure": structure_export,
+            "special_members": special_members,
+            "weight_total_abs": round(ub_reg.weights.get(8, 0.0) or 0.0, 8),
+        }
+
     return {
         "base_year": result.base_year,
         "generated": __import__("datetime").datetime.now().isoformat(timespec="seconds"),
@@ -119,13 +178,18 @@ def build_web_bundle(result: CPIResult) -> dict[str, Any]:
         "special_order": group_order,
         "regions": regions_out,
         "scopes_note": "Тусгай бүлэг зөвхөн Улс + Улаанбаатар",
+        "ub_edit": ub_edit,
     }
 
 
-def export_web_bundle(result: CPIResult, path: str | Path) -> Path:
+def export_web_bundle(
+    result: CPIResult,
+    path: str | Path,
+    data: WorkbookData | None = None,
+) -> Path:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    bundle = build_web_bundle(result)
+    bundle = build_web_bundle(result, data=data)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(bundle, f, ensure_ascii=False, separators=(",", ":"))
     return path

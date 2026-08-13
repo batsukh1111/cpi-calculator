@@ -274,7 +274,7 @@ def cmd_web_export(args: argparse.Namespace) -> int:
     out = Path(args.output).resolve()
     # Always write to docs/data for GitHub Pages
     docs_data = (Path(__file__).resolve().parent / "docs" / "data" / "cpi_bundle.json").resolve()
-    export_web_bundle(result, docs_data)
+    export_web_bundle(result, docs_data, data=data)
     print(f"  GitHub Pages: {docs_data} ({docs_data.stat().st_size // 1024} KB)")
 
     if out != docs_data:
